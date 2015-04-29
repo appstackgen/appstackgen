@@ -1,0 +1,40 @@
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_BUILD_TYPE Debug)
+project(appstackgen)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_CXX_COMPILER /usr/bin/clang++)
+set(CMAKE_AUTOMOC OFF)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/buildsys")
+
+find_package(CppUnit REQUIRED)
+find_package(SOCI REQUIRED)
+
+enable_testing()
+
+set(TEST_MODULE_NAME tst)
+set(TEST_PREFIX ${TEST_MODULE_NAME}_)
+
+set(DUMMY_TARGET_NAME dummy)
+set(ASG_MODULE_NAME asg)
+set(ASG_PREFIX ${ASG_MODULE_NAME}_)
+set(ASG_KERNEL_LIB_NAME ${ASG_PREFIX}kernel)
+
+set(PROJECT_BUILD_DIR ${CMAKE_BINARY_DIR}/build)
+set(PROJECT_DOC_DIR ${PROJECT_BUILD_DIR}/doc)
+set(PROJECT_LIB_DIR ${PROJECT_BUILD_DIR}/lib)
+set(PROJECT_BIN_DIR ${PROJECT_BUILD_DIR}/bin)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_LIB_DIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_LIB_DIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BIN_DIR})
+
+set(PROJECT_COMPILER_FLAGS "-Wall -Werror -std=c++11")
+
+include_directories(${CPPUNIT_INCLUDE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/src/lib)
+include_directories(${CMAKE_SOURCE_DIR}/src/lib)
+
+add_subdirectory(src)

@@ -1,0 +1,50 @@
+#
+# This module finds an installed SOCI package.
+#
+# SOCI_FOUND - Set to true if SOCI is found. Otherwise False or undefined
+# SOCI_INCLUDE_DIR - Where SOCI Header files are located
+# SOCI_CORE_LIBRARY - The SOCI Library
+# SOCI_POSTGRES_LIBRARY - The SOCI Postgres Library
+#
+
+FIND_PATH(SOCI_INCLUDE_DIR
+    soci.h
+    HINTS /home/dev/opt/soci/include/soci
+    PATH_SUFFIXES "" "soci"
+)
+
+FIND_LIBRARY(
+    SOCI_CORE_LIBRARY
+    NAMES soci_core
+    HINTS /home/dev/opt/soci/lib64
+    PATH_SUFFIXES lib${LIB_SUFFIX}
+)
+
+FIND_LIBRARY(
+    SOCI_POSTGRES_LIBRARY
+    NAMES soci_postgresql
+    HINTS /home/dev/opt/soci/lib64
+    PATH_SUFFIXES lib${LIB_SUFFIX}
+)
+
+IF (SOCI_INCLUDE_DIR)
+    MESSAGE(STATUS "SOCI include files found: ${SOCI_INCLUDE_DIR}")
+ELSE (SOCI_INCLUDE_DIR)
+    MESSAGE(FATAL_ERROR "SOCI include files NOT found.")
+ENDIF (SOCI_INCLUDE_DIR)
+
+IF (SOCI_CORE_LIBRARY)
+    MESSAGE(STATUS "SOCI core library found: ${SOCI_CORE_LIBRARY}")
+ELSE (SOCI_CORE_LIBRARY)
+    MESSAGE(FATAL_ERROR "SOCI core library NOT found.")
+ENDIF (SOCI_CORE_LIBRARY)
+
+IF (SOCI_POSTGRES_LIBRARY)
+    MESSAGE(STATUS "SOCI postgres library found: ${SOCI_POSTGRES_LIBRARY}")
+ELSE (SOCI_POSTGRES_LIBRARY)
+    MESSAGE(FATAL_ERROR "SOCI postgres library NOT found.")
+ENDIF (SOCI_POSTGRES_LIBRARY)
+
+IF (SOCI_INCLUDE_DIR AND SOCI_CORE_LIBRARY AND SOCI_POSTGRES_LIBRARY)
+    SET(SOCI_FOUND TRUE)
+ENDIF (SOCI_INCLUDE_DIR AND SOCI_CORE_LIBRARY AND SOCI_POSTGRES_LIBRARY)
