@@ -6,16 +6,11 @@
  * All rights reserved.
  */
 
-#include "project.h"
+#include "projectfragment.h"
 
 namespace ASG {
 namespace Base {
 
-Project::Project(const Name &name, const Description &description)
-    : AbstractNode(), m_name(name), m_description(description)
-{
-
-}
 
 }
 }

@@ -7,6 +7,7 @@
  */
 
 #include <string>
+#include <sstream>
 #include <memory>
 
 #include <boost/uuid/uuid.hpp>
@@ -16,6 +17,8 @@ namespace ASG {
     using String = std::string;
     using Name = String;
     using Description = String;
+
+    using StringStream = std::stringstream;
 
     using Uuid = boost::uuids::uuid;
 }

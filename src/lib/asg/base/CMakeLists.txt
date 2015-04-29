@@ -11,12 +11,15 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
     abstractnode.h
+    node.h
     project.h
+    projectfragment.h
 )
 
 set(KERNEL_SOURCES
     abstractnode.cpp
     project.cpp
+    projectfragment.cpp
 )
 
 set(HEADERS
