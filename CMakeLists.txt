@@ -9,6 +9,7 @@ set(CMAKE_AUTOMOC OFF)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/buildsys")
 
+find_package(Boost 1.54 REQUIRED) # COMPONENTS foo
 find_package(CppUnit REQUIRED)
 find_package(SOCI REQUIRED)
 
@@ -21,6 +22,7 @@ set(DUMMY_TARGET_NAME dummy)
 set(ASG_MODULE_NAME asg)
 set(ASG_PREFIX ${ASG_MODULE_NAME}_)
 set(ASG_KERNEL_LIB_NAME ${ASG_PREFIX}kernel)
+set(ASG_BASE_LIB_NAME ${ASG_PREFIX}base)
 
 set(PROJECT_BUILD_DIR ${CMAKE_BINARY_DIR}/build)
 set(PROJECT_DOC_DIR ${PROJECT_BUILD_DIR}/doc)

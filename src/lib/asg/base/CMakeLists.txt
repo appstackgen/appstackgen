@@ -1,4 +1,4 @@
-set(LIBNAME ${ASG_KERNEL_LIB_NAME})
+set(LIBNAME ${ASG_BASE_LIB_NAME})
 
 set(LIBVERSION_MAJOR 1)
 set(LIBVERSION_MINOR 0)
@@ -10,13 +10,11 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    module.h
-    uuidgenerator.h
+    abstractnode.h
 )
 
 set(KERNEL_SOURCES
-    module.cpp
-    uuidgenerator.cpp
+    abstractnode.cpp
 )
 
 set(HEADERS
@@ -28,7 +26,7 @@ set(SOURCES
 )
 
 # this dummy target ensures headers without cpp file are shown in qtcreator (eg. template files)
-add_custom_target(${LIBNAME}${DUMMY_TARGET_NAME} SOURCES ${HEADERS}) 
+add_custom_target(${LIBNAME}${DUMMY_TARGET_NAME} SOURCES ${HEADERS})
 
 add_library(${LIBNAME} SHARED ${SOURCES})
 

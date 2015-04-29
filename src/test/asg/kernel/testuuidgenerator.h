@@ -11,14 +11,16 @@
 namespace ASG {
 namespace Test {
 
-class TestModule : public CppUnit::TestFixture
+class TestUuidGenerator: public CppUnit::TestFixture
 {
-    CPPUNIT_TEST_SUITE(ASG::Test::TestModule);
-    CPPUNIT_TEST(createId);
+    CPPUNIT_TEST_SUITE(ASG::Test::TestUuidGenerator);
+    CPPUNIT_TEST(createUuid);
+    CPPUNIT_TEST(createInvalidUuid);
     CPPUNIT_TEST_SUITE_END();
 
 protected:
-    void createId();
+    void createUuid();
+    void createInvalidUuid();
 };
 
 }

@@ -1,18 +1,14 @@
-set(TESTED_LIB_NAME ${ASG_KERNEL_LIB_NAME})
+set(TESTED_LIB_NAME ${ASG_BASE_LIB_NAME})
 set(APPNAME ${TEST_PREFIX}${TESTED_LIB_NAME})
 
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(TEST_HEADERS
     infrastructure.h
-    testmodule.h
-    testuuidgenerator.h
 )
 
 set(TEST_SOURCES
     main.cpp
-    testmodule.cpp
-    testuuidgenerator.cpp
 )
 
 set(HEADERS
