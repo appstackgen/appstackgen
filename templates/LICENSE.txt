@@ -1,0 +1,7 @@
+/*
+ * This file is part of Project 'appstackgen'.
+ *
+ * Copyright (c) %YEAR%, Johannes Lochmann
+ *
+ * All rights reserved.
+ */
