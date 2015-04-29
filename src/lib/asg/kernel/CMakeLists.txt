@@ -12,6 +12,7 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     module.h
     uuidgenerator.h
+    types.h
 )
 
 set(KERNEL_SOURCES

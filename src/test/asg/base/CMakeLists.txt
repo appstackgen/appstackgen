@@ -5,10 +5,14 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(TEST_HEADERS
     infrastructure.h
+    testprojectfactory.h
+    testproject.h
 )
 
 set(TEST_SOURCES
     main.cpp
+    testprojectfactory.cpp
+    testproject.cpp
 )
 
 set(HEADERS
