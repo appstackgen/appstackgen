@@ -16,6 +16,8 @@ set(KERNEL_HEADERS
     graphfragment.h
     abstractnode.h
     node.h
+    abstractedge.h
+    edge.h
 )
 
 set(KERNEL_SOURCES
@@ -25,6 +27,8 @@ set(KERNEL_SOURCES
     graphfragment.cpp
     abstractnode.cpp
     node.cpp
+    abstractedge.cpp
+    edge.cpp
 )
 
 set(HEADERS
