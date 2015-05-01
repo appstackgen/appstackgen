@@ -18,6 +18,7 @@ set(KERNEL_HEADERS
     node.h
     abstractedge.h
     edge.h
+    indexnode.h
 )
 
 set(KERNEL_SOURCES
@@ -29,6 +30,7 @@ set(KERNEL_SOURCES
     node.cpp
     abstractedge.cpp
     edge.cpp
+    indexnode.cpp
 )
 
 set(HEADERS

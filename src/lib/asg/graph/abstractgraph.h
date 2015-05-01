@@ -15,11 +15,13 @@ namespace Graph {
 
 class AbstractNode;
 class AbstractEdge;
+class IndexNode;
 
 using AbstractNodePtr = AbstractNode*;
 
 using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
 using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
+using IndexNodeSPtr = std::shared_ptr<IndexNode>;
 
 class AbstractGraph
 {
@@ -54,6 +56,8 @@ public:
     Size nodeCount() const { return implNodeCount(); }
     Size edgeCount() const { return implEdgeCount(); }
 
+    IndexNodeSPtr indexNode() const { return implIndexNode(); }
+
 protected:
     AbstractGraph();
 
@@ -65,6 +69,8 @@ protected:
 
     virtual Size implNodeCount() const = 0;
     virtual Size implEdgeCount() const = 0;
+
+    virtual IndexNodeSPtr implIndexNode() const = 0;
 
     virtual Uuid createUuid() = 0;
 };

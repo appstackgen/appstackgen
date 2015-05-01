@@ -35,11 +35,15 @@ protected:
     Size implNodeCount() const override { return m_nodes.size(); }
     Size implEdgeCount() const override { return m_edges.size(); }
 
+    IndexNodeSPtr implIndexNode() const override { return m_indexNode; }
+
 private:
     Name m_title;
 
     std::map<Uuid, AbstractNodeSPtr> m_nodes;
     std::map<Uuid, AbstractEdgeSPtr> m_edges;
+
+    IndexNodeSPtr m_indexNode;
 
     UuidGenerator m_uuidGenerator;
 };

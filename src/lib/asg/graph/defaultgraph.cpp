@@ -8,12 +8,14 @@
 
 #include "defaultgraph.h"
 
+#include <asg/graph/indexnode.h>
+
 namespace ASG {
 namespace Graph {
 
 DefaultGraph::DefaultGraph(const Name &title)
 {
-
+    m_indexNode = createNode<IndexNode>(IndexNode::defaultName);
 }
 
 void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
