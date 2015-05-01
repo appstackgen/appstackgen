@@ -38,6 +38,11 @@ void TestGraph::createGraph()
 
     CPPUNIT_ASSERT_EQUAL((Size)1, g->edgeCount());
     CPPUNIT_ASSERT_EQUAL((Size)2, g->nodeCount());
+
+    CPPUNIT_ASSERT_EQUAL((Size)0, n2->outEdgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)1, n1->outEdgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)0, n1->inEdgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)1, n2->inEdgeCount());
 }
 
 }
