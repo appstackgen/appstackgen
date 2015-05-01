@@ -6,17 +6,20 @@
  * All rights reserved.
  */
 
-#include <asg/kernel/types.h>
+#pragma once
+
+#include <asg/graph/node.h>
 
 namespace ASG {
+namespace Graph {
+namespace Test {
 
-class UuidGenerator
+class TestNode : public Node
 {
 public:
-    UuidGenerator();
-
-    static Uuid createUuid();
-    static Uuid createInvalidUuid();
+    using Node::Node;
 };
 
+}
+}
 }

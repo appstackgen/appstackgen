@@ -6,17 +6,15 @@
  * All rights reserved.
  */
 
-#include <asg/kernel/types.h>
+#include "abstractgraph.h"
 
 namespace ASG {
+namespace Graph {
 
-class UuidGenerator
+AbstractGraph::AbstractGraph()
 {
-public:
-    UuidGenerator();
 
-    static Uuid createUuid();
-    static Uuid createInvalidUuid();
-};
+}
 
+}
 }

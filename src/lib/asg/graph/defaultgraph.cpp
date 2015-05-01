@@ -6,17 +6,15 @@
  * All rights reserved.
  */
 
-#include <asg/kernel/types.h>
+#include "defaultgraph.h"
 
 namespace ASG {
+namespace Graph {
 
-class UuidGenerator
+DefaultGraph::DefaultGraph(const Name &title)
 {
-public:
-    UuidGenerator();
 
-    static Uuid createUuid();
-    static Uuid createInvalidUuid();
-};
+}
 
+}
 }
