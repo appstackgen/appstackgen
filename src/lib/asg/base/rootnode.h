@@ -8,21 +8,18 @@
 
 #pragma once
 
-#include <asg/kernel/types.h>
-
-#include <asg/base/rootnode.h>
+#include <asg/base/node.h>
 
 namespace ASG {
 namespace Base {
 
-class Project: public RootNode
+class RootNode : public Node
 {
 public:
-    using RootNode::RootNode;
+    RootNode(const Name& name = "", const Description& description = "");
 
 protected:
-
-private:
+    AbstractNode *implParent() const override { return nullptr; }
 };
 
 }

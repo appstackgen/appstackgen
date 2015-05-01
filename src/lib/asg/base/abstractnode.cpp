@@ -11,15 +11,9 @@
 namespace ASG {
 namespace Base {
 
-AbstractNode::AbstractNode()
-{
 
-}
 
-AbstractNode::~AbstractNode()
-{
 
-}
 
 }
 }

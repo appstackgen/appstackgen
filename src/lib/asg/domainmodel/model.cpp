@@ -6,10 +6,10 @@
  * All rights reserved.
  */
 
-#include "project.h"
+#include "model.h"
 
 namespace ASG {
-namespace Base {
+namespace DomainModel {
 
 }
 }

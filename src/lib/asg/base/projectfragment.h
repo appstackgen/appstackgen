@@ -8,20 +8,23 @@
 
 #pragma once
 
-#include <asg/base/node.h>
+#include <asg/base/subnode.h>
 
 #include <asg/base/project.h>
 
 namespace ASG {
 namespace Base {
 
-class ProjectFragment : public Node<Project>
+class ProjectFragment : public SubNode<Project>
 {
 public:
+    using ParentNodeType = Project;
+
     Project* project() const { return typedParent(); }
 
 protected:
-    using Node<Project>::Node;
+    ProjectFragment(ParentNodeType* p, const Name& name = "", const Description& description = "")
+        : SubNode<Project>(p, name, description) {}
 };
 
 }

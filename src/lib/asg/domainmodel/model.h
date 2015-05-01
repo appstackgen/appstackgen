@@ -8,21 +8,16 @@
 
 #pragma once
 
-#include <asg/kernel/types.h>
-
-#include <asg/base/rootnode.h>
+#include <asg/base/projectfragment.h>
 
 namespace ASG {
-namespace Base {
+namespace DomainModel {
 
-class Project: public RootNode
+class Model : public ASG::Base::ProjectFragment
 {
 public:
-    using RootNode::RootNode;
-
 protected:
-
-private:
+    using ASG::Base::ProjectFragment::ProjectFragment;
 };
 
 }

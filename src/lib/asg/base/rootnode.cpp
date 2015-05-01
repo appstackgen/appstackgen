@@ -6,10 +6,18 @@
  * All rights reserved.
  */
 
-#include "project.h"
+#include "rootnode.h"
 
 namespace ASG {
 namespace Base {
+
+RootNode::RootNode(const Name &name, const Description &description)
+    : Node()
+{
+    setName(name);
+    setDescription(description);
+}
+
 
 }
 }
