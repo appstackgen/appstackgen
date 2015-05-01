@@ -16,5 +16,12 @@ DefaultGraph::DefaultGraph(const Name &title)
 
 }
 
+void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
+    e->start()->registerOutEdge(e);
+    e->end()->registerInEdge(e);
+
+    m_edges[e->uuid()] = e;
+}
+
 }
 }

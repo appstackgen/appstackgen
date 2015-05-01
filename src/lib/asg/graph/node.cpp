@@ -16,5 +16,33 @@ Node::Node(AbstractGraph *g, const Name &name, const Uuid &uuid)
 {
 }
 
+AbstractEdgeSPtrVector Node::implOutEdges() const {
+    AbstractEdgeSPtrVector buf;
+
+    for (auto e : m_edges) {
+        if (e->start().get() == this) {
+            buf.push_back(e);
+        }
+    }
+
+    return buf;
+}
+
+AbstractEdgeSPtrVector Node::implInEdges() const {
+    AbstractEdgeSPtrVector buf;
+
+    for (auto e : m_edges) {
+        if (e->end().get() == this) {
+            buf.push_back(e);
+        }
+    }
+
+    return buf;
+}
+
+AbstractEdgeSPtrVector Node::implEdges() const {
+    return m_edges;
+}
+
 }
 }

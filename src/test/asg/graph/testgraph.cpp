@@ -11,6 +11,7 @@
 #include <asg/graph/defaultgraph.h>
 
 #include "testnode.h"
+#include "testedge.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(ASG::Graph::Test::TestGraph);
 
@@ -27,10 +28,16 @@ void TestGraph::createGraph()
 
     CPPUNIT_ASSERT_EQUAL((Size)0, g->nodeCount());
 
-    g->createNode<TestNode>("N");
-
+    auto n1 = g->createNode<TestNode>("N1");
 
     CPPUNIT_ASSERT_EQUAL((Size)1, g->nodeCount());
+
+    auto n2 = g->createNode<TestNode>("N2");
+
+    g->createEdge<TestEdge>(n1, n2);
+
+    CPPUNIT_ASSERT_EQUAL((Size)1, g->edgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)2, g->nodeCount());
 }
 
 }

@@ -7,12 +7,14 @@ set(TEST_HEADERS
     infrastructure.h
     testgraph.h
     testnode.h
+    testedge.h
 )
 
 set(TEST_SOURCES
     main.cpp
     testgraph.cpp
     testnode.cpp
+    testedge.cpp
 )
 
 set(HEADERS

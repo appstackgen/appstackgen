@@ -14,8 +14,12 @@ namespace ASG {
 namespace Graph {
 
 class AbstractNode;
+class AbstractEdge;
+
 using AbstractNodePtr = AbstractNode*;
+
 using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
+using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
 
 class AbstractGraph
 {
@@ -35,7 +39,20 @@ public:
         return n;
     }
 
+    template<typename T>
+    std::shared_ptr<T> createEdge(AbstractNodeSPtr start, AbstractNodeSPtr end) {
+        assert(start);
+        assert(end);
+
+        auto e = std::make_shared<T>(this, createUuid(), start, end);
+
+        registerEdge(e);
+
+        return e;
+    }
+
     Size nodeCount() const { return implNodeCount(); }
+    Size edgeCount() const { return implEdgeCount(); }
 
 protected:
     AbstractGraph();
@@ -44,7 +61,10 @@ protected:
     virtual Name implTitle() const = 0;
 
     virtual void registerNode(AbstractNodeSPtr n) = 0;
+    virtual void registerEdge(AbstractEdgeSPtr e) = 0;
+
     virtual Size implNodeCount() const = 0;
+    virtual Size implEdgeCount() const = 0;
 
     virtual Uuid createUuid() = 0;
 };
