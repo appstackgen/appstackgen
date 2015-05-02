@@ -10,6 +10,8 @@
 
 #include <asg/graph/graphfragment.h>
 
+#include <asg/graph/abstractnode.h>
+
 namespace ASG {
 namespace Graph {
 
@@ -27,8 +29,11 @@ public:
     void setStart(AbstractNodeSPtr s) { implSetStart(s); }
     void setEnd(AbstractNodeSPtr e) { implSetEnd(e); }
 
-    AbstractNodeSPtr start() const { return implStart(); }
-    AbstractNodeSPtr end() const { return implEnd(); }
+    template<typename T=AbstractNode>
+    std::shared_ptr<T> start() const { return std::dynamic_pointer_cast<T>(implStart()); }
+
+    template<typename T=AbstractNode>
+    std::shared_ptr<T> end() const { return std::dynamic_pointer_cast<T>(implEnd()); }
 
     bool hasStart() const { return (AbstractNodeSPtr() != start()); }
     bool hasEnd() const { return (AbstractNodeSPtr() != end()); }

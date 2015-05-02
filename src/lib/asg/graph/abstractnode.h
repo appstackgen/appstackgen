@@ -29,7 +29,7 @@ public:
     void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
 
-    template<typename T>
+    template<typename T=AbstractEdge>
     std::vector<std::shared_ptr<T>> typedOutEdges() const {
         std::vector<std::shared_ptr<T>> buf;
 
@@ -44,7 +44,7 @@ public:
         return buf;
     }
 
-    template<typename T>
+    template<typename T=AbstractEdge>
     std::vector<std::shared_ptr<T>> typedInEdges() const {
         std::vector<std::shared_ptr<T>> buf;
 
@@ -59,7 +59,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT, typename NodeT>
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
     std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
@@ -74,7 +74,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT, typename NodeT>
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
     std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
@@ -89,7 +89,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT, typename NodeT>
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
     std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() {
         std::vector<std::shared_ptr<NodeT>> buf;
 
@@ -100,7 +100,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT, typename NodeT>
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
     std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() {
         std::vector<std::shared_ptr<NodeT>> buf;
 
