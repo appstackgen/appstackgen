@@ -21,12 +21,9 @@ namespace ASG {
 namespace Graph {
 namespace Test {
 
-void TestGraph::createGraph()
+void TestGraph::testCreateNodesAndEdges()
 {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
-
-    CPPUNIT_ASSERT_EQUAL(String(""), g->title());
-    CPPUNIT_ASSERT(!g->hasTitle());
 
     CPPUNIT_ASSERT(g->indexNode());
 
@@ -50,6 +47,20 @@ void TestGraph::createGraph()
 
     CPPUNIT_ASSERT(!g->indexNode()->typedOutEdges<IndexEdge>().empty());
     CPPUNIT_ASSERT_EQUAL((Size)0, g->indexNode()->typedInEdges<IndexEdge>().size());
+
+    CPPUNIT_ASSERT_EQUAL((Size)2, (g->indexNode()->typedOutEdgesTo<IndexEdge, TestNode>().size()));
+    CPPUNIT_ASSERT_EQUAL((Size)1, (n1->typedInEdgesFrom<IndexEdge, IndexNode>().size()));
+
+    CPPUNIT_ASSERT_EQUAL((Size)2, (g->indexNode()->endNodesOfTypedOutEdgesTo<IndexEdge, TestNode>().size()));
+    CPPUNIT_ASSERT_EQUAL((Size)1, (n1->startNodesOfTypedInEdgesFrom<IndexEdge, IndexNode>().size()));
+}
+
+void TestGraph::testGraphTitle()
+{
+    auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
+
+    CPPUNIT_ASSERT_EQUAL(String(""), g->title());
+    CPPUNIT_ASSERT(!g->hasTitle());
 }
 
 }

@@ -59,6 +59,58 @@ public:
         return buf;
     }
 
+    template<typename EdgeT, typename NodeT>
+    std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() {
+        std::vector<std::shared_ptr<EdgeT>> buf;
+
+        for (auto e : typedOutEdges<EdgeT>()) {
+            auto n = std::dynamic_pointer_cast<NodeT>(e->end());
+
+            if (n) {
+                buf.push_back(e);
+            }
+        }
+
+        return buf;
+    }
+
+    template<typename EdgeT, typename NodeT>
+    std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() {
+        std::vector<std::shared_ptr<EdgeT>> buf;
+
+        for (auto e : typedInEdges<EdgeT>()) {
+            auto n = std::dynamic_pointer_cast<NodeT>(e->start());
+
+            if (n) {
+                buf.push_back(e);
+            }
+        }
+
+        return buf;
+    }
+
+    template<typename EdgeT, typename NodeT>
+    std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() {
+        std::vector<std::shared_ptr<NodeT>> buf;
+
+        for (auto e : typedOutEdgesTo<EdgeT, NodeT>()) {
+            buf.push_back(std::dynamic_pointer_cast<NodeT>(e->end()));
+        }
+
+        return buf;
+    }
+
+    template<typename EdgeT, typename NodeT>
+    std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() {
+        std::vector<std::shared_ptr<NodeT>> buf;
+
+        for (auto e : typedInEdgesFrom<EdgeT, NodeT>()) {
+            buf.push_back(std::dynamic_pointer_cast<NodeT>(e->start()));
+        }
+
+        return buf;
+    }
+
     AbstractEdgeSPtrVector outEdges() const { return implOutEdges(); }
     AbstractEdgeSPtrVector inEdges() const { return implInEdges(); }
 

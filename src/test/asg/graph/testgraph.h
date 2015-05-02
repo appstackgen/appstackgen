@@ -15,11 +15,13 @@ namespace Test {
 class TestGraph : public CppUnit::TestFixture
 {
     CPPUNIT_TEST_SUITE(ASG::Graph::Test::TestGraph);
-    CPPUNIT_TEST(createGraph);
+    CPPUNIT_TEST(testCreateNodesAndEdges);
+    CPPUNIT_TEST(testGraphTitle);
     CPPUNIT_TEST_SUITE_END();
 
 protected:
-    void createGraph();
+    void testCreateNodesAndEdges();
+    void testGraphTitle();
 };
 
 }
