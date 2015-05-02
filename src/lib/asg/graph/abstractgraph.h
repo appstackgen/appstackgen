@@ -38,13 +38,14 @@ public:
     std::shared_ptr<T> createNode(const Name& name = "") {
         auto n = std::make_shared<T>(this, name, createUuid());
         registerNode(n);
+
         return n;
     }
 
     template<typename T>
     std::shared_ptr<T> createEdge(AbstractNodeSPtr start, AbstractNodeSPtr end) {
-        assert(start);
-        assert(end);
+        assert(AbstractNodeSPtr() != start);
+        assert(AbstractNodeSPtr() != end);
 
         auto e = std::make_shared<T>(this, createUuid(), start, end);
 

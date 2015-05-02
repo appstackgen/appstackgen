@@ -10,20 +10,11 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    abstractnode.h
-    node.h
-    rootnode.h
-    subnode.h
     project.h
-    projectfragment.h
 )
 
 set(KERNEL_SOURCES
-    abstractnode.cpp
-    node.cpp
-    rootnode.cpp
     project.cpp
-    projectfragment.cpp
 )
 
 set(HEADERS
@@ -45,4 +36,4 @@ set_target_properties(${LIBNAME}
     SOVERSION ${LIBSOVERSION}
 )
 
-target_link_libraries(${LIBNAME} ${ASG_KERNEL_LIB_NAME})
+target_link_libraries(${LIBNAME} ${ASG_GRAPH_LIB_NAME})

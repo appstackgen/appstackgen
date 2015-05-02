@@ -6,11 +6,18 @@
  * All rights reserved.
  */
 
-#include "projectfragment.h"
+#pragma once
+
+#include <asg/graph/edge.h>
 
 namespace ASG {
-namespace Base {
+namespace Graph {
 
+class IndexEdge : public Edge
+{
+public:
+    using Edge::Edge;
+};
 
 }
 }

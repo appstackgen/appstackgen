@@ -26,6 +26,8 @@ void TestGraph::createGraph()
     CPPUNIT_ASSERT_EQUAL(String(""), g->title());
     CPPUNIT_ASSERT(!g->hasTitle());
 
+    CPPUNIT_ASSERT(g->indexNode());
+
     CPPUNIT_ASSERT_EQUAL((Size)0 + 1, g->nodeCount());
 
     auto n1 = g->createNode<TestNode>("N1");
@@ -36,13 +38,13 @@ void TestGraph::createGraph()
 
     g->createEdge<TestEdge>(n1, n2);
 
-    CPPUNIT_ASSERT_EQUAL((Size)1, g->edgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)1 + 2, g->edgeCount());
     CPPUNIT_ASSERT_EQUAL((Size)2 + 1, g->nodeCount());
 
     CPPUNIT_ASSERT_EQUAL((Size)0, n2->outEdgeCount());
     CPPUNIT_ASSERT_EQUAL((Size)1, n1->outEdgeCount());
-    CPPUNIT_ASSERT_EQUAL((Size)0, n1->inEdgeCount());
-    CPPUNIT_ASSERT_EQUAL((Size)1, n2->inEdgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)0 + 1, n1->inEdgeCount());
+    CPPUNIT_ASSERT_EQUAL((Size)1 + 1, n2->inEdgeCount());
 }
 
 }

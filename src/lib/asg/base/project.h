@@ -8,17 +8,15 @@
 
 #pragma once
 
-#include <asg/kernel/types.h>
-
-#include <asg/base/rootnode.h>
+#include <asg/graph/defaultgraph.h>
 
 namespace ASG {
 namespace Base {
 
-class Project: public RootNode
+class Project: public Graph::DefaultGraph
 {
 public:
-    using RootNode::RootNode;
+    using Graph::DefaultGraph::DefaultGraph;
 
 protected:
 

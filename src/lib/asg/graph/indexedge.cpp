@@ -6,14 +6,10 @@
  * All rights reserved.
  */
 
-#include "abstractnode.h"
+#include "indexedge.h"
 
 namespace ASG {
-namespace Base {
-
-
-
-
+namespace Graph {
 
 }
 }
