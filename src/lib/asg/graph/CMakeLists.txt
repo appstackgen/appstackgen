@@ -22,6 +22,8 @@ set(KERNEL_HEADERS
     systemedge.h
     indexnode.h
     indexedge.h
+    usernode.h
+    useredge.h
 )
 
 set(KERNEL_SOURCES
@@ -37,6 +39,8 @@ set(KERNEL_SOURCES
     indexnode.cpp
     systemedge.cpp
     indexedge.cpp
+    usernode.cpp
+    useredge.cpp
 )
 
 set(HEADERS
