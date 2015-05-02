@@ -24,6 +24,7 @@ set(KERNEL_HEADERS
     indexedge.h
     usernode.h
     useredge.h
+    owns.h
 )
 
 set(KERNEL_SOURCES
@@ -41,6 +42,7 @@ set(KERNEL_SOURCES
     indexedge.cpp
     usernode.cpp
     useredge.cpp
+    owns.cpp
 )
 
 set(HEADERS
