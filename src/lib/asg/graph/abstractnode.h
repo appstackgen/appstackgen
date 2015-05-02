@@ -10,6 +10,8 @@
 
 #include <asg/graph/graphfragment.h>
 
+#include <asg/graph/abstractedge.h>
+
 namespace ASG {
 namespace Graph {
 
@@ -26,6 +28,36 @@ public:
 
     void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
+
+    template<typename T>
+    std::vector<std::shared_ptr<T>> typedOutEdges() const {
+        std::vector<std::shared_ptr<T>> buf;
+
+        for (auto e : outEdges()) {
+            auto ee = std::dynamic_pointer_cast<T>(e);
+
+            if (ee) {
+                buf.push_back(ee);
+            }
+        }
+
+        return buf;
+    }
+
+    template<typename T>
+    std::vector<std::shared_ptr<T>> typedInEdges() const {
+        std::vector<std::shared_ptr<T>> buf;
+
+        for (auto e : inEdges()) {
+            auto ee = std::dynamic_pointer_cast<T>(e);
+
+            if (ee) {
+                buf.push_back(ee);
+            }
+        }
+
+        return buf;
+    }
 
     AbstractEdgeSPtrVector outEdges() const { return implOutEdges(); }
     AbstractEdgeSPtrVector inEdges() const { return implInEdges(); }

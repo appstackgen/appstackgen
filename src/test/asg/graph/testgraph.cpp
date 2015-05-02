@@ -9,6 +9,8 @@
 #include "testgraph.h"
 
 #include <asg/graph/defaultgraph.h>
+#include <asg/graph/indexnode.h>
+#include <asg/graph/indexedge.h>
 
 #include "testnode.h"
 #include "testedge.h"
@@ -45,6 +47,9 @@ void TestGraph::createGraph()
     CPPUNIT_ASSERT_EQUAL((Size)1, n1->outEdgeCount());
     CPPUNIT_ASSERT_EQUAL((Size)0 + 1, n1->inEdgeCount());
     CPPUNIT_ASSERT_EQUAL((Size)1 + 1, n2->inEdgeCount());
+
+    CPPUNIT_ASSERT(!g->indexNode()->typedOutEdges<IndexEdge>().empty());
+    CPPUNIT_ASSERT_EQUAL((Size)0, g->indexNode()->typedInEdges<IndexEdge>().size());
 }
 
 }
