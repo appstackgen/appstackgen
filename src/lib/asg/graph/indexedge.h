@@ -8,15 +8,15 @@
 
 #pragma once
 
-#include <asg/graph/edge.h>
+#include <asg/graph/systemedge.h>
 
 namespace ASG {
 namespace Graph {
 
-class IndexEdge : public Edge
+class IndexEdge : public SystemEdge
 {
 public:
-    using Edge::Edge;
+    using SystemEdge::SystemEdge;
 };
 
 }

@@ -6,20 +6,10 @@
  * All rights reserved.
  */
 
-#pragma once
-
-#include <asg/graph/systemnode.h>
+#include "systemnode.h"
 
 namespace ASG {
 namespace Graph {
-
-class IndexNode : public SystemNode
-{
-public:
-    static String defaultName;
-
-    using SystemNode::SystemNode;
-};
 
 }
 }

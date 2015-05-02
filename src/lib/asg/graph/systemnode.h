@@ -8,17 +8,15 @@
 
 #pragma once
 
-#include <asg/graph/systemnode.h>
+#include <asg/graph/node.h>
 
 namespace ASG {
 namespace Graph {
 
-class IndexNode : public SystemNode
+class SystemNode : public Node
 {
 public:
-    static String defaultName;
-
-    using SystemNode::SystemNode;
+    using Node::Node;
 };
 
 }
