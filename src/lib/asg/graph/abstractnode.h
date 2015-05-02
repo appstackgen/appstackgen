@@ -10,7 +10,7 @@
 
 #include <asg/graph/graphfragment.h>
 
-#include <asg/graph/abstractedge.h>
+#include <asg/graph/abstractnode.h>
 
 namespace ASG {
 namespace Graph {
@@ -28,6 +28,38 @@ public:
 
     void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
+
+    template<typename T=AbstractEdge>
+    Size countInEdges() const {
+        return typedInEdges<T>().size();
+    }
+
+    template<typename T=AbstractEdge>
+    Size countOutEdges() const {
+        return typedOutEdges<T>().size();
+    }
+
+    template<typename T>
+    bool hasUniqueInEdge() const {
+        return ((Size)1 == typedInEdges<T>().size());
+    }
+
+    template<typename T>
+    std::shared_ptr<T> uniqueInEdge() const {
+        assert(hasUniqueInEdge<T>());
+        return *(typedInEdges<T>().begin());
+    }
+
+    template<typename EdgeT, typename NodeT=AbstractNode>
+    std::shared_ptr<NodeT> startNodeOfUniqueInEdge() const {
+        assert(hasUniqueInEdge<EdgeT>());
+
+        auto n = uniqueInEdge<EdgeT>()->template start<NodeT>();
+
+        assert(std::shared_ptr<NodeT>() != n);
+
+        return n;
+    }
 
     template<typename T=AbstractEdge>
     std::vector<std::shared_ptr<T>> typedOutEdges() const {
