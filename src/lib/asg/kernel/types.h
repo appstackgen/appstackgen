@@ -12,10 +12,8 @@
 #include <map>
 #include <cassert>
 
-#include <boost/uuid/uuid.hpp>
-#include <boost/uuid/uuid_io.hpp>
-
 #include "objectname.h"
+#include "objectid.h"
 
 namespace ASG {
     using Size = std::size_t;
@@ -26,5 +24,5 @@ namespace ASG {
 
     using StringStream = std::stringstream;
 
-    using Uuid = boost::uuids::uuid;
+    using Id = ObjectId;
 }

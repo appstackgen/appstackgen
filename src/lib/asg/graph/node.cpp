@@ -11,7 +11,7 @@
 namespace ASG {
 namespace Graph {
 
-Node::Node(AbstractGraph *g, const Name &name, const Uuid &uuid)
+Node::Node(AbstractGraph *g, const Name &name, const Id &uuid)
     : AbstractNode(g, uuid), m_name(name)
 {
 }

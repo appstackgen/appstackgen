@@ -8,6 +8,7 @@ set(TEST_HEADERS
     testmodule.h
     testuuidgenerator.h
     testobjectname.h
+    testobjectid.h
 )
 
 set(TEST_SOURCES
@@ -15,6 +16,7 @@ set(TEST_SOURCES
     testmodule.cpp
     testuuidgenerator.cpp
     testobjectname.cpp
+    testobjectid.cpp
 )
 
 set(HEADERS

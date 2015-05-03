@@ -31,7 +31,7 @@ protected:
     void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
     void registerEdge(AbstractEdgeSPtr e) override;
 
-    Uuid createUuid() override { return m_uuidGenerator.createUuid(); }
+    Id createUuid() override { return m_uuidGenerator.createUuid(); }
 
     Size implNodeCount() const override { return m_nodes.size(); }
     Size implEdgeCount() const override { return m_edges.size(); }
@@ -41,8 +41,8 @@ protected:
 private:
     Name m_title;
 
-    std::map<Uuid, AbstractNodeSPtr> m_nodes;
-    std::map<Uuid, AbstractEdgeSPtr> m_edges;
+    std::map<Id, AbstractNodeSPtr> m_nodes;
+    std::map<Id, AbstractEdgeSPtr> m_edges;
 
     IndexNodeSPtr m_indexNode;
 

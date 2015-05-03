@@ -13,14 +13,14 @@
 
 namespace ASG {
 
-Uuid UuidGenerator::createUuid()
+Id UuidGenerator::createUuid()
 {
-    return boost::uuids::random_generator()();
+    return ObjectId::createId();
 }
 
-Uuid UuidGenerator::createInvalidUuid()
+Id UuidGenerator::createInvalidUuid()
 {
-    return boost::uuids::nil_generator()();
+    return ObjectId();
 }
 
 UuidGenerator::UuidGenerator()

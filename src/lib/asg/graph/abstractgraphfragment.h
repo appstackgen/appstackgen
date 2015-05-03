@@ -21,13 +21,13 @@ public:
     virtual ~AbstractGraphFragment() {}
 
     AbstractGraph* graph() const { return implGraph(); }
-    Uuid uuid() const { return implUuid(); }
+    Id uuid() const { return implUuid(); }
 
 protected:
     AbstractGraphFragment();
 
     virtual AbstractGraph* implGraph() const = 0;
-    virtual Uuid implUuid() const = 0;
+    virtual Id implUuid() const = 0;
 };
 
 }

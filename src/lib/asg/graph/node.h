@@ -18,7 +18,7 @@ namespace Graph {
 class Node : public AbstractNode
 {
 public:
-    Node(AbstractGraph* g, const Name& name, const Uuid& uuid);
+    Node(AbstractGraph* g, const Name& name, const Id& uuid);
 
 protected:
     void implRegisterOutEdge(AbstractEdgeSPtr e) override { assert(e->start().get() == this); m_edges.push_back(e); }

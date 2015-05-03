@@ -16,15 +16,15 @@ namespace Graph {
 class GraphFragment : public AbstractGraphFragment
 {
 public:
-    GraphFragment(AbstractGraph* g, const Uuid& uuid);
+    GraphFragment(AbstractGraph* g, const Id& uuid);
 
 protected:
     AbstractGraph *implGraph() const override { return m_g; }
-    Uuid implUuid() const override { return m_uuid; }
+    Id implUuid() const override { return m_uuid; }
 
 private:
     AbstractGraph* m_g { nullptr };
-    Uuid m_uuid;
+    Id m_uuid;
 };
 
 }

@@ -16,7 +16,7 @@ namespace Graph {
 class Edge : public AbstractEdge
 {
 public:
-    Edge(AbstractGraph* g, const Uuid& uuid, AbstractNodeSPtr start, AbstractNodeSPtr end);
+    Edge(AbstractGraph* g, const Id& uuid, AbstractNodeSPtr start, AbstractNodeSPtr end);
 
 protected:
     void implSetStart(AbstractNodeSPtr s) override { m_start = s; }

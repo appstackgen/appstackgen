@@ -14,10 +14,10 @@ void ASG::Test::TestUuidGenerator::createUuid()
 {
     auto id = UuidGenerator::createUuid();
 
-    CPPUNIT_ASSERT(!id.is_nil());
+    CPPUNIT_ASSERT(id.isValid());
 }
 
 void ASG::Test::TestUuidGenerator::createInvalidUuid()
 {
-    CPPUNIT_ASSERT(UuidGenerator::createInvalidUuid().is_nil());
+    CPPUNIT_ASSERT(!UuidGenerator::createInvalidUuid().isValid());
 }

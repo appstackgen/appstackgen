@@ -107,7 +107,7 @@ protected:
 
     virtual IndexNodeSPtr implIndexNode() const = 0;
 
-    virtual Uuid createUuid() = 0;
+    virtual Id createUuid() = 0;
 };
 
 }
