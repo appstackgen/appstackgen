@@ -10,6 +10,9 @@
 
 #include <asg/kernel/types.h>
 
+#include <asg/graph/abstractnode.h>
+#include <asg/graph/owns.h>
+
 namespace ASG {
 namespace Graph {
 
@@ -34,11 +37,41 @@ public:
 
     bool hasTitle() const { return (!title().empty()); }
 
+    template<typename T=AbstractNode>
+    bool hasSuperNode(AbstractNodeSPtr n) const {
+        return n->hasUniqueInEdgeFrom<Owns, T>();
+    }
+
+    template<typename T=AbstractNode>
+    Size subNodeCountOf(AbstractNodeSPtr p) const {
+        return subNodesOf<T>(p).size();
+    }
+
+    template<typename T=AbstractNode>
+    std::vector<std::shared_ptr<T>> subNodesOf(AbstractNodeSPtr p) const {
+        return p->endNodesOfTypedOutEdgesTo<Owns, T>();
+    }
+
+    template<typename T=AbstractNode>
+    std::shared_ptr<T> superNodeOf(AbstractNodeSPtr n) const {
+        assert(hasSuperNode<T>(n));
+
+        return n->startNodeOfUniqueInEdge<Owns, T>();
+    }
+
+    template<typename T>
+    std::shared_ptr<T> createSubNodeOf(AbstractNodeSPtr parent, const Name& subNodeName) {
+        assert(parent);
+
+        auto n = createNode<T>(subNodeName);
+        registerNodeAsSubNodeOf(n, parent);
+        return n;
+    }
+
     template<typename T>
     std::shared_ptr<T> createNode(const Name& name = "") {
         auto n = std::make_shared<T>(this, name, createUuid());
         registerNode(n);
-
         return n;
     }
 
@@ -66,6 +99,7 @@ protected:
     virtual Name implTitle() const = 0;
 
     virtual void registerNode(AbstractNodeSPtr n) = 0;
+    virtual void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) = 0;
     virtual void registerEdge(AbstractEdgeSPtr e) = 0;
 
     virtual Size implNodeCount() const = 0;

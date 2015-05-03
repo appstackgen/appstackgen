@@ -27,8 +27,9 @@ protected:
     void implSetTitle(const Name &t) override { m_title = t; }
     Name implTitle() const override { return m_title; }
 
-    void registerNode(AbstractNodeSPtr n);
-    void registerEdge(AbstractEdgeSPtr e);
+    void registerNode(AbstractNodeSPtr n) override;
+    void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
+    void registerEdge(AbstractEdgeSPtr e) override;
 
     Uuid createUuid() override { return m_uuidGenerator.createUuid(); }
 

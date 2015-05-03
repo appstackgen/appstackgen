@@ -17,11 +17,13 @@ class TestGraph : public CppUnit::TestFixture
     CPPUNIT_TEST_SUITE(ASG::Graph::Test::TestGraph);
     CPPUNIT_TEST(testCreateNodesAndEdges);
     CPPUNIT_TEST(testGraphTitle);
+    CPPUNIT_TEST(testNodeHierarchy);
     CPPUNIT_TEST_SUITE_END();
 
 protected:
     void testCreateNodesAndEdges();
     void testGraphTitle();
+    void testNodeHierarchy();
 };
 
 }

@@ -39,6 +39,16 @@ public:
         return typedOutEdges<T>().size();
     }
 
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
+    bool hasUniqueInEdgeFrom() const {
+        return ((Size)1 == typedInEdgesFrom<EdgeT, NodeT>().size());
+    }
+
+    template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
+    std::shared_ptr<NodeT> startNodeOfUniqueInEdgeFrom() const {
+        return *(typedInEdgesFrom<EdgeT, NodeT>().begin());
+    }
+
     template<typename T>
     bool hasUniqueInEdge() const {
         return ((Size)1 == typedInEdges<T>().size());
@@ -92,7 +102,7 @@ public:
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
-    std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() {
+    std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() const {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
         for (auto e : typedOutEdges<EdgeT>()) {
@@ -107,7 +117,7 @@ public:
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
-    std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() {
+    std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() const {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
         for (auto e : typedInEdges<EdgeT>()) {
@@ -122,7 +132,7 @@ public:
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
-    std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() {
+    std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() const {
         std::vector<std::shared_ptr<NodeT>> buf;
 
         for (auto e : typedOutEdgesTo<EdgeT, NodeT>()) {
@@ -133,7 +143,7 @@ public:
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
-    std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() {
+    std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() const {
         std::vector<std::shared_ptr<NodeT>> buf;
 
         for (auto e : typedInEdgesFrom<EdgeT, NodeT>()) {

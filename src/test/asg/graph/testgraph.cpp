@@ -63,6 +63,19 @@ void TestGraph::testGraphTitle()
     CPPUNIT_ASSERT(!g->hasTitle());
 }
 
+void TestGraph::testNodeHierarchy()
+{
+    auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
+
+    auto root = g->createNode<TestNode>("root");
+    auto child1 = g->createSubNodeOf<TestNode>(root, "child 1");
+    g->createSubNodeOf<TestNode>(root, "child 2");
+
+    CPPUNIT_ASSERT((g->hasSuperNode(child1)));
+    CPPUNIT_ASSERT_EQUAL((Size)2, g->subNodeCountOf(root));
+    CPPUNIT_ASSERT_EQUAL(root, (g->superNodeOf<TestNode>(child1)));
+}
+
 }
 }
 }
