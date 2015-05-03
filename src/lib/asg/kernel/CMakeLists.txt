@@ -13,11 +13,13 @@ set(KERNEL_HEADERS
     module.h
     uuidgenerator.h
     types.h
+    objectname.h
 )
 
 set(KERNEL_SOURCES
     module.cpp
     uuidgenerator.cpp
+    objectname.cpp
 )
 
 set(HEADERS

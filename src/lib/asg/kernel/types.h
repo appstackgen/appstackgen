@@ -15,11 +15,13 @@
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_io.hpp>
 
+#include "objectname.h"
+
 namespace ASG {
     using Size = std::size_t;
 
     using String = std::string;
-    using Name = String;
+    using Name = ObjectName;
     using Description = String;
 
     using StringStream = std::stringstream;

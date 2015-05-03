@@ -20,7 +20,7 @@ namespace Test {
 
 void TestProject::selftestProjectFactory()
 {
-    auto proj = TestProjectFactory::createProject("A Project");
+    auto proj = TestProjectFactory::createProject(Name("A Project"));
 
     CPPUNIT_ASSERT(proj->hasTitle());
 

@@ -29,11 +29,11 @@ void TestGraph::testCreateNodesAndEdges()
 
     CPPUNIT_ASSERT_EQUAL((Size)0 + 1, g->nodeCount());
 
-    auto n1 = g->createNode<TestNode>("N1");
+    auto n1 = g->createNode<TestNode>(Name("N1"));
 
     CPPUNIT_ASSERT_EQUAL((Size)1 + 1, g->nodeCount());
 
-    auto n2 = g->createNode<TestNode>("N2");
+    auto n2 = g->createNode<TestNode>(Name("N2"));
 
     g->createEdge<TestEdge>(n1, n2);
 
@@ -59,7 +59,7 @@ void TestGraph::testGraphTitle()
 {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    CPPUNIT_ASSERT_EQUAL(String(""), g->title());
+    CPPUNIT_ASSERT_EQUAL(Name(""), g->title());
     CPPUNIT_ASSERT(!g->hasTitle());
 }
 
@@ -67,9 +67,9 @@ void TestGraph::testNodeHierarchy()
 {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    auto root = g->createNode<TestNode>("root");
-    auto child1 = g->createSubNodeOf<TestNode>(root, "child 1");
-    g->createSubNodeOf<TestNode>(root, "child 2");
+    auto root = g->createNode<TestNode>(Name("root"));
+    auto child1 = g->createSubNodeOf<TestNode>(root, Name("child 1"));
+    g->createSubNodeOf<TestNode>(root, Name("child 2"));
 
     CPPUNIT_ASSERT((g->hasSuperNode(child1)));
     CPPUNIT_ASSERT_EQUAL((Size)2, g->subNodeCountOf(root));

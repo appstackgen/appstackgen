@@ -21,7 +21,7 @@ namespace Graph {
 class DefaultGraph : public AbstractGraph
 {
 public:
-    explicit DefaultGraph(const Name& title = "");
+    explicit DefaultGraph(const Name& title = Name(""));
 
 protected:
     void implSetTitle(const Name &t) override { m_title = t; }

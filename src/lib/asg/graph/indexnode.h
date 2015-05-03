@@ -16,7 +16,7 @@ namespace Graph {
 class IndexNode : public SystemNode
 {
 public:
-    static String defaultName;
+    static Name defaultName;
 
     using SystemNode::SystemNode;
 };

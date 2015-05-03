@@ -7,12 +7,14 @@ set(TEST_HEADERS
     infrastructure.h
     testmodule.h
     testuuidgenerator.h
+    testobjectname.h
 )
 
 set(TEST_SOURCES
     main.cpp
     testmodule.cpp
     testuuidgenerator.cpp
+    testobjectname.cpp
 )
 
 set(HEADERS

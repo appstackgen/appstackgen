@@ -35,7 +35,7 @@ public:
 
     Name title() const { return implTitle(); }
 
-    bool hasTitle() const { return (!title().empty()); }
+    bool hasTitle() const { return (!title().isEmpty()); }
 
     template<typename T=AbstractNode>
     bool hasSuperNode(AbstractNodeSPtr n) const {
@@ -69,7 +69,7 @@ public:
     }
 
     template<typename T>
-    std::shared_ptr<T> createNode(const Name& name = "") {
+    std::shared_ptr<T> createNode(const Name& name = Name("")) {
         auto n = std::make_shared<T>(this, name, createUuid());
         registerNode(n);
         return n;
