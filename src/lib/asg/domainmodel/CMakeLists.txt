@@ -12,11 +12,13 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     model.h
     modelfragment.h
+    boundedcontext.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
     modelfragment.cpp
+    boundedcontext.cpp
 )
 
 set(HEADERS

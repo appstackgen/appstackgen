@@ -10,13 +10,19 @@
 
 #include <asg/base/project.h>
 
+#include <asg/domainmodel/boundedcontext.h>
+
 namespace ASG {
 namespace DomainModel {
 namespace Test {
 
 Base::ProjectSPtr TestProjectFactory::createProject(const String &n)
 {
-    return std::make_shared<Base::Project>(Name(n));
+    auto proj = std::make_shared<Base::Project>(Name(n));
+
+    proj->createNode<BoundedContext>(Name("NatSci"));
+
+    return proj;
 }
 
 TestProjectFactory::TestProjectFactory()
