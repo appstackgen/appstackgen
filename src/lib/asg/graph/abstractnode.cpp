@@ -8,8 +8,19 @@
 
 #include "abstractnode.h"
 
+#include <asg/kernel/objectid.h>
+
 namespace ASG {
 namespace Graph {
+
+String AbstractNode::implToString() const
+{
+    StringStream s;
+
+    s << nodeName() << " {" << uuid() << "}";
+
+    return s.str();
+}
 
 }
 }

@@ -12,6 +12,8 @@ namespace ASG {
 namespace Graph {
 namespace Test {
 
+String TestEdge::staticEdgeName { "TestEdge" };
+
 }
 }
 }

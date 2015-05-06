@@ -17,8 +17,12 @@ class IndexNode : public SystemNode
 {
 public:
     static Name defaultName;
+    static String staticNodeName;
 
     using SystemNode::SystemNode;
+
+protected:
+    String implNodeName() const override { return IndexNode::staticNodeName; }
 };
 
 }

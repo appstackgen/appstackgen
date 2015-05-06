@@ -71,6 +71,7 @@ public:
     template<typename T>
     std::shared_ptr<T> createNode(const Name& name = Name("")) {
         auto n = std::make_shared<T>(this, name, createUuid());
+        assert(T::staticNodeName == n->nodeName());
         registerNode(n);
         return n;
     }
@@ -81,6 +82,8 @@ public:
         assert(AbstractNodeSPtr() != end);
 
         auto e = std::make_shared<T>(this, createUuid(), start, end);
+
+        assert(T::staticEdgeName == e->edgeName());
 
         registerEdge(e);
 

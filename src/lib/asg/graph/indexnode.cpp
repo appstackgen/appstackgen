@@ -1,4 +1,5 @@
 /*
+ *
  * This file is part of Project 'appstackgen'.
  *
  * Copyright (c) 2015, Johannes Lochmann
@@ -12,6 +13,7 @@ namespace ASG {
 namespace Graph {
 
 Name IndexNode::defaultName { "IndexNode" };
+String IndexNode::staticNodeName { "IndexNode" };
 
 }
 }

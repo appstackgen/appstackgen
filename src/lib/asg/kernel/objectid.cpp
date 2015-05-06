@@ -35,10 +35,21 @@ ObjectId ObjectId::createId()
     return boost::uuids::random_generator()();
 }
 
+void ObjectId::printOn(std::ostream &strm) const
+{
+    strm << m_id;
+}
+
 ObjectId::ObjectId(boost::uuids::uuid uuid)
     : m_id(uuid)
 {
 
+}
+
+std::ostream &operator<<(std::ostream &strm, const ObjectId &id)
+{
+    id.printOn(strm);
+    return strm;
 }
 
 }

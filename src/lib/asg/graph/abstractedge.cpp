@@ -8,8 +8,17 @@
 
 #include "abstractedge.h"
 
+#include <asg/kernel/objectid.h>
+
 namespace ASG {
 namespace Graph {
+
+String AbstractEdge::implToString() const
+{
+    StringStream s;
+    s << edgeName() << " {" << uuid() << "}";
+    return s.str();
+}
 
 }
 }

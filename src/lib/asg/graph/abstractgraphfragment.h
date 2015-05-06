@@ -23,11 +23,15 @@ public:
     AbstractGraph* graph() const { return implGraph(); }
     Id uuid() const { return implUuid(); }
 
+    String toString() const { return implToString(); }
+
 protected:
     AbstractGraphFragment();
 
     virtual AbstractGraph* implGraph() const = 0;
     virtual Id implUuid() const = 0;
+
+    virtual String implToString() const = 0;
 };
 
 }

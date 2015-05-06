@@ -16,7 +16,12 @@ namespace Graph {
 class IndexEdge : public SystemEdge
 {
 public:
+    static String staticEdgeName;
+
     using SystemEdge::SystemEdge;
+
+protected:
+    String implEdgeName() const override;
 };
 
 }

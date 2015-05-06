@@ -30,11 +30,15 @@ public:
 
     bool operator < (const ObjectId& o) const { return (m_id < o.m_id); }
 
+    void printOn(std::ostream& strm) const;
+
 protected:
     ObjectId(boost::uuids::uuid uuid);
 
 private:
     boost::uuids::uuid m_id;
 };
+
+std::ostream& operator<<(std::ostream& strm, const ObjectId& id);
 
 }
