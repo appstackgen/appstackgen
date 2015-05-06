@@ -36,4 +36,4 @@ set_target_properties(${LIBNAME}
     SOVERSION ${LIBSOVERSION}
 )
 
-target_link_libraries(${LIBNAME} ${ASG_BASE_LIB_NAME} ${ASG_KERNEL_LIB_NAME})
+target_link_libraries(${LIBNAME} ${ASG_GRAPH_LIB_NAME})

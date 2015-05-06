@@ -6,27 +6,22 @@
  * All rights reserved.
  */
 
-#include "testproject.h"
+#include <gtest/gtest.h>
 
 #include <asg/base/project.h>
 
 #include "testprojectfactory.h"
 
-CPPUNIT_TEST_SUITE_REGISTRATION(ASG::DomainModel::Test::TestProject);
+using namespace ASG;
+using namespace ASG::DomainModel;
+using namespace ASG::DomainModel::Test;
 
-namespace ASG {
-namespace DomainModel {
-namespace Test {
-
-void TestProject::selftestProjectFactory()
+TEST(TestProject, selftestProjectFactory)
 {
     auto proj = TestProjectFactory::createProject("A Project");
 
-    CPPUNIT_ASSERT(proj->hasTitle());
+    ASSERT_TRUE(proj->hasTitle());
 
-    CPPUNIT_ASSERT_EQUAL(Name("A Project"), proj->title());
+    ASSERT_EQ(Name("A Project"), proj->title());
 }
 
-}
-}
-}

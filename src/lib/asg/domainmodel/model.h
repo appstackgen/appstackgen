@@ -8,16 +8,16 @@
 
 #pragma once
 
-#include <asg/base/projectfragment.h>
+#include <asg/graph/usernode.h>
 
 namespace ASG {
 namespace DomainModel {
 
-class Model : public ASG::Base::ProjectFragment
+class Model : public ASG::Graph::UserNode
 {
 public:
 protected:
-    using ASG::Base::ProjectFragment::ProjectFragment;
+    using ASG::Graph::UserNode::UserNode;
 };
 
 }
