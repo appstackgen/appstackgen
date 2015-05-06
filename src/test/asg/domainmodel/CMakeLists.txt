@@ -28,6 +28,7 @@ add_executable(${APPNAME} ${SOURCES})
 target_link_libraries(${APPNAME}
     ${GTEST_LIBRARIES}
     ${TESTED_LIB_NAME}
+    ${ASG_GRAPHTOOLS_LIB_NAME}
 )
 
 add_test(NAME ${APPNAME} COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${APPNAME})

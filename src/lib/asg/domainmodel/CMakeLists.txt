@@ -13,12 +13,14 @@ set(KERNEL_HEADERS
     model.h
     modelfragment.h
     boundedcontext.h
+    primitivedatatype.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
     modelfragment.cpp
     boundedcontext.cpp
+    primitivedatatype.cpp
 )
 
 set(HEADERS

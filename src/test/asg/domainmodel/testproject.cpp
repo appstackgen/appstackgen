@@ -8,11 +8,16 @@
 
 #include <gtest/gtest.h>
 
+#include <asg/kernel/stringtools.h>
+
 #include <asg/base/project.h>
+
+#include <asg/graphtools/graphtoplaintext.h>
 
 #include "testprojectfactory.h"
 
 using namespace ASG;
+using namespace ASG::Graph;
 using namespace ASG::DomainModel;
 using namespace ASG::DomainModel::Test;
 
@@ -24,6 +29,8 @@ TEST(TestProject, selftestProjectFactory)
 
     ASSERT_EQ(Name("A Project"), proj->title());
 
-    ASSERT_EQ(2, proj->nodeCount());
+    ASSERT_EQ(3, proj->nodeCount());
+
+    std::cout << std::endl << join(GraphToPlainText::toStringVector(proj)) << std::endl;
 }
 

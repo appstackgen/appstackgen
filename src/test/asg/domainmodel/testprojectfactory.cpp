@@ -11,6 +11,7 @@
 #include <asg/base/project.h>
 
 #include <asg/domainmodel/boundedcontext.h>
+#include <asg/domainmodel/primitivedatatype.h>
 
 namespace ASG {
 namespace DomainModel {
@@ -22,6 +23,7 @@ Base::ProjectSPtr TestProjectFactory::createProject(const String &n)
 
     proj->createNode<BoundedContext>(Name("NatSci"));
 
+    proj->createNode<PrimitiveDataType>(Name("Integer"));
     return proj;
 }
 
