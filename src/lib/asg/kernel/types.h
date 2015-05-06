@@ -23,6 +23,7 @@ namespace ASG {
     using Description = String;
 
     using StringStream = std::stringstream;
+    using StringVector = std::vector<String>;
 
     using Id = ObjectId;
 }

@@ -48,5 +48,27 @@ void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
     m_edges[e->uuid()] = e;
 }
 
+AbstractNodeSPtrVector DefaultGraph::implNodes() const
+{
+    AbstractNodeSPtrVector buf;
+
+    for (auto i : m_nodes) {
+        buf.push_back(i.second);
+    }
+
+    return buf;
+}
+
+AbstractEdgeSPtrVector DefaultGraph::implEdges() const
+{
+    AbstractEdgeSPtrVector buf;
+
+    for (auto e : m_edges) {
+        buf.push_back(e.second);
+    }
+
+    return buf;
+}
+
 }
 }

@@ -38,6 +38,9 @@ protected:
 
     IndexNodeSPtr implIndexNode() const override { return m_indexNode; }
 
+    AbstractNodeSPtrVector implNodes() const override;
+    AbstractEdgeSPtrVector implEdges() const override;
+
 private:
     Name m_title;
 

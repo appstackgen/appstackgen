@@ -25,6 +25,10 @@ using AbstractNodePtr = AbstractNode*;
 using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
 using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
 using IndexNodeSPtr = std::shared_ptr<IndexNode>;
+using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
+
+using AbstractNodeSPtrVector = std::vector<AbstractNodeSPtr>;
+using AbstractEdgeSPtrVector = std::vector<AbstractEdgeSPtr>;
 
 class AbstractGraph
 {
@@ -36,6 +40,9 @@ public:
     Name title() const { return implTitle(); }
 
     bool hasTitle() const { return (!title().isEmpty()); }
+
+    AbstractNodeSPtrVector nodes() const { return implNodes(); }
+    AbstractEdgeSPtrVector edges() const { return implEdges(); }
 
     template<typename T=AbstractNode>
     bool hasSuperNode(AbstractNodeSPtr n) const {
@@ -107,6 +114,9 @@ protected:
 
     virtual Size implNodeCount() const = 0;
     virtual Size implEdgeCount() const = 0;
+
+    virtual AbstractNodeSPtrVector implNodes() const = 0;
+    virtual AbstractEdgeSPtrVector implEdges() const = 0;
 
     virtual IndexNodeSPtr implIndexNode() const = 0;
 
