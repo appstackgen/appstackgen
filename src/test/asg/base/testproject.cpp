@@ -6,27 +6,18 @@
  * All rights reserved.
  */
 
-#include "testproject.h"
+#include <gtest/gtest.h>
 
 #include <asg/base/project.h>
 
-#include "testprojectfactory.h"
+using namespace ASG;
+using namespace ASG::Base;
 
-CPPUNIT_TEST_SUITE_REGISTRATION(ASG::Base::Test::TestProject);
+TEST(TestProject, testProjectCtor) {
+    auto proj = std::unique_ptr<Project>(new Project(Name("A Project")));
 
-namespace ASG {
-namespace Base {
-namespace Test {
+    ASSERT_TRUE(proj->hasTitle());
 
-void TestProject::selftestProjectFactory()
-{
-    auto proj = TestProjectFactory::createProject(Name("A Project"));
-
-    CPPUNIT_ASSERT(proj->hasTitle());
-
-    CPPUNIT_ASSERT_EQUAL(Name("A Project"), proj->title());
+    ASSERT_EQ(Name("A Project"), proj->title());
 }
 
-}
-}
-}

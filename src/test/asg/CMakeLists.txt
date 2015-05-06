@@ -1,3 +1,4 @@
+add_subdirectory(gtest_selftest)
 add_subdirectory(kernel)
 add_subdirectory(graph)
 add_subdirectory(base)

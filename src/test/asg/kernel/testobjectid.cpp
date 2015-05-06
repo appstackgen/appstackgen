@@ -6,19 +6,14 @@
  * All rights reserved.
  */
 
-#include "testobjectid.h"
+#include <gtest/gtest.h>
 
 #include <asg/kernel/objectid.h>
 
-CPPUNIT_TEST_SUITE_REGISTRATION(ASG::Test::TestObjectId);
+using namespace ASG;
 
-namespace ASG {
-
-void Test::TestObjectId::testDefaultCtor()
-{
+TEST(TestObjectId, testDefaultCtor) {
     ObjectId id;
 
-    CPPUNIT_ASSERT(!id.isValid());
-}
-
+    ASSERT_TRUE(!id.isValid());
 }

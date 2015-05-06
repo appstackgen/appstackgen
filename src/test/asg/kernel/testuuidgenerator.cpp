@@ -6,18 +6,18 @@
  * All rights reserved.
  */
 
-#include "testuuidgenerator.h"
+#include <gtest/gtest.h>
 
 #include <asg/kernel/uuidgenerator.h>
 
-void ASG::Test::TestUuidGenerator::createUuid()
-{
+using namespace ASG;
+
+TEST(TestUuidGenerator, createUuid) {
     auto id = UuidGenerator::createUuid();
 
-    CPPUNIT_ASSERT(id.isValid());
+    ASSERT_TRUE(id.isValid());
 }
 
-void ASG::Test::TestUuidGenerator::createInvalidUuid()
-{
-    CPPUNIT_ASSERT(!UuidGenerator::createInvalidUuid().isValid());
+TEST(TestUuidGenerator, createInvalidUuid)  {
+    ASSERT_TRUE(!UuidGenerator::createInvalidUuid().isValid());
 }

@@ -4,14 +4,11 @@ set(APPNAME ${TEST_PREFIX}${TESTED_LIB_NAME})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(TEST_HEADERS
-    infrastructure.h
-    testgraph.h
     testnode.h
     testedge.h
 )
 
 set(TEST_SOURCES
-    main.cpp
     testgraph.cpp
     testnode.cpp
     testedge.cpp
@@ -31,7 +28,7 @@ add_custom_target(${APPNAME}${DUMMY_TARGET_NAME} SOURCES ${HEADERS})
 add_executable(${APPNAME} ${SOURCES})
 
 target_link_libraries(${APPNAME}
-    ${CPPUNIT_LIBRARY}
+    ${GTEST_LIBRARIES}
     ${TESTED_LIB_NAME}
 )
 

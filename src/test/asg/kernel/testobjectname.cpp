@@ -6,32 +6,24 @@
  * All rights reserved.
  */
 
-#include "testobjectname.h"
+#include <gtest/gtest.h>
 
 #include <asg/kernel/types.h>
 
-CPPUNIT_TEST_SUITE_REGISTRATION(ASG::Test::TestObjectName);
+using namespace ASG;
 
-namespace ASG {
-namespace Test {
-
-void TestObjectName::testDefaultCtor()
-{
+TEST(TestObjectName, testDefaultCtor) {
     ObjectName n;
 
-    CPPUNIT_ASSERT_EQUAL(std::string(), n.toString());
+    ASSERT_EQ(std::string(), n.toString());
 }
 
-void TestObjectName::testEquality()
-{
+TEST(TestObjectName, testEquality) {
     ObjectName a("a");
     ObjectName b("b");
     ObjectName a2("a");
 
-    CPPUNIT_ASSERT_EQUAL(a, a);
-    CPPUNIT_ASSERT(a != b);
-    CPPUNIT_ASSERT(a == a);
-}
-
-}
+    ASSERT_EQ(a, a);
+    ASSERT_TRUE(a != b);
+    ASSERT_TRUE(a == a);
 }

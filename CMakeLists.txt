@@ -9,11 +9,14 @@ set(CMAKE_AUTOMOC OFF)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/buildsys")
 
+enable_testing()
+
+find_package(Threads REQUIRED)
+find_package(GTest REQUIRED)
 find_package(Boost 1.54 REQUIRED) # COMPONENTS foo
-find_package(CppUnit REQUIRED)
 find_package(SOCI REQUIRED)
 
-enable_testing()
+set(GTEST_LIBRARIES ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 set(TEST_MODULE_NAME tst)
 set(TEST_PREFIX ${TEST_MODULE_NAME}_)
@@ -40,5 +43,6 @@ set(PROJECT_COMPILER_FLAGS "-Wall -Werror -std=c++11")
 include_directories(${CPPUNIT_INCLUDE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/src/lib)
 include_directories(${CMAKE_SOURCE_DIR}/src/lib)
+include_directories(${GTEST_INCLUDE_DIRS})
 
 add_subdirectory(src)
