@@ -15,6 +15,7 @@ set(KERNEL_HEADERS
     types.h
     objectname.h
     objectid.h
+    stringtools.h
 )
 
 set(KERNEL_SOURCES
@@ -22,6 +23,7 @@ set(KERNEL_SOURCES
     uuidgenerator.cpp
     objectname.cpp
     objectid.cpp
+    stringtools.cpp
 )
 
 set(HEADERS
