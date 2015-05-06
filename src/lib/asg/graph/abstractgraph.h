@@ -41,7 +41,21 @@ public:
 
     bool hasTitle() const { return (!title().isEmpty()); }
 
-    AbstractNodeSPtrVector nodes() const { return implNodes(); }
+    template<typename NodeT=AbstractNode>
+    std::vector<std::shared_ptr<NodeT>> nodes() const {
+        std::vector<std::shared_ptr<NodeT>> buf;
+
+        for (auto n : implNodes()) {
+            auto i = std::dynamic_pointer_cast<NodeT>(n);
+
+            if (i) {
+                buf.push_back(i);
+            }
+        }
+
+        return buf;
+    }
+
     AbstractEdgeSPtrVector edges() const { return implEdges(); }
 
     template<typename T=AbstractNode>
