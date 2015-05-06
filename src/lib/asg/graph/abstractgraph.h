@@ -56,7 +56,20 @@ public:
         return buf;
     }
 
-    AbstractEdgeSPtrVector edges() const { return implEdges(); }
+    template<typename EdgeT=AbstractEdge>
+    std::vector<std::shared_ptr<EdgeT>> edges() const {
+        std::vector<std::shared_ptr<EdgeT>> buf;
+
+        for (auto e : implEdges()) {
+            auto i = std::dynamic_pointer_cast<EdgeT>(e);
+
+            if (i) {
+                buf.push_back(i);
+            }
+        }
+
+        return buf;
+    }
 
     template<typename T=AbstractNode>
     bool hasSuperNode(AbstractNodeSPtr n) const {
