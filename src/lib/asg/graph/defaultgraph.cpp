@@ -36,7 +36,7 @@ void default_graph::register_node_as_sub_node_of(abstract_node_sptr n, abstract_
     assert(n);
     assert(p);
 
-    create_edge<Owns>(p, n);
+    create_edge<owns>(p, n);
 }
 
 void default_graph::register_edge(abstract_edge_sptr e) {

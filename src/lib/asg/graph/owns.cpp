@@ -11,7 +11,7 @@
 namespace asg {
 namespace graph {
 
-string Owns::staticEdgeName { "owns" };
+string owns::staticEdgeName { "owns" };
 
 }
 }

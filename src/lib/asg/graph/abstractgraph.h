@@ -73,7 +73,7 @@ public:
 
     template<typename T=abstract_node>
     bool has_super_node(abstract_node_sptr n) const {
-        return n->has_unique_in_edge_from<Owns, T>();
+        return n->has_unique_in_edge_from<owns, T>();
     }
 
     template<typename T=abstract_node>
@@ -83,14 +83,14 @@ public:
 
     template<typename T=abstract_node>
     std::vector<std::shared_ptr<T>> subNodesOf(abstract_node_sptr p) const {
-        return p->end_nodes_of_typed_out_edges_to<Owns, T>();
+        return p->end_nodes_of_typed_out_edges_to<owns, T>();
     }
 
     template<typename T=abstract_node>
     std::shared_ptr<T> sub_node_of(abstract_node_sptr n) const {
         assert(has_super_node<T>(n));
 
-        return n->start_node_of_unique_in_edge<Owns, T>();
+        return n->start_node_of_unique_in_edge<owns, T>();
     }
 
     template<typename T>

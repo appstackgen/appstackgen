@@ -13,15 +13,15 @@
 namespace asg {
 namespace graph {
 
-class Owns : public SystemEdge
+class owns : public system_edge
 {
 public:
     static string staticEdgeName;
 
-    using SystemEdge::SystemEdge;
+    using system_edge::system_edge;
 
 protected:
-    string impl_edge_type_name() const override { return Owns::staticEdgeName; }
+    string impl_edge_type_name() const override { return owns::staticEdgeName; }
 };
 
 }

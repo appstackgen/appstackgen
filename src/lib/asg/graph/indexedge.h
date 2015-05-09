@@ -13,12 +13,12 @@
 namespace asg {
 namespace graph {
 
-class index_edge : public SystemEdge
+class index_edge : public system_edge
 {
 public:
     static string staticEdgeName;
 
-    using SystemEdge::SystemEdge;
+    using system_edge::system_edge;
 
 protected:
     string impl_edge_type_name() const override;
