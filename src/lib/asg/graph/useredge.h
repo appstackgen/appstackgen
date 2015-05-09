@@ -13,7 +13,7 @@
 namespace asg {
 namespace graph {
 
-class UserEdge : public edge
+class user_edge : public edge
 {
 public:
     using edge::edge;

@@ -13,10 +13,10 @@
 namespace asg {
 namespace DomainModel {
 
-class ModelFragment : public graph::UserNode
+class ModelFragment : public graph::user_node
 {
 public:
-    using graph::UserNode::UserNode;
+    using graph::user_node::user_node;
 };
 
 }

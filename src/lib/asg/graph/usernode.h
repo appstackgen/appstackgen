@@ -13,7 +13,7 @@
 namespace asg {
 namespace graph {
 
-class UserNode : public node
+class user_node : public node
 {
 public:
     using node::node;

@@ -13,13 +13,13 @@
 namespace asg {
 namespace graph {
 
-class index_node : public SystemNode
+class index_node : public system_node
 {
 public:
     static ::asg::name defaultName;
     static string staticNodeName;
 
-    using SystemNode::SystemNode;
+    using system_node::system_node;
 
 protected:
     string impl_node_type_name() const override { return index_node::staticNodeName; }
