@@ -13,8 +13,8 @@
 namespace asg {
 namespace graph {
 
-class AbstractGraph;
-using AbstractGraphSPtr = std::shared_ptr<AbstractGraph>;
+class abstract_graph;
+using AbstractGraphSPtr = std::shared_ptr<abstract_graph>;
 
 class GraphToPlainText
 {

@@ -24,10 +24,10 @@ using namespace asg::graph::Test;
 std::shared_ptr<DefaultGraph> createGraph() {
     auto g = std::make_shared<DefaultGraph>();
 
-    auto n1 = g->createNode<TestNode>(name("N1"));
-    auto n2 = g->createNode<TestNode>(name("N2"));
+    auto n1 = g->create_node<TestNode>(name("N1"));
+    auto n2 = g->create_node<TestNode>(name("N2"));
 
-    g->createEdge<TestEdge>(n1, n2);
+    g->create_edge<TestEdge>(n1, n2);
 
     return g;
 }

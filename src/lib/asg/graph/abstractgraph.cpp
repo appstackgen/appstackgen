@@ -11,7 +11,7 @@
 namespace asg {
 namespace graph {
 
-AbstractGraph::AbstractGraph()
+abstract_graph::abstract_graph()
 {
 
 }

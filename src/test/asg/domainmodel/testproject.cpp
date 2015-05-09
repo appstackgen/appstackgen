@@ -25,11 +25,11 @@ TEST(TestProject, selftestProjectFactory)
 {
     auto proj = TestProjectFactory::createProject("A Project");
 
-    ASSERT_TRUE(proj->hasTitle());
+    ASSERT_TRUE(proj->has_title());
 
     ASSERT_EQ(name("A Project"), proj->title());
 
-    ASSERT_EQ(4, proj->nodeCount());
+    ASSERT_EQ(4, proj->node_count());
 
     std::cout << std::endl << join(GraphToPlainText::toStringVector(proj)) << std::endl;
 }

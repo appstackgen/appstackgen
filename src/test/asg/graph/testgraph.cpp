@@ -22,52 +22,50 @@ using namespace asg::graph::Test;
 TEST(TestGraph, testCreateNodesAndEdges) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    ASSERT_TRUE(nullptr != g->indexNode());
+    ASSERT_TRUE(nullptr != g->get_index_node());
 
-    ASSERT_EQ((size)0 + 1, g->nodeCount());
+    ASSERT_EQ((size)0 + 1, g->node_count());
 
-    auto n1 = g->createNode<TestNode>(name("N1"));
+    auto n1 = g->create_node<TestNode>(name("N1"));
 
-    ASSERT_EQ((size)1 + 1, g->nodeCount());
+    ASSERT_EQ((size)1 + 1, g->node_count());
 
-    auto n2 = g->createNode<TestNode>(name("N2"));
+    auto n2 = g->create_node<TestNode>(name("N2"));
 
-    g->createEdge<TestEdge>(n1, n2);
+    g->create_edge<TestEdge>(n1, n2);
 
-    ASSERT_EQ((size)1 + 2, g->edgeCount());
-    ASSERT_EQ((size)2 + 1, g->nodeCount());
+    ASSERT_EQ((size)1 + 2, g->edge_count());
+    ASSERT_EQ((size)2 + 1, g->node_count());
 
-    ASSERT_EQ((size)0, n2->outEdgeCount());
-    ASSERT_EQ((size)1, n1->outEdgeCount());
-    ASSERT_EQ((size)0 + 1, n1->inEdgeCount());
-    ASSERT_EQ((size)1 + 1, n2->inEdgeCount());
+    ASSERT_EQ((size)0, n2->out_edge_count());
+    ASSERT_EQ((size)1, n1->out_edge_count());
+    ASSERT_EQ((size)0 + 1, n1->in_edge_count());
+    ASSERT_EQ((size)1 + 1, n2->in_edge_count());
 
-    ASSERT_TRUE(!g->indexNode()->typedOutEdges<IndexEdge>().empty());
-    ASSERT_EQ((size)0, g->indexNode()->typedInEdges<IndexEdge>().size());
+    ASSERT_TRUE(!g->get_index_node()->typed_out_edges<IndexEdge>().empty());
+    ASSERT_EQ((size)0, g->get_index_node()->typed_in_edges<IndexEdge>().size());
 
-    ASSERT_EQ((size)2, (g->indexNode()->typedOutEdgesTo<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->typedInEdgesFrom<IndexEdge, index_node>().size()));
+    ASSERT_EQ((size)2, (g->get_index_node()->typed_out_edges_to<IndexEdge, TestNode>().size()));
+    ASSERT_EQ((size)1, (n1->typed_in_edges_from<IndexEdge, index_node>().size()));
 
-    ASSERT_EQ((size)2, (g->indexNode()->endNodesOfTypedOutEdgesTo<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->startNodesOfTypedInEdgesFrom<IndexEdge, index_node>().size()));
+    ASSERT_EQ((size)2, (g->get_index_node()->end_nodes_of_typed_out_edges_to<IndexEdge, TestNode>().size()));
+    ASSERT_EQ((size)1, (n1->start_nodes_of_typed_in_edges_from<IndexEdge, index_node>().size()));
 }
 
 TEST(TestGraph, testGraphTitle) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
     ASSERT_EQ(name(""), g->title());
-    ASSERT_TRUE(!g->hasTitle());
+    ASSERT_TRUE(!g->has_title());
 }
 
 TEST(TestGraph, testNodeHierarchy) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    auto root = g->createNode<TestNode>(name("root"));
-    auto child1 = g->createSubNodeOf<TestNode>(root, name("child 1"));
-    g->createSubNodeOf<TestNode>(root, name("child 2"));
+    auto root = g->create_node<TestNode>(name("root"));
+    auto child1 = g->create_sub_node_of<TestNode>(root, name("child 1"));
+    g->create_sub_node_of<TestNode>(root, name("child 2"));
 
-    ASSERT_TRUE((g->hasSuperNode(child1)));
-    ASSERT_EQ((size)2, g->subNodeCountOf(root));
-    ASSERT_EQ(root, (g->superNodeOf<TestNode>(child1)));
+    ASSERT_TRUE((g->has_super_node(child1)));
 }
 

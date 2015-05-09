@@ -20,33 +20,33 @@ class abstract_node;
 class abstract_edge;
 class index_node;
 
-using AbstractNodePtr = abstract_node*;
+using abstract_node_ptr = abstract_node*;
 
 using abstract_node_sptr = std::shared_ptr<abstract_node>;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
-using IndexNodeSPtr = std::shared_ptr<index_node>;
+using index_node_sptr = std::shared_ptr<index_node>;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 
-using AbstractNodeSPtrVector = std::vector<abstract_node_sptr>;
-using AbstractEdgeSPtrVector = std::vector<abstract_edge_sptr>;
+using abstract_node_sptr_vec = std::vector<abstract_node_sptr>;
+using abstract_edge_sptr_vec = std::vector<abstract_edge_sptr>;
 
-class AbstractGraph
+class abstract_graph
 {
 public:
-    virtual ~AbstractGraph() {}
+    virtual ~abstract_graph() {}
 
-    void setTitle(const name& t) { implSetTitle(t); }
+    void set_title(const name& t) { impl_set_title(t); }
 
-    name title() const { return implTitle(); }
+    name title() const { return impl_title(); }
 
-    bool hasTitle() const { return (!title().is_empty()); }
+    bool has_title() const { return (!title().is_empty()); }
 
-    template<typename NodeT=abstract_node>
-    std::vector<std::shared_ptr<NodeT>> nodes() const {
-        std::vector<std::shared_ptr<NodeT>> buf;
+    template<typename node_t=abstract_node>
+    std::vector<std::shared_ptr<node_t>> nodes() const {
+        std::vector<std::shared_ptr<node_t>> buf;
 
-        for (auto n : implNodes()) {
-            auto i = std::dynamic_pointer_cast<NodeT>(n);
+        for (auto n : impl_nodes()) {
+            auto i = std::dynamic_pointer_cast<node_t>(n);
 
             if (i) {
                 buf.push_back(i);
@@ -56,12 +56,12 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge>
-    std::vector<std::shared_ptr<EdgeT>> edges() const {
-        std::vector<std::shared_ptr<EdgeT>> buf;
+    template<typename edge_t=abstract_edge>
+    std::vector<std::shared_ptr<edge_t>> edges() const {
+        std::vector<std::shared_ptr<edge_t>> buf;
 
-        for (auto e : implEdges()) {
-            auto i = std::dynamic_pointer_cast<EdgeT>(e);
+        for (auto e : impl_edges()) {
+            auto i = std::dynamic_pointer_cast<edge_t>(e);
 
             if (i) {
                 buf.push_back(i);
@@ -72,86 +72,86 @@ public:
     }
 
     template<typename T=abstract_node>
-    bool hasSuperNode(abstract_node_sptr n) const {
-        return n->hasUniqueInEdgeFrom<Owns, T>();
+    bool has_super_node(abstract_node_sptr n) const {
+        return n->has_unique_in_edge_from<Owns, T>();
     }
 
     template<typename T=abstract_node>
-    size subNodeCountOf(abstract_node_sptr p) const {
+    size sub_node_count_of(abstract_node_sptr p) const {
         return subNodesOf<T>(p).size();
     }
 
     template<typename T=abstract_node>
     std::vector<std::shared_ptr<T>> subNodesOf(abstract_node_sptr p) const {
-        return p->endNodesOfTypedOutEdgesTo<Owns, T>();
+        return p->end_nodes_of_typed_out_edges_to<Owns, T>();
     }
 
     template<typename T=abstract_node>
-    std::shared_ptr<T> superNodeOf(abstract_node_sptr n) const {
-        assert(hasSuperNode<T>(n));
+    std::shared_ptr<T> sub_node_of(abstract_node_sptr n) const {
+        assert(has_super_node<T>(n));
 
-        return n->startNodeOfUniqueInEdge<Owns, T>();
+        return n->start_node_of_unique_in_edge<Owns, T>();
     }
 
     template<typename T>
-    std::shared_ptr<T> createSubNodeOf(abstract_node_sptr parent, const name& subNodeName) {
+    std::shared_ptr<T> create_sub_node_of(abstract_node_sptr parent, const name& subNodeName) {
         assert(parent);
 
-        auto n = createNode<T>(subNodeName);
-        registerNodeAsSubNodeOf(n, parent);
+        auto n = create_node<T>(subNodeName);
+        register_node_as_sub_node_of(n, parent);
         return n;
     }
 
     template<typename T>
-    std::shared_ptr<T> createNode(const name& n = name("")) {
-        auto node = std::make_shared<T>(this, n, createUuid());
-        assert(T::staticNodeName == node->nodeTypeName());
-        registerNode(node);
+    std::shared_ptr<T> create_node(const name& n = name("")) {
+        auto node = std::make_shared<T>(this, n, create_object_id());
+        assert(T::staticNodeName == node->node_type_name());
+        register_node(node);
         return node;
     }
 
     template<typename T>
-    std::shared_ptr<T> createEdge(abstract_node_sptr start, abstract_node_sptr end) {
+    std::shared_ptr<T> create_edge(abstract_node_sptr start, abstract_node_sptr end) {
         assert(abstract_node_sptr() != start);
         assert(abstract_node_sptr() != end);
 
-        auto e = std::make_shared<T>(this, createUuid(), start, end);
+        auto e = std::make_shared<T>(this, create_object_id(), start, end);
 
         assert(T::staticEdgeName == e->edge_type_name());
 
-        registerEdge(e);
+        register_edge(e);
 
         return e;
     }
 
-    abstract_node_sptr node(const object_id& id) const { return implNode(id); }
+    abstract_node_sptr node(const object_id& id) const { return impl_node(id); }
 
-    size nodeCount() const { return implNodeCount(); }
-    size edgeCount() const { return implEdgeCount(); }
+    size node_count() const { return impl_node_count(); }
+    size edge_count() const { return impl_edge_count(); }
 
-    IndexNodeSPtr indexNode() const { return implIndexNode(); }
+    index_node_sptr get_index_node() const { return impl_get_index_node(); }
 
 protected:
-    AbstractGraph();
+    abstract_graph();
 
-    virtual void implSetTitle(const name& t) = 0;
-    virtual name implTitle() const = 0;
+    virtual void impl_set_title(const name& t) = 0;
+    virtual name impl_title() const = 0;
 
-    virtual void registerNode(abstract_node_sptr n) = 0;
-    virtual void registerNodeAsSubNodeOf(abstract_node_sptr n, abstract_node_sptr p) = 0;
-    virtual void registerEdge(abstract_edge_sptr e) = 0;
+    virtual void register_node(abstract_node_sptr n) = 0;
+    virtual void register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p) = 0;
+    virtual void register_edge(abstract_edge_sptr e) = 0;
 
-    virtual size implNodeCount() const = 0;
-    virtual size implEdgeCount() const = 0;
+    virtual size impl_node_count() const = 0;
+    virtual size impl_edge_count() const = 0;
 
-    virtual AbstractNodeSPtrVector implNodes() const = 0;
-    virtual AbstractEdgeSPtrVector implEdges() const = 0;
+    virtual abstract_node_sptr_vec impl_nodes() const = 0;
+    virtual abstract_edge_sptr_vec impl_edges() const = 0;
 
-    virtual abstract_node_sptr implNode(const object_id& object_id) const = 0;
+    virtual abstract_node_sptr impl_node(const object_id& object_id) const = 0;
 
-    virtual IndexNodeSPtr implIndexNode() const = 0;
+    virtual index_node_sptr impl_get_index_node() const = 0;
 
-    virtual object_id createUuid() = 0;
+    virtual object_id create_object_id() = 0;
 };
 
 }

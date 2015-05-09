@@ -16,7 +16,7 @@ using namespace asg::Base;
 TEST(TestProject, testProjectCtor) {
     auto proj = std::unique_ptr<Project>(new Project(name("A Project")));
 
-    ASSERT_TRUE(proj->hasTitle());
+    ASSERT_TRUE(proj->has_title());
 
     ASSERT_EQ(name("A Project"), proj->title());
 }

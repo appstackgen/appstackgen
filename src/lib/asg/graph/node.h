@@ -19,30 +19,30 @@ namespace graph {
 class Node : public abstract_node
 {
 public:
-    Node(AbstractGraph* g, const object_name& name, const object_id& id);
+    Node(abstract_graph* g, const object_name& name, const object_id& id);
 
 protected:
     template<typename T>
     std::shared_ptr<T> createSubNode(const string& name) {
-        return graph()->createSubNodeOf<T>(graph()->node(id()), object_name(name));
+        return graph()->create_sub_node_of<T>(graph()->node(id()), object_name(name));
     }
 
-    void implRegisterOutEdge(abstract_edge_sptr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
-    void implRegisterInEdge(abstract_edge_sptr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
+    void impl_register_out_edge(abstract_edge_sptr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
+    void impl_register_in_edge(abstract_edge_sptr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
 
-    AbstractEdgeSPtrVector implOutEdges() const override;
-    AbstractEdgeSPtrVector implInEdges() const override;
-    AbstractEdgeSPtrVector implEdges() const override;
+    abstract_edge_sptr_vec impl_out_edges() const override;
+    abstract_edge_sptr_vec impl_in_edges() const override;
+    abstract_edge_sptr_vec impl_edges() const override;
 
-    size implOutEdgeCount() const override { return outEdges().size(); }
-    size implInEdgeCount() const override { return inEdges().size(); }
-    size implEdgeCount() const override { return m_edges.size(); }
+    size impl_out_edge_count() const override { return out_edges().size(); }
+    size impl_in_edge_count() const override { return in_edges().size(); }
+    size impl_edge_count() const override { return m_edges.size(); }
 
-    object_name implName() const override { return m_name; }
+    object_name impl_name() const override { return m_name; }
 
 private:
     object_name m_name;
-    AbstractEdgeSPtrVector m_edges;
+    abstract_edge_sptr_vec m_edges;
 };
 
 }

@@ -34,7 +34,7 @@ public:
     const BoundedContextSPtrVector boundedContexts() const;
 
 protected:
-    virtual string implNodeTypeName() const override { return staticNodeName; }
+    virtual string impl_node_type_name() const override { return staticNodeName; }
 
     using asg::graph::UserNode::UserNode;
 };

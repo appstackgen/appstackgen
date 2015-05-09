@@ -18,38 +18,38 @@
 namespace asg {
 namespace graph {
 
-class DefaultGraph : public AbstractGraph
+class DefaultGraph : public abstract_graph
 {
 public:
     explicit DefaultGraph(const name& title = name(""));
 
 protected:
-    void implSetTitle(const name &t) override { m_title = t; }
-    name implTitle() const override { return m_title; }
+    void impl_set_title(const name &t) override { m_title = t; }
+    name impl_title() const override { return m_title; }
 
-    void registerNode(abstract_node_sptr n) override;
-    void registerNodeAsSubNodeOf(abstract_node_sptr n, abstract_node_sptr p) override;
-    void registerEdge(abstract_edge_sptr e) override;
+    void register_node(abstract_node_sptr n) override;
+    void register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p) override;
+    void register_edge(abstract_edge_sptr e) override;
 
-    object_id createUuid() override { return m_uuidGenerator.create_id(); }
+    object_id create_object_id() override { return m_uuidGenerator.create_id(); }
 
-    size implNodeCount() const override { return m_nodes.size(); }
-    size implEdgeCount() const override { return m_edges.size(); }
+    size impl_node_count() const override { return m_nodes.size(); }
+    size impl_edge_count() const override { return m_edges.size(); }
 
-    IndexNodeSPtr implIndexNode() const override { return m_indexNode; }
+    index_node_sptr impl_get_index_node() const override { return m_indexNode; }
 
-    AbstractNodeSPtrVector implNodes() const override;
-    AbstractEdgeSPtrVector implEdges() const override;
+    abstract_node_sptr_vec impl_nodes() const override;
+    abstract_edge_sptr_vec impl_edges() const override;
 
-    abstract_node_sptr implNode(const object_id& object_id) const override;
+    abstract_node_sptr impl_node(const object_id& object_id) const override;
 
 private:
     name m_title;
 
-    AbstractNodeSPtrVector m_nodes;
-    AbstractEdgeSPtrVector m_edges;
+    abstract_node_sptr_vec m_nodes;
+    abstract_edge_sptr_vec m_edges;
 
-    IndexNodeSPtr m_indexNode;
+    index_node_sptr m_indexNode;
 
     object_id_generator m_uuidGenerator;
 };

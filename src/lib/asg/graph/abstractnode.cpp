@@ -17,7 +17,7 @@ string abstract_node::impl_to_string() const
 {
     stringstream s;
 
-    s << nodeTypeName() << " '" << name() << "' {" << id() << "}";
+    s << node_type_name() << " '" << name() << "' {" << id() << "}";
 
     return s.str();
 }

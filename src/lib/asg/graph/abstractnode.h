@@ -15,70 +15,70 @@
 namespace asg {
 namespace graph {
 
-class AbstractGraph;
+class abstract_graph;
 class abstract_edge;
 
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
-using AbstractEdgeSPtrVector = std::vector<abstract_edge_sptr>;
+using abstract_edge_sptr_vec = std::vector<abstract_edge_sptr>;
 
 class abstract_node: public GraphFragment
 {
 public:
     using GraphFragment::GraphFragment;
 
-    string nodeTypeName() const { return implNodeTypeName(); }
-    object_name name() const { return implName(); }
+    string node_type_name() const { return impl_node_type_name(); }
+    object_name name() const { return impl_name(); }
 
-    void registerOutEdge(abstract_edge_sptr e) { implRegisterOutEdge(e); }
-    void registerInEdge(abstract_edge_sptr e) { implRegisterInEdge(e); }
-
-    template<typename T=abstract_edge>
-    size countInEdges() const {
-        return typedInEdges<T>().size();
-    }
+    void register_out_edge(abstract_edge_sptr e) { impl_register_out_edge(e); }
+    void register_in_edge(abstract_edge_sptr e) { impl_register_in_edge(e); }
 
     template<typename T=abstract_edge>
-    size countOutEdges() const {
-        return typedOutEdges<T>().size();
+    size count_in_edges() const {
+        return typed_in_edges<T>().size();
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    bool hasUniqueInEdgeFrom() const {
-        return ((size)1 == typedInEdgesFrom<EdgeT, NodeT>().size());
+    template<typename T=abstract_edge>
+    size count_out_edges() const {
+        return typed_out_edges<T>().size();
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    std::shared_ptr<NodeT> startNodeOfUniqueInEdgeFrom() const {
-        return *(typedInEdgesFrom<EdgeT, NodeT>().begin());
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    bool has_unique_in_edge_from() const {
+        return ((size)1 == typed_in_edges_from<edge_t, node_t>().size());
+    }
+
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    std::shared_ptr<node_t> start_node_of_unique_in_edge_from() const {
+        return *(typed_in_edges_from<edge_t, node_t>().begin());
     }
 
     template<typename T>
-    bool hasUniqueInEdge() const {
-        return ((size)1 == typedInEdges<T>().size());
+    bool has_unique_in_edge() const {
+        return ((size)1 == typed_in_edges<T>().size());
     }
 
     template<typename T>
-    std::shared_ptr<T> uniqueInEdge() const {
-        assert(hasUniqueInEdge<T>());
-        return *(typedInEdges<T>().begin());
+    std::shared_ptr<T> unique_in_edge() const {
+        assert(has_unique_in_edge<T>());
+        return *(typed_in_edges<T>().begin());
     }
 
-    template<typename EdgeT, typename NodeT=abstract_node>
-    std::shared_ptr<NodeT> startNodeOfUniqueInEdge() const {
-        assert(hasUniqueInEdge<EdgeT>());
+    template<typename edge_t, typename node_t=abstract_node>
+    std::shared_ptr<node_t> start_node_of_unique_in_edge() const {
+        assert(has_unique_in_edge<edge_t>());
 
-        auto n = uniqueInEdge<EdgeT>()->template start<NodeT>();
+        auto n = unique_in_edge<edge_t>()->template start<node_t>();
 
-        assert(std::shared_ptr<NodeT>() != n);
+        assert(std::shared_ptr<node_t>() != n);
 
         return n;
     }
 
     template<typename T=abstract_edge>
-    std::vector<std::shared_ptr<T>> typedOutEdges() const {
+    std::vector<std::shared_ptr<T>> typed_out_edges() const {
         std::vector<std::shared_ptr<T>> buf;
 
-        for (auto e : outEdges()) {
+        for (auto e : out_edges()) {
             auto ee = std::dynamic_pointer_cast<T>(e);
 
             if (ee) {
@@ -90,10 +90,10 @@ public:
     }
 
     template<typename T=abstract_edge>
-    std::vector<std::shared_ptr<T>> typedInEdges() const {
+    std::vector<std::shared_ptr<T>> typed_in_edges() const {
         std::vector<std::shared_ptr<T>> buf;
 
-        for (auto e : inEdges()) {
+        for (auto e : in_edges()) {
             auto ee = std::dynamic_pointer_cast<T>(e);
 
             if (ee) {
@@ -104,27 +104,12 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() const {
-        std::vector<std::shared_ptr<EdgeT>> buf;
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    std::vector<std::shared_ptr<edge_t>> typed_out_edges_to() const {
+        std::vector<std::shared_ptr<edge_t>> buf;
 
-        for (auto e : typedOutEdges<EdgeT>()) {
-            auto n = std::dynamic_pointer_cast<NodeT>(e->end());
-
-            if (n) {
-                buf.push_back(e);
-            }
-        }
-
-        return buf;
-    }
-
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() const {
-        std::vector<std::shared_ptr<EdgeT>> buf;
-
-        for (auto e : typedInEdges<EdgeT>()) {
-            auto n = std::dynamic_pointer_cast<NodeT>(e->start());
+        for (auto e : typed_out_edges<edge_t>()) {
+            auto n = std::dynamic_pointer_cast<node_t>(e->end());
 
             if (n) {
                 buf.push_back(e);
@@ -134,51 +119,66 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() const {
-        std::vector<std::shared_ptr<NodeT>> buf;
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    std::vector<std::shared_ptr<edge_t>> typed_in_edges_from() const {
+        std::vector<std::shared_ptr<edge_t>> buf;
 
-        for (auto e : typedOutEdgesTo<EdgeT, NodeT>()) {
-            buf.push_back(std::dynamic_pointer_cast<NodeT>(e->end()));
+        for (auto e : typed_in_edges<edge_t>()) {
+            auto n = std::dynamic_pointer_cast<node_t>(e->start());
+
+            if (n) {
+                buf.push_back(e);
+            }
         }
 
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
-    std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() const {
-        std::vector<std::shared_ptr<NodeT>> buf;
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    std::vector<std::shared_ptr<node_t>> end_nodes_of_typed_out_edges_to() const {
+        std::vector<std::shared_ptr<node_t>> buf;
 
-        for (auto e : typedInEdgesFrom<EdgeT, NodeT>()) {
-            buf.push_back(std::dynamic_pointer_cast<NodeT>(e->start()));
+        for (auto e : typed_out_edges_to<edge_t, node_t>()) {
+            buf.push_back(std::dynamic_pointer_cast<node_t>(e->end()));
         }
 
         return buf;
     }
 
-    AbstractEdgeSPtrVector outEdges() const { return implOutEdges(); }
-    AbstractEdgeSPtrVector inEdges() const { return implInEdges(); }
+    template<typename edge_t=abstract_edge, typename node_t=abstract_node>
+    std::vector<std::shared_ptr<node_t>> start_nodes_of_typed_in_edges_from() const {
+        std::vector<std::shared_ptr<node_t>> buf;
 
-    AbstractEdgeSPtrVector edges() const { return implEdges(); }
+        for (auto e : typed_in_edges_from<edge_t, node_t>()) {
+            buf.push_back(std::dynamic_pointer_cast<node_t>(e->start()));
+        }
 
-    size outEdgeCount() const { return implOutEdgeCount(); }
-    size inEdgeCount() const { return implInEdgeCount(); }
-    size edgeCount() { return edgeCount(); }
+        return buf;
+    }
+
+    abstract_edge_sptr_vec out_edges() const { return impl_out_edges(); }
+    abstract_edge_sptr_vec in_edges() const { return impl_in_edges(); }
+
+    abstract_edge_sptr_vec edges() const { return impl_edges(); }
+
+    size out_edge_count() const { return impl_out_edge_count(); }
+    size in_edge_count() const { return impl_in_edge_count(); }
+    size edge_count() { return edge_count(); }
 
 protected:
-    virtual void implRegisterOutEdge(abstract_edge_sptr e) = 0;
-    virtual void implRegisterInEdge(abstract_edge_sptr e) = 0;
+    virtual void impl_register_out_edge(abstract_edge_sptr e) = 0;
+    virtual void impl_register_in_edge(abstract_edge_sptr e) = 0;
 
-    virtual AbstractEdgeSPtrVector implOutEdges() const = 0;
-    virtual AbstractEdgeSPtrVector implInEdges() const = 0;
-    virtual AbstractEdgeSPtrVector implEdges() const = 0;
+    virtual abstract_edge_sptr_vec impl_out_edges() const = 0;
+    virtual abstract_edge_sptr_vec impl_in_edges() const = 0;
+    virtual abstract_edge_sptr_vec impl_edges() const = 0;
 
-    virtual size implOutEdgeCount() const = 0;
-    virtual size implInEdgeCount() const = 0;
-    virtual size implEdgeCount() const = 0;
+    virtual size impl_out_edge_count() const = 0;
+    virtual size impl_in_edge_count() const = 0;
+    virtual size impl_edge_count() const = 0;
 
-    virtual string implNodeTypeName() const = 0;
-    virtual object_name implName() const = 0;
+    virtual string impl_node_type_name() const = 0;
+    virtual object_name impl_name() const = 0;
 
     string impl_to_string() const override;
 };

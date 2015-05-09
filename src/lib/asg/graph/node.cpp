@@ -11,13 +11,13 @@
 namespace asg {
 namespace graph {
 
-Node::Node(AbstractGraph *g, const object_name &name, const object_id &uuid)
+Node::Node(abstract_graph *g, const object_name &name, const object_id &uuid)
     : abstract_node(g, uuid), m_name(name)
 {
 }
 
-AbstractEdgeSPtrVector Node::implOutEdges() const {
-    AbstractEdgeSPtrVector buf;
+abstract_edge_sptr_vec Node::impl_out_edges() const {
+    abstract_edge_sptr_vec buf;
 
     for (auto e : m_edges) {
         if (e->start().get() == this) {
@@ -28,8 +28,8 @@ AbstractEdgeSPtrVector Node::implOutEdges() const {
     return buf;
 }
 
-AbstractEdgeSPtrVector Node::implInEdges() const {
-    AbstractEdgeSPtrVector buf;
+abstract_edge_sptr_vec Node::impl_in_edges() const {
+    abstract_edge_sptr_vec buf;
 
     for (auto e : m_edges) {
         if (e->end().get() == this) {
@@ -40,7 +40,7 @@ AbstractEdgeSPtrVector Node::implInEdges() const {
     return buf;
 }
 
-AbstractEdgeSPtrVector Node::implEdges() const {
+abstract_edge_sptr_vec Node::impl_edges() const {
     return m_edges;
 }
 

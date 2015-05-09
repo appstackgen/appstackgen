@@ -18,45 +18,45 @@ namespace graph {
 DefaultGraph::DefaultGraph(const name &title)
     : m_title(title)
 {
-    m_indexNode = createNode<index_node>(index_node::defaultName);
+    m_indexNode = create_node<index_node>(index_node::defaultName);
 }
 
-void DefaultGraph::registerNode(abstract_node_sptr n) {
+void DefaultGraph::register_node(abstract_node_sptr n) {
     assert(n);
 
     m_nodes.push_back(n);
 
-    if (indexNode()) {
-        createEdge<IndexEdge>(indexNode(), n);
+    if (get_index_node()) {
+        create_edge<IndexEdge>(get_index_node(), n);
     }
 }
 
-void DefaultGraph::registerNodeAsSubNodeOf(abstract_node_sptr n, abstract_node_sptr p)
+void DefaultGraph::register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p)
 {
     assert(n);
     assert(p);
 
-    createEdge<Owns>(p, n);
+    create_edge<Owns>(p, n);
 }
 
-void DefaultGraph::registerEdge(abstract_edge_sptr e) {
-    e->start()->registerOutEdge(e);
-    e->end()->registerInEdge(e);
+void DefaultGraph::register_edge(abstract_edge_sptr e) {
+    e->start()->register_out_edge(e);
+    e->end()->register_in_edge(e);
 
     m_edges.push_back(e);
 }
 
-AbstractNodeSPtrVector DefaultGraph::implNodes() const
+abstract_node_sptr_vec DefaultGraph::impl_nodes() const
 {
     return m_nodes;
 }
 
-AbstractEdgeSPtrVector DefaultGraph::implEdges() const
+abstract_edge_sptr_vec DefaultGraph::impl_edges() const
 {
     return m_edges;
 }
 
-abstract_node_sptr DefaultGraph::implNode(const object_id &id) const
+abstract_node_sptr DefaultGraph::impl_node(const object_id &id) const
 {
     auto i = std::find_if(std::begin(m_nodes), std::end(m_nodes), [=](abstract_node_sptr n) { return (n->id() == id); });
 
