@@ -20,7 +20,6 @@ namespace ASG {
 
     using string = std::string;
     using name = ObjectName;
-    using Description = string;
 
     using StringStream = std::stringstream;
     using StringVector = std::vector<string>;
