@@ -27,8 +27,8 @@ protected:
         return graph()->createSubNodeOf<T>(graph()->node(id()), object_name(name));
     }
 
-    void implRegisterOutEdge(AbstractEdgeSPtr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
-    void implRegisterInEdge(AbstractEdgeSPtr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
+    void implRegisterOutEdge(abstract_edge_sptr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
+    void implRegisterInEdge(abstract_edge_sptr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
 
     AbstractEdgeSPtrVector implOutEdges() const override;
     AbstractEdgeSPtrVector implInEdges() const override;

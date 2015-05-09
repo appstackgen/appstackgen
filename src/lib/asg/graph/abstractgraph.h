@@ -23,12 +23,12 @@ class IndexNode;
 using AbstractNodePtr = abstract_node*;
 
 using AbstractNodeSPtr = std::shared_ptr<abstract_node>;
-using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
+using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 using IndexNodeSPtr = std::shared_ptr<IndexNode>;
-using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
+using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 
 using AbstractNodeSPtrVector = std::vector<AbstractNodeSPtr>;
-using AbstractEdgeSPtrVector = std::vector<AbstractEdgeSPtr>;
+using AbstractEdgeSPtrVector = std::vector<abstract_edge_sptr>;
 
 class AbstractGraph
 {
@@ -139,7 +139,7 @@ protected:
 
     virtual void registerNode(AbstractNodeSPtr n) = 0;
     virtual void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) = 0;
-    virtual void registerEdge(AbstractEdgeSPtr e) = 0;
+    virtual void registerEdge(abstract_edge_sptr e) = 0;
 
     virtual size implNodeCount() const = 0;
     virtual size implEdgeCount() const = 0;

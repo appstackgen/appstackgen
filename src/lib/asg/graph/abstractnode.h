@@ -18,8 +18,8 @@ namespace graph {
 class AbstractGraph;
 class abstract_edge;
 
-using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
-using AbstractEdgeSPtrVector = std::vector<AbstractEdgeSPtr>;
+using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
+using AbstractEdgeSPtrVector = std::vector<abstract_edge_sptr>;
 
 class abstract_node: public GraphFragment
 {
@@ -29,8 +29,8 @@ public:
     string nodeTypeName() const { return implNodeTypeName(); }
     object_name name() const { return implName(); }
 
-    void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
-    void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
+    void registerOutEdge(abstract_edge_sptr e) { implRegisterOutEdge(e); }
+    void registerInEdge(abstract_edge_sptr e) { implRegisterInEdge(e); }
 
     template<typename T=abstract_edge>
     size countInEdges() const {
@@ -166,8 +166,8 @@ public:
     size edgeCount() { return edgeCount(); }
 
 protected:
-    virtual void implRegisterOutEdge(AbstractEdgeSPtr e) = 0;
-    virtual void implRegisterInEdge(AbstractEdgeSPtr e) = 0;
+    virtual void implRegisterOutEdge(abstract_edge_sptr e) = 0;
+    virtual void implRegisterInEdge(abstract_edge_sptr e) = 0;
 
     virtual AbstractEdgeSPtrVector implOutEdges() const = 0;
     virtual AbstractEdgeSPtrVector implInEdges() const = 0;

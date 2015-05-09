@@ -18,7 +18,7 @@ namespace graph {
 class abstract_edge;
 class abstract_node;
 
-using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
+using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 using AbstractNodeSPtr = std::shared_ptr<abstract_node>;
 
 class abstract_edge : public GraphFragment

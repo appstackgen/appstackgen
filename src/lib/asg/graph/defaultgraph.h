@@ -29,7 +29,7 @@ protected:
 
     void registerNode(AbstractNodeSPtr n) override;
     void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
-    void registerEdge(AbstractEdgeSPtr e) override;
+    void registerEdge(abstract_edge_sptr e) override;
 
     object_id createUuid() override { return m_uuidGenerator.create_id(); }
 

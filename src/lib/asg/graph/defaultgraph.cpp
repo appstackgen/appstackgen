@@ -39,7 +39,7 @@ void DefaultGraph::registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr 
     createEdge<Owns>(p, n);
 }
 
-void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
+void DefaultGraph::registerEdge(abstract_edge_sptr e) {
     e->start()->registerOutEdge(e);
     e->end()->registerInEdge(e);
 
