@@ -12,7 +12,7 @@
 
 namespace asg {
 
-namespace Base {
+namespace base {
 class Project;
 using ProjectSPtr = std::shared_ptr<Project>;
 }
@@ -24,7 +24,7 @@ namespace Test {
 class TestProjectFactory
 {
 public:
-    static Base::ProjectSPtr createProject(const string& n = "Test Project");
+    static base::ProjectSPtr createProject(const string& n = "Test Project");
 
 protected:
     TestProjectFactory();

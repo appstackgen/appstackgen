@@ -11,7 +11,7 @@
 #include <asg/graph/defaultgraph.h>
 
 namespace asg {
-namespace Base {
+namespace base {
 
 class Project: public graph::default_graph
 {

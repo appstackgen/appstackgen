@@ -11,7 +11,7 @@
 #include <asg/base/project.h>
 
 using namespace asg;
-using namespace asg::Base;
+using namespace asg::base;
 
 TEST(TestProject, testProjectCtor) {
     auto proj = std::unique_ptr<Project>(new Project(name("A Project")));

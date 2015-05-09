@@ -9,7 +9,7 @@
 #include "project.h"
 
 namespace asg {
-namespace Base {
+namespace base {
 
 }
 }
