@@ -13,7 +13,7 @@
 namespace asg {
 namespace graph {
 
-class Edge : public AbstractEdge
+class Edge : public abstract_edge
 {
 public:
     Edge(AbstractGraph* g, const object_id& id, AbstractNodeSPtr start, AbstractNodeSPtr end);

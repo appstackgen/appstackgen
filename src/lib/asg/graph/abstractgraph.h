@@ -17,15 +17,15 @@ namespace asg {
 namespace graph {
 
 class AbstractNode;
-class AbstractEdge;
+class abstract_edge;
 class IndexNode;
 
 using AbstractNodePtr = AbstractNode*;
 
 using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
-using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
+using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
 using IndexNodeSPtr = std::shared_ptr<IndexNode>;
-using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
+using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
 
 using AbstractNodeSPtrVector = std::vector<AbstractNodeSPtr>;
 using AbstractEdgeSPtrVector = std::vector<AbstractEdgeSPtr>;
@@ -56,7 +56,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=AbstractEdge>
+    template<typename EdgeT=abstract_edge>
     std::vector<std::shared_ptr<EdgeT>> edges() const {
         std::vector<std::shared_ptr<EdgeT>> buf;
 

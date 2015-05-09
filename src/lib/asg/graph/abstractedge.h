@@ -15,13 +15,13 @@
 namespace asg {
 namespace graph {
 
-class AbstractEdge;
+class abstract_edge;
 class AbstractNode;
 
-using AbstractEdgeSPtr = std::shared_ptr<AbstractEdge>;
+using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
 using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
 
-class AbstractEdge : public GraphFragment
+class abstract_edge : public GraphFragment
 {
 public:
     using GraphFragment::GraphFragment;
