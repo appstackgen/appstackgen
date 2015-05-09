@@ -25,7 +25,7 @@ object_name::object_name(const std::string &n)
 
 std::ostream& operator<<(std::ostream &strm, const asg::object_name &n)
 {
-    n.printOn(strm);
+    n.print_on(strm);
     return strm;
 }
 

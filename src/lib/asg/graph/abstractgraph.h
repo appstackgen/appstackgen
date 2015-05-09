@@ -39,7 +39,7 @@ public:
 
     name title() const { return implTitle(); }
 
-    bool hasTitle() const { return (!title().isEmpty()); }
+    bool hasTitle() const { return (!title().is_empty()); }
 
     template<typename NodeT=AbstractNode>
     std::vector<std::shared_ptr<NodeT>> nodes() const {

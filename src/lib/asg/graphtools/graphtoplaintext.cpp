@@ -32,7 +32,7 @@ string_vec GraphToPlainText::graphToStringVector() const
 {
     string_vec buf;
 
-    buf.push_back(string("Graph: ") + m_g->title().toString());
+    buf.push_back(string("Graph: ") + m_g->title().to_string());
 
     for (auto n : m_g->nodes()) {
         buf.push_back("\t" + n->toString());

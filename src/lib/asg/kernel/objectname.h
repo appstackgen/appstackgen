@@ -19,14 +19,14 @@ public:
     virtual ~object_name();
     explicit object_name(const std::string& n);
 
-    std::string toString() const { return m_str; }
+    std::string to_string() const { return m_str; }
 
     bool operator ==(const object_name& o) const { return (m_str == o.m_str); }
     bool operator !=(const object_name& o) const { return (m_str != o.m_str); }
 
-    void printOn(std::ostream& strm) const { strm << toString(); }
+    void print_on(std::ostream& strm) const { strm << to_string(); }
 
-    bool isEmpty() const { return (m_str.empty()); }
+    bool is_empty() const { return (m_str.empty()); }
 
 private:
     std::string m_str;

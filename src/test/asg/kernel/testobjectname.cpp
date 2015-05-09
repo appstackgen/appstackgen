@@ -15,7 +15,7 @@ using namespace asg;
 TEST(TestObjectName, testDefaultCtor) {
     object_name n;
 
-    ASSERT_EQ(std::string(), n.toString());
+    ASSERT_EQ(std::string(), n.to_string());
 }
 
 TEST(TestObjectName, testEquality) {
