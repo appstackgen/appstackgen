@@ -20,9 +20,9 @@ namespace Test {
 
 Base::ProjectSPtr TestProjectFactory::createProject(const string &n)
 {
-    auto proj = std::make_shared<Base::Project>(Name(n));
+    auto proj = std::make_shared<Base::Project>(name(n));
 
-    auto model = proj->createNode<Model>(Name("TestModel"));
+    auto model = proj->createNode<Model>(name("TestModel"));
 
     auto natSci = model->createBoundedContext("NatSci");
 

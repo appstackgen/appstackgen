@@ -14,10 +14,10 @@ using namespace ASG;
 using namespace ASG::Base;
 
 TEST(TestProject, testProjectCtor) {
-    auto proj = std::unique_ptr<Project>(new Project(Name("A Project")));
+    auto proj = std::unique_ptr<Project>(new Project(name("A Project")));
 
     ASSERT_TRUE(proj->hasTitle());
 
-    ASSERT_EQ(Name("A Project"), proj->title());
+    ASSERT_EQ(name("A Project"), proj->title());
 }
 

@@ -15,7 +15,7 @@
 namespace ASG {
 namespace Graph {
 
-DefaultGraph::DefaultGraph(const Name &title)
+DefaultGraph::DefaultGraph(const name &title)
     : m_title(title)
 {
     m_indexNode = createNode<IndexNode>(IndexNode::defaultName);

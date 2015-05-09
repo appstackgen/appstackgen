@@ -35,9 +35,9 @@ class AbstractGraph
 public:
     virtual ~AbstractGraph() {}
 
-    void setTitle(const Name& t) { implSetTitle(t); }
+    void setTitle(const name& t) { implSetTitle(t); }
 
-    Name title() const { return implTitle(); }
+    name title() const { return implTitle(); }
 
     bool hasTitle() const { return (!title().isEmpty()); }
 
@@ -94,7 +94,7 @@ public:
     }
 
     template<typename T>
-    std::shared_ptr<T> createSubNodeOf(AbstractNodeSPtr parent, const Name& subNodeName) {
+    std::shared_ptr<T> createSubNodeOf(AbstractNodeSPtr parent, const name& subNodeName) {
         assert(parent);
 
         auto n = createNode<T>(subNodeName);
@@ -103,11 +103,11 @@ public:
     }
 
     template<typename T>
-    std::shared_ptr<T> createNode(const Name& name = Name("")) {
-        auto n = std::make_shared<T>(this, name, createUuid());
-        assert(T::staticNodeName == n->nodeTypeName());
-        registerNode(n);
-        return n;
+    std::shared_ptr<T> createNode(const name& n = name("")) {
+        auto node = std::make_shared<T>(this, n, createUuid());
+        assert(T::staticNodeName == node->nodeTypeName());
+        registerNode(node);
+        return node;
     }
 
     template<typename T>
@@ -134,8 +134,8 @@ public:
 protected:
     AbstractGraph();
 
-    virtual void implSetTitle(const Name& t) = 0;
-    virtual Name implTitle() const = 0;
+    virtual void implSetTitle(const name& t) = 0;
+    virtual name implTitle() const = 0;
 
     virtual void registerNode(AbstractNodeSPtr n) = 0;
     virtual void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) = 0;

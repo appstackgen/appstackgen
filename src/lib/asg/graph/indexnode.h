@@ -16,7 +16,7 @@ namespace Graph {
 class IndexNode : public SystemNode
 {
 public:
-    static Name defaultName;
+    static ::ASG::name defaultName;
     static string staticNodeName;
 
     using SystemNode::SystemNode;

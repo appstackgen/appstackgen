@@ -26,11 +26,11 @@ TEST(TestGraph, testCreateNodesAndEdges) {
 
     ASSERT_EQ((size)0 + 1, g->nodeCount());
 
-    auto n1 = g->createNode<TestNode>(Name("N1"));
+    auto n1 = g->createNode<TestNode>(name("N1"));
 
     ASSERT_EQ((size)1 + 1, g->nodeCount());
 
-    auto n2 = g->createNode<TestNode>(Name("N2"));
+    auto n2 = g->createNode<TestNode>(name("N2"));
 
     g->createEdge<TestEdge>(n1, n2);
 
@@ -55,16 +55,16 @@ TEST(TestGraph, testCreateNodesAndEdges) {
 TEST(TestGraph, testGraphTitle) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    ASSERT_EQ(Name(""), g->title());
+    ASSERT_EQ(name(""), g->title());
     ASSERT_TRUE(!g->hasTitle());
 }
 
 TEST(TestGraph, testNodeHierarchy) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
 
-    auto root = g->createNode<TestNode>(Name("root"));
-    auto child1 = g->createSubNodeOf<TestNode>(root, Name("child 1"));
-    g->createSubNodeOf<TestNode>(root, Name("child 2"));
+    auto root = g->createNode<TestNode>(name("root"));
+    auto child1 = g->createSubNodeOf<TestNode>(root, name("child 1"));
+    g->createSubNodeOf<TestNode>(root, name("child 2"));
 
     ASSERT_TRUE((g->hasSuperNode(child1)));
     ASSERT_EQ((size)2, g->subNodeCountOf(root));

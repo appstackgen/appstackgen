@@ -21,11 +21,11 @@ namespace Graph {
 class DefaultGraph : public AbstractGraph
 {
 public:
-    explicit DefaultGraph(const Name& title = Name(""));
+    explicit DefaultGraph(const name& title = name(""));
 
 protected:
-    void implSetTitle(const Name &t) override { m_title = t; }
-    Name implTitle() const override { return m_title; }
+    void implSetTitle(const name &t) override { m_title = t; }
+    name implTitle() const override { return m_title; }
 
     void registerNode(AbstractNodeSPtr n) override;
     void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
@@ -44,7 +44,7 @@ protected:
     AbstractNodeSPtr implNode(const ObjectId& id) const override;
 
 private:
-    Name m_title;
+    name m_title;
 
     AbstractNodeSPtrVector m_nodes;
     AbstractEdgeSPtrVector m_edges;

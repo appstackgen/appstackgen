@@ -12,7 +12,7 @@
 namespace ASG {
 namespace Graph {
 
-Name IndexNode::defaultName { "IndexNode" };
+name IndexNode::defaultName { "IndexNode" };
 string IndexNode::staticNodeName { "IndexNode" };
 
 }

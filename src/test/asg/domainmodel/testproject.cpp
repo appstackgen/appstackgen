@@ -27,7 +27,7 @@ TEST(TestProject, selftestProjectFactory)
 
     ASSERT_TRUE(proj->hasTitle());
 
-    ASSERT_EQ(Name("A Project"), proj->title());
+    ASSERT_EQ(name("A Project"), proj->title());
 
     ASSERT_EQ(4, proj->nodeCount());
 
