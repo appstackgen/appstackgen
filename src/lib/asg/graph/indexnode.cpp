@@ -12,8 +12,8 @@
 namespace asg {
 namespace graph {
 
-name IndexNode::defaultName { "IndexNode" };
-string IndexNode::staticNodeName { "IndexNode" };
+name index_node::defaultName { "IndexNode" };
+string index_node::staticNodeName { "IndexNode" };
 
 }
 }

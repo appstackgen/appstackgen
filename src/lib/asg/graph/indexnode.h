@@ -13,7 +13,7 @@
 namespace asg {
 namespace graph {
 
-class IndexNode : public SystemNode
+class index_node : public SystemNode
 {
 public:
     static ::asg::name defaultName;
@@ -22,7 +22,7 @@ public:
     using SystemNode::SystemNode;
 
 protected:
-    string implNodeTypeName() const override { return IndexNode::staticNodeName; }
+    string implNodeTypeName() const override { return index_node::staticNodeName; }
 };
 
 }

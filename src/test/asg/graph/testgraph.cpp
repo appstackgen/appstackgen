@@ -46,10 +46,10 @@ TEST(TestGraph, testCreateNodesAndEdges) {
     ASSERT_EQ((size)0, g->indexNode()->typedInEdges<IndexEdge>().size());
 
     ASSERT_EQ((size)2, (g->indexNode()->typedOutEdgesTo<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->typedInEdgesFrom<IndexEdge, IndexNode>().size()));
+    ASSERT_EQ((size)1, (n1->typedInEdgesFrom<IndexEdge, index_node>().size()));
 
     ASSERT_EQ((size)2, (g->indexNode()->endNodesOfTypedOutEdgesTo<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->startNodesOfTypedInEdgesFrom<IndexEdge, IndexNode>().size()));
+    ASSERT_EQ((size)1, (n1->startNodesOfTypedInEdgesFrom<IndexEdge, index_node>().size()));
 }
 
 TEST(TestGraph, testGraphTitle) {

@@ -18,13 +18,13 @@ namespace graph {
 
 class abstract_node;
 class abstract_edge;
-class IndexNode;
+class index_node;
 
 using AbstractNodePtr = abstract_node*;
 
 using abstract_node_sptr = std::shared_ptr<abstract_node>;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
-using IndexNodeSPtr = std::shared_ptr<IndexNode>;
+using IndexNodeSPtr = std::shared_ptr<index_node>;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 
 using AbstractNodeSPtrVector = std::vector<abstract_node_sptr>;
