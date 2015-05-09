@@ -14,12 +14,12 @@ namespace asg {
 namespace graph {
 namespace Test {
 
-class TestEdge : public Edge
+class TestEdge : public edge
 {
 public:
     static string staticEdgeName;
 
-    using Edge::Edge;
+    using edge::edge;
 
 protected:
     string impl_edge_type_name() const override { return TestEdge::staticEdgeName; }

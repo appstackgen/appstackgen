@@ -11,7 +11,7 @@
 namespace asg {
 namespace graph {
 
-Edge::Edge(abstract_graph *g, const object_id &uuid, abstract_node_sptr start, abstract_node_sptr end)
+edge::edge(abstract_graph *g, const object_id &uuid, abstract_node_sptr start, abstract_node_sptr end)
     : abstract_edge(g, uuid), m_start(start), m_end(end)
 {
 }
