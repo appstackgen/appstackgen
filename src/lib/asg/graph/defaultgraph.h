@@ -46,7 +46,7 @@ protected:
 private:
     Name m_title;
 
-    std::map<Id, AbstractNodeSPtr> m_nodes;
+    AbstractNodeSPtrVector m_nodes;
     std::map<Id, AbstractEdgeSPtr> m_edges;
 
     IndexNodeSPtr m_indexNode;

@@ -29,6 +29,7 @@ public:
     static ObjectId createId();
 
     bool operator < (const ObjectId& o) const { return (m_id < o.m_id); }
+    bool operator ==(const ObjectId& o) const { return (m_id == o.m_id); }
 
     void printOn(std::ostream& strm) const;
 

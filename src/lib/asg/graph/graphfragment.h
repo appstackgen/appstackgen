@@ -20,7 +20,7 @@ public:
 
 protected:
     AbstractGraph *implGraph() const override { return m_g; }
-    Id implId() const override { return m_id; }
+    const Id implId() const override { return m_id; }
 
 private:
     AbstractGraph* m_g { nullptr };

@@ -21,7 +21,7 @@ public:
     virtual ~AbstractGraphFragment() {}
 
     AbstractGraph* graph() const { return implGraph(); }
-    Id id() const { return implId(); }
+    const Id id() const { return implId(); }
 
     String toString() const { return implToString(); }
 
@@ -29,7 +29,7 @@ protected:
     AbstractGraphFragment();
 
     virtual AbstractGraph* implGraph() const = 0;
-    virtual Id implId() const = 0;
+    virtual const Id implId() const = 0;
 
     virtual String implToString() const = 0;
 };
