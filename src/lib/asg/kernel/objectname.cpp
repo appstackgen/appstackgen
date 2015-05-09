@@ -10,20 +10,20 @@
 
 namespace asg {
 
-ObjectName::ObjectName()
+object_name::object_name()
 {
 }
 
-ObjectName::~ObjectName()
+object_name::~object_name()
 {
 }
 
-ObjectName::ObjectName(const std::string &n)
+object_name::object_name(const std::string &n)
     : m_str(n)
 {
 }
 
-std::ostream& operator<<(std::ostream &strm, const asg::ObjectName &n)
+std::ostream& operator<<(std::ostream &strm, const asg::object_name &n)
 {
     n.printOn(strm);
     return strm;
