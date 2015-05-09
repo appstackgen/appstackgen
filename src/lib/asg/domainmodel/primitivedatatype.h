@@ -21,7 +21,7 @@ public:
     using ModelFragment::ModelFragment;
 
 protected:
-    String implNodeName() const override { return staticNodeName; }
+    String implNodeTypeName() const override { return staticNodeName; }
 };
 
 }

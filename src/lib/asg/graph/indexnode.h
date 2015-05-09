@@ -22,7 +22,7 @@ public:
     using SystemNode::SystemNode;
 
 protected:
-    String implNodeName() const override { return IndexNode::staticNodeName; }
+    String implNodeTypeName() const override { return IndexNode::staticNodeName; }
 };
 
 }

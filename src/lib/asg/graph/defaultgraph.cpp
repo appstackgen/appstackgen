@@ -24,7 +24,7 @@ DefaultGraph::DefaultGraph(const Name &title)
 void DefaultGraph::registerNode(AbstractNodeSPtr n) {
     assert(n);
 
-    m_nodes[n->uuid()] = n;
+    m_nodes[n->id()] = n;
 
     if (indexNode()) {
         createEdge<IndexEdge>(indexNode(), n);
@@ -45,7 +45,7 @@ void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
     e->start()->registerOutEdge(e);
     e->end()->registerInEdge(e);
 
-    m_edges[e->uuid()] = e;
+    m_edges[e->id()] = e;
 }
 
 AbstractNodeSPtrVector DefaultGraph::implNodes() const
@@ -68,6 +68,15 @@ AbstractEdgeSPtrVector DefaultGraph::implEdges() const
     }
 
     return buf;
+}
+
+AbstractNodeSPtr DefaultGraph::implNode(const ObjectId &id) const
+{
+    auto i = m_nodes.find(id);
+
+    assert(m_nodes.end() != i);
+
+    return (*i).second;
 }
 
 }

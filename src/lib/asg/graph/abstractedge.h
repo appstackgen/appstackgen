@@ -38,7 +38,7 @@ public:
     bool hasStart() const { return (AbstractNodeSPtr() != start()); }
     bool hasEnd() const { return (AbstractNodeSPtr() != end()); }
 
-    String edgeName() const { return implEdgeName(); }
+    String edgeTypeName() const { return implEdgeTypeName(); }
 
 protected:
     virtual void implSetStart(AbstractNodeSPtr s) = 0;
@@ -47,7 +47,7 @@ protected:
     virtual AbstractNodeSPtr implStart() const = 0;
     virtual AbstractNodeSPtr implEnd() const = 0;
 
-    virtual String implEdgeName() const = 0;
+    virtual String implEdgeTypeName() const = 0;
 
     String implToString() const override;
 };

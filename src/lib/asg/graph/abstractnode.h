@@ -26,7 +26,8 @@ class AbstractNode: public GraphFragment
 public:
     using GraphFragment::GraphFragment;
 
-    String nodeName() const { return implNodeName(); }
+    String nodeTypeName() const { return implNodeTypeName(); }
+    ObjectName name() const { return implName(); }
 
     void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
@@ -176,7 +177,8 @@ protected:
     virtual Size implInEdgeCount() const = 0;
     virtual Size implEdgeCount() const = 0;
 
-    virtual String implNodeName() const = 0;
+    virtual String implNodeTypeName() const = 0;
+    virtual ObjectName implName() const = 0;
 
     String implToString() const override;
 };

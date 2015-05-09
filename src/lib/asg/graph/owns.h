@@ -21,7 +21,7 @@ public:
     using SystemEdge::SystemEdge;
 
 protected:
-    String implEdgeName() const override { return Owns::staticEdgeName; }
+    String implEdgeTypeName() const override { return Owns::staticEdgeName; }
 };
 
 }

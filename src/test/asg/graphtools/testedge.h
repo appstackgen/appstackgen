@@ -22,7 +22,7 @@ public:
     using Edge::Edge;
 
 protected:
-    String implEdgeName() const override { return TestEdge::staticEdgeName; }
+    String implEdgeTypeName() const override { return TestEdge::staticEdgeName; }
 };
 
 }

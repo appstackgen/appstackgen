@@ -41,6 +41,8 @@ protected:
     AbstractNodeSPtrVector implNodes() const override;
     AbstractEdgeSPtrVector implEdges() const override;
 
+    AbstractNodeSPtr implNode(const ObjectId& id) const override;
+
 private:
     Name m_title;
 

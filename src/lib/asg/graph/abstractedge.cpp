@@ -10,13 +10,15 @@
 
 #include <asg/kernel/objectid.h>
 
+#include <asg/graph/abstractnode.h>
+
 namespace ASG {
 namespace Graph {
 
 String AbstractEdge::implToString() const
 {
     StringStream s;
-    s << edgeName() << " {" << uuid() << "}";
+    s << edgeTypeName() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();
     return s.str();
 }
 

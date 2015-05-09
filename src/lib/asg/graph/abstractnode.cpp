@@ -17,7 +17,7 @@ String AbstractNode::implToString() const
 {
     StringStream s;
 
-    s << nodeName() << " {" << uuid() << "}";
+    s << nodeTypeName() << " '" << name() << "' {" << id() << "}";
 
     return s.str();
 }

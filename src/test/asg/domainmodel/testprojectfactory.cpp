@@ -10,6 +10,7 @@
 
 #include <asg/base/project.h>
 
+#include <asg/domainmodel/model.h>
 #include <asg/domainmodel/boundedcontext.h>
 #include <asg/domainmodel/primitivedatatype.h>
 
@@ -21,9 +22,11 @@ Base::ProjectSPtr TestProjectFactory::createProject(const String &n)
 {
     auto proj = std::make_shared<Base::Project>(Name(n));
 
-    proj->createNode<BoundedContext>(Name("NatSci"));
+    auto model = proj->createNode<Model>(Name("TestModel"));
 
-    proj->createNode<PrimitiveDataType>(Name("Integer"));
+    auto natSci = model->createBoundedContext("NatSci");
+
+    model->createPrimitiveDataType("Integer");
     return proj;
 }
 

@@ -22,7 +22,7 @@ public:
     using Node::Node;
 
 protected:
-    String implNodeName() const override { return TestNode::staticNodeName; }
+    String implNodeTypeName() const override { return TestNode::staticNodeName; }
 };
 
 }

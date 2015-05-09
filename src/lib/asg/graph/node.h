@@ -11,6 +11,7 @@
 #include <asg/graph/abstractnode.h>
 
 #include <asg/graph/abstractedge.h>
+#include <asg/graph/abstractgraph.h>
 
 namespace ASG {
 namespace Graph {
@@ -18,9 +19,14 @@ namespace Graph {
 class Node : public AbstractNode
 {
 public:
-    Node(AbstractGraph* g, const Name& name, const Id& uuid);
+    Node(AbstractGraph* g, const ObjectName& name, const Id& id);
 
 protected:
+    template<typename T>
+    std::shared_ptr<T> createSubNode(const String& name) {
+        return graph()->createSubNodeOf<T>(graph()->node(id()), ObjectName(name));
+    }
+
     void implRegisterOutEdge(AbstractEdgeSPtr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
     void implRegisterInEdge(AbstractEdgeSPtr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
 
@@ -32,8 +38,10 @@ protected:
     Size implInEdgeCount() const override { return inEdges().size(); }
     Size implEdgeCount() const override { return m_edges.size(); }
 
+    ObjectName implName() const override { return m_name; }
+
 private:
-    Name m_name;
+    ObjectName m_name;
     AbstractEdgeSPtrVector m_edges;
 };
 

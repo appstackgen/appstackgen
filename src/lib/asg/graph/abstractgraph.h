@@ -105,7 +105,7 @@ public:
     template<typename T>
     std::shared_ptr<T> createNode(const Name& name = Name("")) {
         auto n = std::make_shared<T>(this, name, createUuid());
-        assert(T::staticNodeName == n->nodeName());
+        assert(T::staticNodeName == n->nodeTypeName());
         registerNode(n);
         return n;
     }
@@ -117,12 +117,14 @@ public:
 
         auto e = std::make_shared<T>(this, createUuid(), start, end);
 
-        assert(T::staticEdgeName == e->edgeName());
+        assert(T::staticEdgeName == e->edgeTypeName());
 
         registerEdge(e);
 
         return e;
     }
+
+    AbstractNodeSPtr node(const ObjectId& id) const { return implNode(id); }
 
     Size nodeCount() const { return implNodeCount(); }
     Size edgeCount() const { return implEdgeCount(); }
@@ -144,6 +146,8 @@ protected:
 
     virtual AbstractNodeSPtrVector implNodes() const = 0;
     virtual AbstractEdgeSPtrVector implEdges() const = 0;
+
+    virtual AbstractNodeSPtr implNode(const ObjectId& id) const = 0;
 
     virtual IndexNodeSPtr implIndexNode() const = 0;
 

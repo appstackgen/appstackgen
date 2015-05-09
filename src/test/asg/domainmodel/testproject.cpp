@@ -29,7 +29,7 @@ TEST(TestProject, selftestProjectFactory)
 
     ASSERT_EQ(Name("A Project"), proj->title());
 
-    ASSERT_EQ(3, proj->nodeCount());
+    ASSERT_EQ(4, proj->nodeCount());
 
     std::cout << std::endl << join(GraphToPlainText::toStringVector(proj)) << std::endl;
 }
