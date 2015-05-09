@@ -19,12 +19,12 @@ namespace Graph {
 class Node : public AbstractNode
 {
 public:
-    Node(AbstractGraph* g, const ObjectName& name, const ObjectId& id);
+    Node(AbstractGraph* g, const object_name& name, const object_id& id);
 
 protected:
     template<typename T>
     std::shared_ptr<T> createSubNode(const string& name) {
-        return graph()->createSubNodeOf<T>(graph()->node(id()), ObjectName(name));
+        return graph()->createSubNodeOf<T>(graph()->node(id()), object_name(name));
     }
 
     void implRegisterOutEdge(AbstractEdgeSPtr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
@@ -38,10 +38,10 @@ protected:
     size implInEdgeCount() const override { return inEdges().size(); }
     size implEdgeCount() const override { return m_edges.size(); }
 
-    ObjectName implName() const override { return m_name; }
+    object_name implName() const override { return m_name; }
 
 private:
-    ObjectName m_name;
+    object_name m_name;
     AbstractEdgeSPtrVector m_edges;
 };
 

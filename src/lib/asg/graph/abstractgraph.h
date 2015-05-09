@@ -124,7 +124,7 @@ public:
         return e;
     }
 
-    AbstractNodeSPtr node(const ObjectId& id) const { return implNode(id); }
+    AbstractNodeSPtr node(const object_id& id) const { return implNode(id); }
 
     size nodeCount() const { return implNodeCount(); }
     size edgeCount() const { return implEdgeCount(); }
@@ -147,11 +147,11 @@ protected:
     virtual AbstractNodeSPtrVector implNodes() const = 0;
     virtual AbstractEdgeSPtrVector implEdges() const = 0;
 
-    virtual AbstractNodeSPtr implNode(const ObjectId& ObjectId) const = 0;
+    virtual AbstractNodeSPtr implNode(const object_id& object_id) const = 0;
 
     virtual IndexNodeSPtr implIndexNode() const = 0;
 
-    virtual ObjectId createUuid() = 0;
+    virtual object_id createUuid() = 0;
 };
 
 }

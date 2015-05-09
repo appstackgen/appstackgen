@@ -13,14 +13,14 @@
 
 namespace asg {
 
-ObjectId uuid_generator::createUuid()
+object_id uuid_generator::createUuid()
 {
-    return ObjectId::createId();
+    return object_id::create_id();
 }
 
-ObjectId uuid_generator::createInvalidUuid()
+object_id uuid_generator::createInvalidUuid()
 {
-    return ObjectId();
+    return object_id();
 }
 
 uuid_generator::uuid_generator()

@@ -13,7 +13,7 @@
 using namespace asg;
 
 TEST(TestObjectId, testDefaultCtor) {
-    ObjectId id;
+    object_id id;
 
-    ASSERT_TRUE(!id.isValid());
+    ASSERT_TRUE(!id.is_valid());
 }

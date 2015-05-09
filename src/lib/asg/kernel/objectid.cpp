@@ -13,16 +13,16 @@
 
 namespace asg {
 
-ObjectId::ObjectId()
+object_id::object_id()
     : m_id(boost::uuids::nil_uuid())
 {   
 }
 
-ObjectId::~ObjectId()
+object_id::~object_id()
 {
 }
 
-std::string ObjectId::toString() const
+std::string object_id::to_string() const
 {
     std::stringstream s;
     s << m_id;
@@ -30,25 +30,25 @@ std::string ObjectId::toString() const
     return s.str();
 }
 
-ObjectId ObjectId::createId()
+object_id object_id::create_id()
 {
     return boost::uuids::random_generator()();
 }
 
-void ObjectId::printOn(std::ostream &strm) const
+void object_id::print_on(std::ostream &strm) const
 {
     strm << m_id;
 }
 
-ObjectId::ObjectId(boost::uuids::uuid uuid)
+object_id::object_id(boost::uuids::uuid uuid)
     : m_id(uuid)
 {
 
 }
 
-std::ostream &operator<<(std::ostream &strm, const ObjectId &id)
+std::ostream &operator<<(std::ostream &strm, const object_id &id)
 {
-    id.printOn(strm);
+    id.print_on(strm);
     return strm;
 }
 

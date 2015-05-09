@@ -19,7 +19,7 @@ namespace asg {
     using size = std::size_t;
 
     using string = std::string;
-    using name = ObjectName;
+    using name = object_name;
 
     using stringstream = std::stringstream;
     using string_vec = std::vector<string>;

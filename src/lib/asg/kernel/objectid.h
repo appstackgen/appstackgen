@@ -16,30 +16,30 @@
 
 namespace asg {
 
-class ObjectId
+class object_id
 {
 public:
-    ObjectId();
-    virtual ~ObjectId();
+    object_id();
+    virtual ~object_id();
 
-    bool isValid() const { return (!m_id.is_nil()); }
+    bool is_valid() const { return (!m_id.is_nil()); }
 
-    std::string toString() const;
+    std::string to_string() const;
 
-    static ObjectId createId();
+    static object_id create_id();
 
-    bool operator < (const ObjectId& o) const { return (m_id < o.m_id); }
-    bool operator ==(const ObjectId& o) const { return (m_id == o.m_id); }
+    bool operator < (const object_id& o) const { return (m_id < o.m_id); }
+    bool operator ==(const object_id& o) const { return (m_id == o.m_id); }
 
-    void printOn(std::ostream& strm) const;
+    void print_on(std::ostream& strm) const;
 
 protected:
-    ObjectId(boost::uuids::uuid uuid);
+    object_id(boost::uuids::uuid uuid);
 
 private:
     boost::uuids::uuid m_id;
 };
 
-std::ostream& operator<<(std::ostream& strm, const ObjectId& id);
+std::ostream& operator<<(std::ostream& strm, const object_id& id);
 
 }

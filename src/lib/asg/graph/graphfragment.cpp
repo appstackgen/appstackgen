@@ -11,7 +11,7 @@
 namespace asg {
 namespace Graph {
 
-GraphFragment::GraphFragment(AbstractGraph *g, const ObjectId &uuid)
+GraphFragment::GraphFragment(AbstractGraph *g, const object_id &uuid)
     : AbstractGraphFragment(), m_g(g), m_id(uuid)
 {
 

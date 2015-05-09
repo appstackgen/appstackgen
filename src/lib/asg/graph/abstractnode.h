@@ -27,7 +27,7 @@ public:
     using GraphFragment::GraphFragment;
 
     string nodeTypeName() const { return implNodeTypeName(); }
-    ObjectName name() const { return implName(); }
+    object_name name() const { return implName(); }
 
     void registerOutEdge(AbstractEdgeSPtr e) { implRegisterOutEdge(e); }
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
@@ -178,7 +178,7 @@ protected:
     virtual size implEdgeCount() const = 0;
 
     virtual string implNodeTypeName() const = 0;
-    virtual ObjectName implName() const = 0;
+    virtual object_name implName() const = 0;
 
     string implToString() const override;
 };

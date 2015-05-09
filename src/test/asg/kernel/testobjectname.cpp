@@ -13,15 +13,15 @@
 using namespace asg;
 
 TEST(TestObjectName, testDefaultCtor) {
-    ObjectName n;
+    object_name n;
 
     ASSERT_EQ(std::string(), n.toString());
 }
 
 TEST(TestObjectName, testEquality) {
-    ObjectName a("a");
-    ObjectName b("b");
-    ObjectName a2("a");
+    object_name a("a");
+    object_name b("b");
+    object_name a2("a");
 
     ASSERT_EQ(a, a);
     ASSERT_TRUE(a != b);

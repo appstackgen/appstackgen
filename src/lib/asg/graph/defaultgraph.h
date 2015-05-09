@@ -31,7 +31,7 @@ protected:
     void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
     void registerEdge(AbstractEdgeSPtr e) override;
 
-    ObjectId createUuid() override { return m_uuidGenerator.createUuid(); }
+    object_id createUuid() override { return m_uuidGenerator.createUuid(); }
 
     size implNodeCount() const override { return m_nodes.size(); }
     size implEdgeCount() const override { return m_edges.size(); }
@@ -41,7 +41,7 @@ protected:
     AbstractNodeSPtrVector implNodes() const override;
     AbstractEdgeSPtrVector implEdges() const override;
 
-    AbstractNodeSPtr implNode(const ObjectId& ObjectId) const override;
+    AbstractNodeSPtr implNode(const object_id& object_id) const override;
 
 private:
     name m_title;

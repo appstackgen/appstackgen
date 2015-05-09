@@ -12,17 +12,17 @@
 
 namespace asg {
 
-class ObjectName
+class object_name
 {
 public:
-    ObjectName();
-    virtual ~ObjectName();
-    explicit ObjectName(const std::string& n);
+    object_name();
+    virtual ~object_name();
+    explicit object_name(const std::string& n);
 
     std::string toString() const { return m_str; }
 
-    bool operator ==(const ObjectName& o) const { return (m_str == o.m_str); }
-    bool operator !=(const ObjectName& o) const { return (m_str != o.m_str); }
+    bool operator ==(const object_name& o) const { return (m_str == o.m_str); }
+    bool operator !=(const object_name& o) const { return (m_str != o.m_str); }
 
     void printOn(std::ostream& strm) const { strm << toString(); }
 
@@ -32,7 +32,7 @@ private:
     std::string m_str;
 };
 
-std::ostream &operator<<(std::ostream& strm, const asg::ObjectName& n);
+std::ostream &operator<<(std::ostream& strm, const asg::object_name& n);
 
 }
 

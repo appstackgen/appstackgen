@@ -56,7 +56,7 @@ AbstractEdgeSPtrVector DefaultGraph::implEdges() const
     return m_edges;
 }
 
-AbstractNodeSPtr DefaultGraph::implNode(const ObjectId &id) const
+AbstractNodeSPtr DefaultGraph::implNode(const object_id &id) const
 {
     auto i = std::find_if(std::begin(m_nodes), std::end(m_nodes), [=](AbstractNodeSPtr n) { return (n->id() == id); });
 
