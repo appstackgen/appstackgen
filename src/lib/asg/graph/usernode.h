@@ -13,10 +13,10 @@
 namespace asg {
 namespace graph {
 
-class UserNode : public Node
+class UserNode : public node
 {
 public:
-    using Node::Node;
+    using node::node;
 };
 
 }

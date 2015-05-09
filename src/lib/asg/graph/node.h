@@ -16,10 +16,10 @@
 namespace asg {
 namespace graph {
 
-class Node : public abstract_node
+class node : public abstract_node
 {
 public:
-    Node(abstract_graph* g, const object_name& name, const object_id& id);
+    node(abstract_graph* g, const object_name& name, const object_id& id);
 
 protected:
     template<typename T>
