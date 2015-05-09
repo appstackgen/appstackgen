@@ -10,7 +10,7 @@
 #include "indexnode.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 name IndexNode::defaultName { "IndexNode" };
 string IndexNode::staticNodeName { "IndexNode" };

@@ -9,7 +9,7 @@
 #include "abstractgraph.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 AbstractGraph::AbstractGraph()
 {

@@ -9,7 +9,7 @@
 #include "testedge.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 namespace Test {
 
 string TestEdge::staticEdgeName { "TestEdge" };

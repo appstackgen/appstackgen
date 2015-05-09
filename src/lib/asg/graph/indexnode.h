@@ -11,7 +11,7 @@
 #include <asg/graph/systemnode.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class IndexNode : public SystemNode
 {

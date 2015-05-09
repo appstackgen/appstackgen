@@ -9,7 +9,7 @@
 #include "useredge.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 }
 }

@@ -11,7 +11,7 @@
 #include <asg/graph/abstractgraphfragment.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class GraphFragment : public AbstractGraphFragment
 {

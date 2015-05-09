@@ -14,7 +14,7 @@
 #include <asg/graph/abstractgraph.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class Node : public AbstractNode
 {

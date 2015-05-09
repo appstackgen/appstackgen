@@ -18,8 +18,8 @@
 #include "testedge.h"
 
 using namespace asg;
-using namespace asg::Graph;
-using namespace asg::Graph::Test;
+using namespace asg::graph;
+using namespace asg::graph::Test;
 
 std::shared_ptr<DefaultGraph> createGraph() {
     auto g = std::make_shared<DefaultGraph>();

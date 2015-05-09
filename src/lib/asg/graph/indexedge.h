@@ -11,7 +11,7 @@
 #include <asg/graph/systemedge.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class IndexEdge : public SystemEdge
 {

@@ -11,7 +11,7 @@
 #include <asg/graph/node.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 namespace Test {
 
 class TestNode : public Node

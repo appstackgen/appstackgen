@@ -22,7 +22,7 @@ using BoundedContextSPtr = std::shared_ptr<BoundedContext>;
 using PrimitiveDataTypeSPtrVector = std::vector<PrimitiveDataTypeSPtr>;
 using BoundedContextSPtrVector = std::vector<BoundedContextSPtr>;
 
-class Model : public asg::Graph::UserNode
+class Model : public asg::graph::UserNode
 {
 public:
     static string staticNodeName;
@@ -36,7 +36,7 @@ public:
 protected:
     virtual string implNodeTypeName() const override { return staticNodeName; }
 
-    using asg::Graph::UserNode::UserNode;
+    using asg::graph::UserNode::UserNode;
 };
 
 }

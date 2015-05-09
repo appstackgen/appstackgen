@@ -11,7 +11,7 @@
 #include <asg/kernel/types.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class AbstractGraph;
 

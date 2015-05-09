@@ -13,10 +13,10 @@
 namespace asg {
 namespace DomainModel {
 
-class BoundedContextFragment : public Graph::UserNode
+class BoundedContextFragment : public graph::UserNode
 {
 public:
-    using Graph::UserNode::UserNode;
+    using graph::UserNode::UserNode;
 };
 
 }

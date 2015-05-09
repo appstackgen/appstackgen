@@ -9,7 +9,7 @@
 #include "owns.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 string Owns::staticEdgeName { "owns" };
 

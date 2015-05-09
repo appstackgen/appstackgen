@@ -17,7 +17,7 @@
 #include "testprojectfactory.h"
 
 using namespace asg;
-using namespace asg::Graph;
+using namespace asg::graph;
 using namespace asg::DomainModel;
 using namespace asg::DomainModel::Test;
 

@@ -9,7 +9,7 @@
 #include "testnode.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 namespace Test {
 
 string TestNode::staticNodeName { "TestNode" };

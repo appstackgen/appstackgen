@@ -14,7 +14,7 @@
 #include <asg/graph/owns.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 class AbstractNode;
 class AbstractEdge;

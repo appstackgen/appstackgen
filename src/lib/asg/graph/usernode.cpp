@@ -9,7 +9,7 @@
 #include "usernode.h"
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 }
 }

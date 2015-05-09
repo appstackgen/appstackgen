@@ -16,8 +16,8 @@
 #include "testedge.h"
 
 using namespace asg;
-using namespace asg::Graph;
-using namespace asg::Graph::Test;
+using namespace asg::graph;
+using namespace asg::graph::Test;
 
 TEST(TestGraph, testCreateNodesAndEdges) {
     auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());

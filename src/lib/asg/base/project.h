@@ -13,10 +13,10 @@
 namespace asg {
 namespace Base {
 
-class Project: public Graph::DefaultGraph
+class Project: public graph::DefaultGraph
 {
 public:
-    using Graph::DefaultGraph::DefaultGraph;
+    using graph::DefaultGraph::DefaultGraph;
 
 protected:
 

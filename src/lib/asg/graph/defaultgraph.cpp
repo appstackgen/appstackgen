@@ -13,7 +13,7 @@
 #include <asg/graph/owns.h>
 
 namespace asg {
-namespace Graph {
+namespace graph {
 
 DefaultGraph::DefaultGraph(const name &title)
     : m_title(title)
