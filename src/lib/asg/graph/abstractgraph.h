@@ -105,7 +105,7 @@ public:
     template<typename T>
     std::shared_ptr<T> create_node(const name& n = name("")) {
         auto node = std::make_shared<T>(this, n, create_object_id());
-        assert(T::staticNodeName == node->node_type_name());
+        assert(T::static_node_type_name == node->node_type_name());
         register_node(node);
         return node;
     }

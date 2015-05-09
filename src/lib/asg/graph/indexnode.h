@@ -16,13 +16,13 @@ namespace graph {
 class index_node : public system_node
 {
 public:
-    static ::asg::name defaultName;
-    static string staticNodeName;
+    static ::asg::name default_name;
+    static string static_node_type_name;
 
     using system_node::system_node;
 
 protected:
-    string impl_node_type_name() const override { return index_node::staticNodeName; }
+    string impl_node_type_name() const override { return index_node::static_node_type_name; }
 };
 
 }

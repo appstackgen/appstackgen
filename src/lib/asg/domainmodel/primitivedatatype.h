@@ -16,12 +16,12 @@ namespace DomainModel {
 class PrimitiveDataType : public ModelFragment
 {
 public:
-    static string staticNodeName;
+    static string static_node_type_name;
 
     using ModelFragment::ModelFragment;
 
 protected:
-    string impl_node_type_name() const override { return staticNodeName; }
+    string impl_node_type_name() const override { return static_node_type_name; }
 };
 
 }

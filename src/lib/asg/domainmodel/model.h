@@ -25,7 +25,7 @@ using BoundedContextSPtrVector = std::vector<BoundedContextSPtr>;
 class Model : public asg::graph::user_node
 {
 public:
-    static string staticNodeName;
+    static string static_node_type_name;
 
     PrimitiveDataTypeSPtr createPrimitiveDataType(const string& name);
     BoundedContextSPtr createBoundedContext(const string& name);
@@ -34,7 +34,7 @@ public:
     const BoundedContextSPtrVector boundedContexts() const;
 
 protected:
-    virtual string impl_node_type_name() const override { return staticNodeName; }
+    virtual string impl_node_type_name() const override { return static_node_type_name; }
 
     using asg::graph::user_node::user_node;
 };

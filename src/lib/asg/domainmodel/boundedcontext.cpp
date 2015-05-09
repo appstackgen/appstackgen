@@ -11,7 +11,7 @@
 namespace asg {
 namespace DomainModel {
 
-string BoundedContext::staticNodeName { "BoundedContext" };
+string BoundedContext::static_node_type_name { "BoundedContext" };
 
 }
 }

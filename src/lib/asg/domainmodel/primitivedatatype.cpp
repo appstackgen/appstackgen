@@ -11,7 +11,7 @@
 namespace asg {
 namespace DomainModel {
 
-string PrimitiveDataType::staticNodeName { "PrimitiveDataType" };
+string PrimitiveDataType::static_node_type_name { "PrimitiveDataType" };
 
 }
 }

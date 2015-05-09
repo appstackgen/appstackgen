@@ -16,7 +16,7 @@ namespace DomainModel {
 class Domain : public BoundedContextFragment
 {
 public:
-    static string staticNodeTypeName;
+    static string static_node_type_name;
 
     using BoundedContextFragment::BoundedContextFragment;
 };

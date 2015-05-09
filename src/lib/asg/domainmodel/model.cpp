@@ -17,7 +17,7 @@
 namespace asg {
 namespace DomainModel {
 
-string Model::staticNodeName = "Model";
+string Model::static_node_type_name = "Model";
 
 PrimitiveDataTypeSPtr Model::createPrimitiveDataType(const string &name)
 {

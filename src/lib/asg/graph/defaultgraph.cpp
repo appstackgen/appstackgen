@@ -18,7 +18,7 @@ namespace graph {
 default_graph::default_graph(const name &title)
     : m_title(title)
 {
-    m_index_node = create_node<index_node>(index_node::defaultName);
+    m_index_node = create_node<index_node>(index_node::default_name);
 }
 
 void default_graph::register_node(abstract_node_sptr n) {
