@@ -13,11 +13,11 @@
 using namespace asg;
 
 TEST(TestUuidGenerator, createUuid) {
-    auto id = UuidGenerator::createUuid();
+    auto id = uuid_generator::createUuid();
 
     ASSERT_TRUE(id.isValid());
 }
 
 TEST(TestUuidGenerator, createInvalidUuid)  {
-    ASSERT_TRUE(!UuidGenerator::createInvalidUuid().isValid());
+    ASSERT_TRUE(!uuid_generator::createInvalidUuid().isValid());
 }

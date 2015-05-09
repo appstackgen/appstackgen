@@ -51,7 +51,7 @@ private:
 
     IndexNodeSPtr m_indexNode;
 
-    UuidGenerator m_uuidGenerator;
+    uuid_generator m_uuidGenerator;
 };
 
 }
