@@ -10,13 +10,13 @@
 
 namespace asg {
 
-class uuid_generator
+class object_id_generator
 {
 public:
-    uuid_generator();
+    object_id_generator();
 
-    static object_id createUuid();
-    static object_id createInvalidUuid();
+    static object_id create_id();
+    static object_id create_invalid_id();
 };
 
 }

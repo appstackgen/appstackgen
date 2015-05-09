@@ -8,16 +8,16 @@
 
 #include <gtest/gtest.h>
 
-#include <asg/kernel/uuidgenerator.h>
+#include <asg/kernel/objectidgenerator.h>
 
 using namespace asg;
 
 TEST(TestUuidGenerator, createUuid) {
-    auto id = uuid_generator::createUuid();
+    auto id = object_id_generator::create_id();
 
     ASSERT_TRUE(id.is_valid());
 }
 
 TEST(TestUuidGenerator, createInvalidUuid)  {
-    ASSERT_TRUE(!uuid_generator::createInvalidUuid().is_valid());
+    ASSERT_TRUE(!object_id_generator::create_invalid_id().is_valid());
 }

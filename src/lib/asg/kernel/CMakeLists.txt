@@ -11,7 +11,7 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
     module.h
-    uuidgenerator.h
+    objectidgenerator.h
     types.h
     objectname.h
     objectid.h
@@ -20,7 +20,7 @@ set(KERNEL_HEADERS
 
 set(KERNEL_SOURCES
     module.cpp
-    uuidgenerator.cpp
+    objectidgenerator.cpp
     objectname.cpp
     objectid.cpp
     stringtools.cpp

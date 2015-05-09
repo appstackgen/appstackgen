@@ -10,7 +10,7 @@
 
 #include <asg/graph/abstractgraph.h>
 
-#include <asg/kernel/uuidgenerator.h>
+#include <asg/kernel/objectidgenerator.h>
 
 #include <asg/graph/abstractnode.h>
 #include <asg/graph/abstractedge.h>
@@ -31,7 +31,7 @@ protected:
     void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
     void registerEdge(AbstractEdgeSPtr e) override;
 
-    object_id createUuid() override { return m_uuidGenerator.createUuid(); }
+    object_id createUuid() override { return m_uuidGenerator.create_id(); }
 
     size implNodeCount() const override { return m_nodes.size(); }
     size implEdgeCount() const override { return m_edges.size(); }
@@ -51,7 +51,7 @@ private:
 
     IndexNodeSPtr m_indexNode;
 
-    uuid_generator m_uuidGenerator;
+    object_id_generator m_uuidGenerator;
 };
 
 }

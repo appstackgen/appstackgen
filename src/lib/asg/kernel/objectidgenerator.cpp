@@ -6,24 +6,24 @@
  * All rights reserved.
  */
 
-#include "uuidgenerator.h"
+#include "objectidgenerator.h"
 
 #include <boost/uuid/random_generator.hpp>
 #include <boost/uuid/nil_generator.hpp>
 
 namespace asg {
 
-object_id uuid_generator::createUuid()
+object_id object_id_generator::create_id()
 {
     return object_id::create_id();
 }
 
-object_id uuid_generator::createInvalidUuid()
+object_id object_id_generator::create_invalid_id()
 {
     return object_id();
 }
 
-uuid_generator::uuid_generator()
+object_id_generator::object_id_generator()
 {
 
 }
