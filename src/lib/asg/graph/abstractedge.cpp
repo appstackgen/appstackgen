@@ -17,7 +17,7 @@ namespace Graph {
 
 string AbstractEdge::implToString() const
 {
-    StringStream s;
+    stringstream s;
     s << edgeTypeName() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();
     return s.str();
 }

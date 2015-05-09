@@ -19,12 +19,12 @@ using AbstractGraphSPtr = std::shared_ptr<AbstractGraph>;
 class GraphToPlainText
 {
 public:
-    static StringVector toStringVector(AbstractGraphSPtr g);
+    static string_vec toStringVector(AbstractGraphSPtr g);
 
 protected:
     GraphToPlainText(AbstractGraphSPtr g);
 
-    StringVector graphToStringVector() const;
+    string_vec graphToStringVector() const;
 
 private:
     AbstractGraphSPtr m_g;

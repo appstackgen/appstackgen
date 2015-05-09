@@ -21,8 +21,6 @@ namespace ASG {
     using string = std::string;
     using name = ObjectName;
 
-    using StringStream = std::stringstream;
-    using StringVector = std::vector<string>;
-
-    using Id = ObjectId;
+    using stringstream = std::stringstream;
+    using string_vec = std::vector<string>;
 }

@@ -19,7 +19,7 @@ namespace Graph {
 class Node : public AbstractNode
 {
 public:
-    Node(AbstractGraph* g, const ObjectName& name, const Id& id);
+    Node(AbstractGraph* g, const ObjectName& name, const ObjectId& id);
 
 protected:
     template<typename T>

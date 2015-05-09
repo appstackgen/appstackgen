@@ -15,7 +15,7 @@
 namespace ASG {
 namespace Graph {
 
-StringVector GraphToPlainText::toStringVector(AbstractGraphSPtr g)
+string_vec GraphToPlainText::toStringVector(AbstractGraphSPtr g)
 {
     GraphToPlainText i(g);
 
@@ -28,9 +28,9 @@ GraphToPlainText::GraphToPlainText(AbstractGraphSPtr g)
 
 }
 
-StringVector GraphToPlainText::graphToStringVector() const
+string_vec GraphToPlainText::graphToStringVector() const
 {
-    StringVector buf;
+    string_vec buf;
 
     buf.push_back(string("Graph: ") + m_g->title().toString());
 

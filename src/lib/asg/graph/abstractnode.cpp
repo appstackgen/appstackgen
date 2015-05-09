@@ -15,7 +15,7 @@ namespace Graph {
 
 string AbstractNode::implToString() const
 {
-    StringStream s;
+    stringstream s;
 
     s << nodeTypeName() << " '" << name() << "' {" << id() << "}";
 

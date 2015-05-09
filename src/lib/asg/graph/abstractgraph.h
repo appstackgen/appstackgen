@@ -147,11 +147,11 @@ protected:
     virtual AbstractNodeSPtrVector implNodes() const = 0;
     virtual AbstractEdgeSPtrVector implEdges() const = 0;
 
-    virtual AbstractNodeSPtr implNode(const ObjectId& id) const = 0;
+    virtual AbstractNodeSPtr implNode(const ObjectId& ObjectId) const = 0;
 
     virtual IndexNodeSPtr implIndexNode() const = 0;
 
-    virtual Id createUuid() = 0;
+    virtual ObjectId createUuid() = 0;
 };
 
 }

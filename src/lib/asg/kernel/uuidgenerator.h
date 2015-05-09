@@ -15,8 +15,8 @@ class UuidGenerator
 public:
     UuidGenerator();
 
-    static Id createUuid();
-    static Id createInvalidUuid();
+    static ObjectId createUuid();
+    static ObjectId createInvalidUuid();
 };
 
 }
