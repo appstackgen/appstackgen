@@ -18,8 +18,8 @@
 
 using namespace asg;
 using namespace asg::graph;
-using namespace asg::DomainModel;
-using namespace asg::DomainModel::Test;
+using namespace asg::domain_model;
+using namespace asg::domain_model::Test;
 
 TEST(TestProject, selftestProjectFactory)
 {

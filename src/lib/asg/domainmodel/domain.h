@@ -11,14 +11,14 @@
 #include <asg/domainmodel/boundedcontextfragment.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-class Domain : public BoundedContextFragment
+class domain : public bounded_context_fragment
 {
 public:
     static string static_node_type_name;
 
-    using BoundedContextFragment::BoundedContextFragment;
+    using bounded_context_fragment::bounded_context_fragment;
 };
 
 }

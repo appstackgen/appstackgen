@@ -9,7 +9,7 @@
 #include "boundedcontextfragment.h"
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
 }
 }

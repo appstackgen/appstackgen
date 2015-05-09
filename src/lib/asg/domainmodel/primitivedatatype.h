@@ -11,14 +11,14 @@
 #include <asg/domainmodel/modelfragment.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-class PrimitiveDataType : public ModelFragment
+class primitive_data_type : public model_fragment
 {
 public:
     static string static_node_type_name;
 
-    using ModelFragment::ModelFragment;
+    using model_fragment::model_fragment;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

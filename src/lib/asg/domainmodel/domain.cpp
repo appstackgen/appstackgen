@@ -9,7 +9,7 @@
 #include "domain.h"
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
 }
 }

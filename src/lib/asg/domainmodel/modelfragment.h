@@ -11,9 +11,9 @@
 #include <asg/graph/usernode.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-class ModelFragment : public graph::user_node
+class model_fragment : public graph::user_node
 {
 public:
     using graph::user_node::user_node;

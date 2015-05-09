@@ -15,18 +15,18 @@
 #include <asg/domainmodel/primitivedatatype.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 namespace Test {
 
 base::ProjectSPtr TestProjectFactory::createProject(const string &n)
 {
     auto proj = std::make_shared<base::project>(name(n));
 
-    auto model = proj->create_node<Model>(name("TestModel"));
+    auto m = proj->create_node<model>(name("TestModel"));
 
-    auto natSci = model->createBoundedContext("NatSci");
+    auto natSci = m->createBoundedContext("NatSci");
 
-    model->createPrimitiveDataType("Integer");
+    m->createPrimitiveDataType("Integer");
     return proj;
 }
 

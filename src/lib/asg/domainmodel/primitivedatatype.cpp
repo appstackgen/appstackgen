@@ -9,9 +9,9 @@
 #include "primitivedatatype.h"
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-string PrimitiveDataType::static_node_type_name { "PrimitiveDataType" };
+string primitive_data_type::static_node_type_name { "PrimitiveDataType" };
 
 }
 }

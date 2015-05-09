@@ -15,18 +15,18 @@
 #include <asg/domainmodel/boundedcontext.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-string Model::static_node_type_name = "Model";
+string model::static_node_type_name = "Model";
 
-PrimitiveDataTypeSPtr Model::createPrimitiveDataType(const string &name)
+primitive_data_type_sptr model::createPrimitiveDataType(const string &name)
 {
-    return createSubNode<PrimitiveDataType>(name);
+    return createSubNode<primitive_data_type>(name);
 }
 
-BoundedContextSPtr Model::createBoundedContext(const string &name)
+bounded_context_sptr model::createBoundedContext(const string &name)
 {
-    return createSubNode<BoundedContext>(name);
+    return createSubNode<bounded_context>(name);
 }
 
 }

@@ -9,9 +9,9 @@
 #include "boundedcontext.h"
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-string BoundedContext::static_node_type_name { "BoundedContext" };
+string bounded_context::static_node_type_name { "BoundedContext" };
 
 }
 }

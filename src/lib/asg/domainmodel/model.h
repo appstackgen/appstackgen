@@ -11,27 +11,27 @@
 #include <asg/graph/usernode.h>
 
 namespace asg {
-namespace DomainModel {
+namespace domain_model {
 
-class PrimitiveDataType;
-class BoundedContext;
+class primitive_data_type;
+class bounded_context;
 
-using PrimitiveDataTypeSPtr = std::shared_ptr<PrimitiveDataType>;
-using BoundedContextSPtr = std::shared_ptr<BoundedContext>;
+using primitive_data_type_sptr = std::shared_ptr<primitive_data_type>;
+using bounded_context_sptr = std::shared_ptr<bounded_context>;
 
-using PrimitiveDataTypeSPtrVector = std::vector<PrimitiveDataTypeSPtr>;
-using BoundedContextSPtrVector = std::vector<BoundedContextSPtr>;
+using primitive_data_type_sptr_vec = std::vector<primitive_data_type_sptr>;
+using bounded_context_sptr_vec = std::vector<bounded_context_sptr>;
 
-class Model : public asg::graph::user_node
+class model : public asg::graph::user_node
 {
 public:
     static string static_node_type_name;
 
-    PrimitiveDataTypeSPtr createPrimitiveDataType(const string& name);
-    BoundedContextSPtr createBoundedContext(const string& name);
+    primitive_data_type_sptr createPrimitiveDataType(const string& name);
+    bounded_context_sptr createBoundedContext(const string& name);
 
-    const PrimitiveDataTypeSPtrVector primtiveDataTypes() const;
-    const BoundedContextSPtrVector boundedContexts() const;
+    const primitive_data_type_sptr_vec primtiveDataTypes() const;
+    const bounded_context_sptr_vec boundedContexts() const;
 
 protected:
     virtual string impl_node_type_name() const override { return static_node_type_name; }

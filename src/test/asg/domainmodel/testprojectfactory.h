@@ -17,7 +17,7 @@ class project;
 using ProjectSPtr = std::shared_ptr<project>;
 }
 
-namespace DomainModel {
+namespace domain_model {
 
 namespace Test {
 
