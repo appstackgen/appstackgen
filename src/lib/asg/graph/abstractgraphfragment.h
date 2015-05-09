@@ -20,16 +20,16 @@ class AbstractGraphFragment
 public:
     virtual ~AbstractGraphFragment() {}
 
-    abstract_graph* graph() const { return implGraph(); }
-    const object_id id() const { return implId(); }
+    abstract_graph* graph() const { return impl_graph(); }
+    const object_id id() const { return impl_id(); }
 
-    string toString() const { return impl_to_string(); }
+    string to_string() const { return impl_to_string(); }
 
 protected:
     AbstractGraphFragment();
 
-    virtual abstract_graph* implGraph() const = 0;
-    virtual const object_id implId() const = 0;
+    virtual abstract_graph* impl_graph() const = 0;
+    virtual const object_id impl_id() const = 0;
 
     virtual string impl_to_string() const = 0;
 };

@@ -18,7 +18,7 @@ namespace graph {
 string abstract_edge::impl_to_string() const
 {
     stringstream s;
-    s << edge_type_name() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();
+    s << edge_type_name() << " {" << id() << "}: " << start()->to_string() << " --> " << end()->to_string();
     return s.str();
 }
 

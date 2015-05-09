@@ -19,8 +19,8 @@ public:
     GraphFragment(abstract_graph* g, const object_id& id);
 
 protected:
-    abstract_graph *implGraph() const override { return m_g; }
-    const object_id implId() const override { return m_id; }
+    abstract_graph *impl_graph() const override { return m_g; }
+    const object_id impl_id() const override { return m_id; }
 
 private:
     abstract_graph* m_g { nullptr };
