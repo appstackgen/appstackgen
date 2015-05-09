@@ -18,10 +18,10 @@
 namespace asg {
 namespace graph {
 
-class DefaultGraph : public abstract_graph
+class default_graph : public abstract_graph
 {
 public:
-    explicit DefaultGraph(const name& title = name(""));
+    explicit default_graph(const name& title = name(""));
 
 protected:
     void impl_set_title(const name &t) override { m_title = t; }
@@ -31,12 +31,12 @@ protected:
     void register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p) override;
     void register_edge(abstract_edge_sptr e) override;
 
-    object_id create_object_id() override { return m_uuidGenerator.create_id(); }
+    object_id create_object_id() override { return m_id_enerator.create_id(); }
 
     size impl_node_count() const override { return m_nodes.size(); }
     size impl_edge_count() const override { return m_edges.size(); }
 
-    index_node_sptr impl_get_index_node() const override { return m_indexNode; }
+    index_node_sptr impl_get_index_node() const override { return m_index_node; }
 
     abstract_node_sptr_vec impl_nodes() const override;
     abstract_edge_sptr_vec impl_edges() const override;
@@ -49,9 +49,9 @@ private:
     abstract_node_sptr_vec m_nodes;
     abstract_edge_sptr_vec m_edges;
 
-    index_node_sptr m_indexNode;
+    index_node_sptr m_index_node;
 
-    object_id_generator m_uuidGenerator;
+    object_id_generator m_id_enerator;
 };
 
 }

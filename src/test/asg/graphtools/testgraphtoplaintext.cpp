@@ -21,8 +21,8 @@ using namespace asg;
 using namespace asg::graph;
 using namespace asg::graph::Test;
 
-std::shared_ptr<DefaultGraph> createGraph() {
-    auto g = std::make_shared<DefaultGraph>();
+std::shared_ptr<default_graph> createGraph() {
+    auto g = std::make_shared<default_graph>();
 
     auto n1 = g->create_node<TestNode>(name("N1"));
     auto n2 = g->create_node<TestNode>(name("N2"));

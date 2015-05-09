@@ -20,7 +20,7 @@ using namespace asg::graph;
 using namespace asg::graph::Test;
 
 TEST(TestGraph, testCreateNodesAndEdges) {
-    auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
+    auto g = std::unique_ptr<default_graph>(new default_graph());
 
     ASSERT_TRUE(nullptr != g->get_index_node());
 
@@ -53,14 +53,14 @@ TEST(TestGraph, testCreateNodesAndEdges) {
 }
 
 TEST(TestGraph, testGraphTitle) {
-    auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
+    auto g = std::unique_ptr<default_graph>(new default_graph());
 
     ASSERT_EQ(name(""), g->title());
     ASSERT_TRUE(!g->has_title());
 }
 
 TEST(TestGraph, testNodeHierarchy) {
-    auto g = std::unique_ptr<DefaultGraph>(new DefaultGraph());
+    auto g = std::unique_ptr<default_graph>(new default_graph());
 
     auto root = g->create_node<TestNode>(name("root"));
     auto child1 = g->create_sub_node_of<TestNode>(root, name("child 1"));

@@ -15,13 +15,13 @@
 namespace asg {
 namespace graph {
 
-DefaultGraph::DefaultGraph(const name &title)
+default_graph::default_graph(const name &title)
     : m_title(title)
 {
-    m_indexNode = create_node<index_node>(index_node::defaultName);
+    m_index_node = create_node<index_node>(index_node::defaultName);
 }
 
-void DefaultGraph::register_node(abstract_node_sptr n) {
+void default_graph::register_node(abstract_node_sptr n) {
     assert(n);
 
     m_nodes.push_back(n);
@@ -31,7 +31,7 @@ void DefaultGraph::register_node(abstract_node_sptr n) {
     }
 }
 
-void DefaultGraph::register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p)
+void default_graph::register_node_as_sub_node_of(abstract_node_sptr n, abstract_node_sptr p)
 {
     assert(n);
     assert(p);
@@ -39,24 +39,24 @@ void DefaultGraph::register_node_as_sub_node_of(abstract_node_sptr n, abstract_n
     create_edge<Owns>(p, n);
 }
 
-void DefaultGraph::register_edge(abstract_edge_sptr e) {
+void default_graph::register_edge(abstract_edge_sptr e) {
     e->start()->register_out_edge(e);
     e->end()->register_in_edge(e);
 
     m_edges.push_back(e);
 }
 
-abstract_node_sptr_vec DefaultGraph::impl_nodes() const
+abstract_node_sptr_vec default_graph::impl_nodes() const
 {
     return m_nodes;
 }
 
-abstract_edge_sptr_vec DefaultGraph::impl_edges() const
+abstract_edge_sptr_vec default_graph::impl_edges() const
 {
     return m_edges;
 }
 
-abstract_node_sptr DefaultGraph::impl_node(const object_id &id) const
+abstract_node_sptr default_graph::impl_node(const object_id &id) const
 {
     auto i = std::find_if(std::begin(m_nodes), std::end(m_nodes), [=](abstract_node_sptr n) { return (n->id() == id); });
 
