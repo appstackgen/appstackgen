@@ -13,10 +13,10 @@
 namespace asg {
 namespace graph {
 
-class GraphFragment : public AbstractGraphFragment
+class graph_fragment : public AbstractGraphFragment
 {
 public:
-    GraphFragment(abstract_graph* g, const object_id& id);
+    graph_fragment(abstract_graph* g, const object_id& id);
 
 protected:
     abstract_graph *impl_graph() const override { return m_g; }

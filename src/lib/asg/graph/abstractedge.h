@@ -21,10 +21,10 @@ class abstract_node;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 using abstract_node_sptr = std::shared_ptr<abstract_node>;
 
-class abstract_edge : public GraphFragment
+class abstract_edge : public graph_fragment
 {
 public:
-    using GraphFragment::GraphFragment;
+    using graph_fragment::graph_fragment;
 
     void set_start(abstract_node_sptr s) { impl_set_start(s); }
     void set_end(abstract_node_sptr e) { impl_set_end(e); }

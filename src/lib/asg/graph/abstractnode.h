@@ -21,10 +21,10 @@ class abstract_edge;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 using abstract_edge_sptr_vec = std::vector<abstract_edge_sptr>;
 
-class abstract_node: public GraphFragment
+class abstract_node: public graph_fragment
 {
 public:
-    using GraphFragment::GraphFragment;
+    using graph_fragment::graph_fragment;
 
     string node_type_name() const { return impl_node_type_name(); }
     object_name name() const { return impl_name(); }
