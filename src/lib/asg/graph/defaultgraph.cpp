@@ -43,7 +43,7 @@ void DefaultGraph::registerEdge(AbstractEdgeSPtr e) {
     e->start()->registerOutEdge(e);
     e->end()->registerInEdge(e);
 
-    m_edges[e->id()] = e;
+    m_edges.push_back(e);
 }
 
 AbstractNodeSPtrVector DefaultGraph::implNodes() const
@@ -53,13 +53,7 @@ AbstractNodeSPtrVector DefaultGraph::implNodes() const
 
 AbstractEdgeSPtrVector DefaultGraph::implEdges() const
 {
-    AbstractEdgeSPtrVector buf;
-
-    for (auto e : m_edges) {
-        buf.push_back(e.second);
-    }
-
-    return buf;
+    return m_edges;
 }
 
 AbstractNodeSPtr DefaultGraph::implNode(const ObjectId &id) const
