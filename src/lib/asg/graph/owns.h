@@ -16,12 +16,12 @@ namespace Graph {
 class Owns : public SystemEdge
 {
 public:
-    static String staticEdgeName;
+    static string staticEdgeName;
 
     using SystemEdge::SystemEdge;
 
 protected:
-    String implEdgeTypeName() const override { return Owns::staticEdgeName; }
+    string implEdgeTypeName() const override { return Owns::staticEdgeName; }
 };
 
 }

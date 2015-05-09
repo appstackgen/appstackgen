@@ -12,7 +12,7 @@ namespace ASG {
 namespace Graph {
 namespace Test {
 
-String TestNode::staticNodeName { "TestNode" };
+string TestNode::staticNodeName { "TestNode" };
 
 }
 }

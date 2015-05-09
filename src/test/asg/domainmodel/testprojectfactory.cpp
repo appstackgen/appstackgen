@@ -18,7 +18,7 @@ namespace ASG {
 namespace DomainModel {
 namespace Test {
 
-Base::ProjectSPtr TestProjectFactory::createProject(const String &n)
+Base::ProjectSPtr TestProjectFactory::createProject(const string &n)
 {
     auto proj = std::make_shared<Base::Project>(Name(n));
 

@@ -15,7 +15,7 @@
 namespace ASG {
 namespace Graph {
 
-String AbstractEdge::implToString() const
+string AbstractEdge::implToString() const
 {
     StringStream s;
     s << edgeTypeName() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();

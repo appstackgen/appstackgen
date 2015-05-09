@@ -24,7 +24,7 @@ namespace Test {
 class TestProjectFactory
 {
 public:
-    static Base::ProjectSPtr createProject(const String& n = "Test Project");
+    static Base::ProjectSPtr createProject(const string& n = "Test Project");
 
 protected:
     TestProjectFactory();

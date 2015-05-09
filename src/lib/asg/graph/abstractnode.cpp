@@ -13,7 +13,7 @@
 namespace ASG {
 namespace Graph {
 
-String AbstractNode::implToString() const
+string AbstractNode::implToString() const
 {
     StringStream s;
 

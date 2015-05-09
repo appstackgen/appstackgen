@@ -18,12 +18,12 @@
 namespace ASG {
     using size = std::size_t;
 
-    using String = std::string;
+    using string = std::string;
     using Name = ObjectName;
-    using Description = String;
+    using Description = string;
 
     using StringStream = std::stringstream;
-    using StringVector = std::vector<String>;
+    using StringVector = std::vector<string>;
 
     using Id = ObjectId;
 }

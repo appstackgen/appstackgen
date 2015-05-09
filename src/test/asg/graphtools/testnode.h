@@ -17,12 +17,12 @@ namespace Test {
 class TestNode : public Node
 {
 public:
-    static String staticNodeName;
+    static string staticNodeName;
 
     using Node::Node;
 
 protected:
-    String implNodeTypeName() const override { return TestNode::staticNodeName; }
+    string implNodeTypeName() const override { return TestNode::staticNodeName; }
 };
 
 }

@@ -17,14 +17,14 @@
 namespace ASG {
 namespace DomainModel {
 
-String Model::staticNodeName = "Model";
+string Model::staticNodeName = "Model";
 
-PrimitiveDataTypeSPtr Model::createPrimitiveDataType(const String &name)
+PrimitiveDataTypeSPtr Model::createPrimitiveDataType(const string &name)
 {
     return createSubNode<PrimitiveDataType>(name);
 }
 
-BoundedContextSPtr Model::createBoundedContext(const String &name)
+BoundedContextSPtr Model::createBoundedContext(const string &name)
 {
     return createSubNode<BoundedContext>(name);
 }

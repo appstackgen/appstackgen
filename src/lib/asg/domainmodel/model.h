@@ -25,16 +25,16 @@ using BoundedContextSPtrVector = std::vector<BoundedContextSPtr>;
 class Model : public ASG::Graph::UserNode
 {
 public:
-    static String staticNodeName;
+    static string staticNodeName;
 
-    PrimitiveDataTypeSPtr createPrimitiveDataType(const String& name);
-    BoundedContextSPtr createBoundedContext(const String& name);
+    PrimitiveDataTypeSPtr createPrimitiveDataType(const string& name);
+    BoundedContextSPtr createBoundedContext(const string& name);
 
     const PrimitiveDataTypeSPtrVector primtiveDataTypes() const;
     const BoundedContextSPtrVector boundedContexts() const;
 
 protected:
-    virtual String implNodeTypeName() const override { return staticNodeName; }
+    virtual string implNodeTypeName() const override { return staticNodeName; }
 
     using ASG::Graph::UserNode::UserNode;
 };

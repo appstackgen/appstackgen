@@ -16,12 +16,12 @@ namespace DomainModel {
 class BoundedContext : public ModelFragment
 {
 public:
-    static String staticNodeName;
+    static string staticNodeName;
 
     using ModelFragment::ModelFragment;
 
 protected:
-    String implNodeTypeName() const override { return staticNodeName; }
+    string implNodeTypeName() const override { return staticNodeName; }
 };
 
 }
