@@ -11,9 +11,9 @@
 namespace asg {
 namespace graph {
 
-string IndexEdge::staticEdgeName { "IndexEdge" };
+string index_edge::staticEdgeName { "IndexEdge" };
 
-string IndexEdge::impl_edge_type_name() const
+string index_edge::impl_edge_type_name() const
 {
     return staticEdgeName;
 }

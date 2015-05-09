@@ -27,7 +27,7 @@ void default_graph::register_node(abstract_node_sptr n) {
     m_nodes.push_back(n);
 
     if (get_index_node()) {
-        create_edge<IndexEdge>(get_index_node(), n);
+        create_edge<index_edge>(get_index_node(), n);
     }
 }
 

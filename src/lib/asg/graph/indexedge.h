@@ -13,7 +13,7 @@
 namespace asg {
 namespace graph {
 
-class IndexEdge : public SystemEdge
+class index_edge : public SystemEdge
 {
 public:
     static string staticEdgeName;

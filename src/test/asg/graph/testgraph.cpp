@@ -42,14 +42,14 @@ TEST(TestGraph, testCreateNodesAndEdges) {
     ASSERT_EQ((size)0 + 1, n1->in_edge_count());
     ASSERT_EQ((size)1 + 1, n2->in_edge_count());
 
-    ASSERT_TRUE(!g->get_index_node()->typed_out_edges<IndexEdge>().empty());
-    ASSERT_EQ((size)0, g->get_index_node()->typed_in_edges<IndexEdge>().size());
+    ASSERT_TRUE(!g->get_index_node()->typed_out_edges<index_edge>().empty());
+    ASSERT_EQ((size)0, g->get_index_node()->typed_in_edges<index_edge>().size());
 
-    ASSERT_EQ((size)2, (g->get_index_node()->typed_out_edges_to<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->typed_in_edges_from<IndexEdge, index_node>().size()));
+    ASSERT_EQ((size)2, (g->get_index_node()->typed_out_edges_to<index_edge, TestNode>().size()));
+    ASSERT_EQ((size)1, (n1->typed_in_edges_from<index_edge, index_node>().size()));
 
-    ASSERT_EQ((size)2, (g->get_index_node()->end_nodes_of_typed_out_edges_to<IndexEdge, TestNode>().size()));
-    ASSERT_EQ((size)1, (n1->start_nodes_of_typed_in_edges_from<IndexEdge, index_node>().size()));
+    ASSERT_EQ((size)2, (g->get_index_node()->end_nodes_of_typed_out_edges_to<index_edge, TestNode>().size()));
+    ASSERT_EQ((size)1, (n1->start_nodes_of_typed_in_edges_from<index_edge, index_node>().size()));
 }
 
 TEST(TestGraph, testGraphTitle) {
