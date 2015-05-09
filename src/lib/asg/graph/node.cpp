@@ -12,7 +12,7 @@ namespace asg {
 namespace graph {
 
 Node::Node(AbstractGraph *g, const object_name &name, const object_id &uuid)
-    : AbstractNode(g, uuid), m_name(name)
+    : abstract_node(g, uuid), m_name(name)
 {
 }
 

@@ -16,10 +16,10 @@ namespace asg {
 namespace graph {
 
 class abstract_edge;
-class AbstractNode;
+class abstract_node;
 
 using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
-using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
+using AbstractNodeSPtr = std::shared_ptr<abstract_node>;
 
 class abstract_edge : public GraphFragment
 {
@@ -29,10 +29,10 @@ public:
     void setStart(AbstractNodeSPtr s) { implSetStart(s); }
     void setEnd(AbstractNodeSPtr e) { implSetEnd(e); }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     std::shared_ptr<T> start() const { return std::dynamic_pointer_cast<T>(implStart()); }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     std::shared_ptr<T> end() const { return std::dynamic_pointer_cast<T>(implEnd()); }
 
     bool hasStart() const { return (AbstractNodeSPtr() != start()); }

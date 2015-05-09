@@ -21,7 +21,7 @@ class abstract_edge;
 using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
 using AbstractEdgeSPtrVector = std::vector<AbstractEdgeSPtr>;
 
-class AbstractNode: public GraphFragment
+class abstract_node: public GraphFragment
 {
 public:
     using GraphFragment::GraphFragment;
@@ -42,12 +42,12 @@ public:
         return typedOutEdges<T>().size();
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     bool hasUniqueInEdgeFrom() const {
         return ((size)1 == typedInEdgesFrom<EdgeT, NodeT>().size());
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     std::shared_ptr<NodeT> startNodeOfUniqueInEdgeFrom() const {
         return *(typedInEdgesFrom<EdgeT, NodeT>().begin());
     }
@@ -63,7 +63,7 @@ public:
         return *(typedInEdges<T>().begin());
     }
 
-    template<typename EdgeT, typename NodeT=AbstractNode>
+    template<typename EdgeT, typename NodeT=abstract_node>
     std::shared_ptr<NodeT> startNodeOfUniqueInEdge() const {
         assert(hasUniqueInEdge<EdgeT>());
 
@@ -104,7 +104,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     std::vector<std::shared_ptr<EdgeT>> typedOutEdgesTo() const {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
@@ -119,7 +119,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     std::vector<std::shared_ptr<EdgeT>> typedInEdgesFrom() const {
         std::vector<std::shared_ptr<EdgeT>> buf;
 
@@ -134,7 +134,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     std::vector<std::shared_ptr<NodeT>> endNodesOfTypedOutEdgesTo() const {
         std::vector<std::shared_ptr<NodeT>> buf;
 
@@ -145,7 +145,7 @@ public:
         return buf;
     }
 
-    template<typename EdgeT=abstract_edge, typename NodeT=AbstractNode>
+    template<typename EdgeT=abstract_edge, typename NodeT=abstract_node>
     std::vector<std::shared_ptr<NodeT>> startNodesOfTypedInEdgesFrom() const {
         std::vector<std::shared_ptr<NodeT>> buf;
 

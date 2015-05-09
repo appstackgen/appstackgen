@@ -16,13 +16,13 @@
 namespace asg {
 namespace graph {
 
-class AbstractNode;
+class abstract_node;
 class abstract_edge;
 class IndexNode;
 
-using AbstractNodePtr = AbstractNode*;
+using AbstractNodePtr = abstract_node*;
 
-using AbstractNodeSPtr = std::shared_ptr<AbstractNode>;
+using AbstractNodeSPtr = std::shared_ptr<abstract_node>;
 using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
 using IndexNodeSPtr = std::shared_ptr<IndexNode>;
 using AbstractEdgeSPtr = std::shared_ptr<abstract_edge>;
@@ -41,7 +41,7 @@ public:
 
     bool hasTitle() const { return (!title().is_empty()); }
 
-    template<typename NodeT=AbstractNode>
+    template<typename NodeT=abstract_node>
     std::vector<std::shared_ptr<NodeT>> nodes() const {
         std::vector<std::shared_ptr<NodeT>> buf;
 
@@ -71,22 +71,22 @@ public:
         return buf;
     }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     bool hasSuperNode(AbstractNodeSPtr n) const {
         return n->hasUniqueInEdgeFrom<Owns, T>();
     }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     size subNodeCountOf(AbstractNodeSPtr p) const {
         return subNodesOf<T>(p).size();
     }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     std::vector<std::shared_ptr<T>> subNodesOf(AbstractNodeSPtr p) const {
         return p->endNodesOfTypedOutEdgesTo<Owns, T>();
     }
 
-    template<typename T=AbstractNode>
+    template<typename T=abstract_node>
     std::shared_ptr<T> superNodeOf(AbstractNodeSPtr n) const {
         assert(hasSuperNode<T>(n));
 

@@ -16,7 +16,7 @@
 namespace asg {
 namespace graph {
 
-class Node : public AbstractNode
+class Node : public abstract_node
 {
 public:
     Node(AbstractGraph* g, const object_name& name, const object_id& id);
