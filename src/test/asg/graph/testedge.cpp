@@ -12,7 +12,7 @@ namespace asg {
 namespace graph {
 namespace Test {
 
-string TestEdge::staticEdgeName { "TestEdge" };
+string TestEdge::static_edge_name { "TestEdge" };
 
 }
 }

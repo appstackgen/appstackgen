@@ -17,12 +17,12 @@ namespace Test {
 class TestEdge : public edge
 {
 public:
-    static string staticEdgeName;
+    static string static_edge_name;
 
     using edge::edge;
 
 protected:
-    string impl_edge_type_name() const override { return TestEdge::staticEdgeName; }
+    string impl_edge_type_name() const override { return TestEdge::static_edge_name; }
 };
 
 }

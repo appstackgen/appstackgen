@@ -16,7 +16,7 @@ namespace graph {
 class index_edge : public system_edge
 {
 public:
-    static string staticEdgeName;
+    static string static_edge_name;
 
     using system_edge::system_edge;
 

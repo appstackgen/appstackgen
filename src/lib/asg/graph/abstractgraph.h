@@ -117,7 +117,7 @@ public:
 
         auto e = std::make_shared<T>(this, create_object_id(), start, end);
 
-        assert(T::staticEdgeName == e->edge_type_name());
+        assert(T::static_edge_name == e->edge_type_name());
 
         register_edge(e);
 
