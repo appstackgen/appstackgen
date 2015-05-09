@@ -13,8 +13,8 @@
 namespace asg {
 
 namespace base {
-class Project;
-using ProjectSPtr = std::shared_ptr<Project>;
+class project;
+using ProjectSPtr = std::shared_ptr<project>;
 }
 
 namespace DomainModel {

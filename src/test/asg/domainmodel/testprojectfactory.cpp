@@ -20,7 +20,7 @@ namespace Test {
 
 base::ProjectSPtr TestProjectFactory::createProject(const string &n)
 {
-    auto proj = std::make_shared<base::Project>(name(n));
+    auto proj = std::make_shared<base::project>(name(n));
 
     auto model = proj->create_node<Model>(name("TestModel"));
 
