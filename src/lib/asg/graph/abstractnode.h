@@ -180,7 +180,7 @@ protected:
     virtual string implNodeTypeName() const = 0;
     virtual object_name implName() const = 0;
 
-    string implToString() const override;
+    string impl_to_string() const override;
 };
 
 }

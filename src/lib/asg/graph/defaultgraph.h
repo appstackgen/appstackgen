@@ -27,8 +27,8 @@ protected:
     void implSetTitle(const name &t) override { m_title = t; }
     name implTitle() const override { return m_title; }
 
-    void registerNode(AbstractNodeSPtr n) override;
-    void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) override;
+    void registerNode(abstract_node_sptr n) override;
+    void registerNodeAsSubNodeOf(abstract_node_sptr n, abstract_node_sptr p) override;
     void registerEdge(abstract_edge_sptr e) override;
 
     object_id createUuid() override { return m_uuidGenerator.create_id(); }
@@ -41,7 +41,7 @@ protected:
     AbstractNodeSPtrVector implNodes() const override;
     AbstractEdgeSPtrVector implEdges() const override;
 
-    AbstractNodeSPtr implNode(const object_id& object_id) const override;
+    abstract_node_sptr implNode(const object_id& object_id) const override;
 
 private:
     name m_title;

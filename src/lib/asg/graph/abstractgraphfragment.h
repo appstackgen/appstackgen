@@ -23,7 +23,7 @@ public:
     AbstractGraph* graph() const { return implGraph(); }
     const object_id id() const { return implId(); }
 
-    string toString() const { return implToString(); }
+    string toString() const { return impl_to_string(); }
 
 protected:
     AbstractGraphFragment();
@@ -31,7 +31,7 @@ protected:
     virtual AbstractGraph* implGraph() const = 0;
     virtual const object_id implId() const = 0;
 
-    virtual string implToString() const = 0;
+    virtual string impl_to_string() const = 0;
 };
 
 }

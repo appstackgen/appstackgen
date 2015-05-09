@@ -13,7 +13,7 @@ namespace graph {
 
 string IndexEdge::staticEdgeName { "IndexEdge" };
 
-string IndexEdge::implEdgeTypeName() const
+string IndexEdge::impl_edge_type_name() const
 {
     return staticEdgeName;
 }

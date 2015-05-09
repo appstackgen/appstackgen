@@ -21,7 +21,7 @@ DefaultGraph::DefaultGraph(const name &title)
     m_indexNode = createNode<IndexNode>(IndexNode::defaultName);
 }
 
-void DefaultGraph::registerNode(AbstractNodeSPtr n) {
+void DefaultGraph::registerNode(abstract_node_sptr n) {
     assert(n);
 
     m_nodes.push_back(n);
@@ -31,7 +31,7 @@ void DefaultGraph::registerNode(AbstractNodeSPtr n) {
     }
 }
 
-void DefaultGraph::registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p)
+void DefaultGraph::registerNodeAsSubNodeOf(abstract_node_sptr n, abstract_node_sptr p)
 {
     assert(n);
     assert(p);
@@ -56,9 +56,9 @@ AbstractEdgeSPtrVector DefaultGraph::implEdges() const
     return m_edges;
 }
 
-AbstractNodeSPtr DefaultGraph::implNode(const object_id &id) const
+abstract_node_sptr DefaultGraph::implNode(const object_id &id) const
 {
-    auto i = std::find_if(std::begin(m_nodes), std::end(m_nodes), [=](AbstractNodeSPtr n) { return (n->id() == id); });
+    auto i = std::find_if(std::begin(m_nodes), std::end(m_nodes), [=](abstract_node_sptr n) { return (n->id() == id); });
 
     assert(std::end(m_nodes) != i);
 

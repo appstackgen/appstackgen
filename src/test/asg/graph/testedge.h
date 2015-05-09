@@ -22,7 +22,7 @@ public:
     using Edge::Edge;
 
 protected:
-    string implEdgeTypeName() const override { return TestEdge::staticEdgeName; }
+    string impl_edge_type_name() const override { return TestEdge::staticEdgeName; }
 };
 
 }

@@ -15,10 +15,10 @@
 namespace asg {
 namespace graph {
 
-string abstract_edge::implToString() const
+string abstract_edge::impl_to_string() const
 {
     stringstream s;
-    s << edgeTypeName() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();
+    s << edge_type_name() << " {" << id() << "}: " << start()->toString() << " --> " << end()->toString();
     return s.str();
 }
 

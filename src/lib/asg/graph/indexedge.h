@@ -21,7 +21,7 @@ public:
     using SystemEdge::SystemEdge;
 
 protected:
-    string implEdgeTypeName() const override;
+    string impl_edge_type_name() const override;
 };
 
 }

@@ -16,18 +16,18 @@ namespace graph {
 class Edge : public abstract_edge
 {
 public:
-    Edge(AbstractGraph* g, const object_id& id, AbstractNodeSPtr start, AbstractNodeSPtr end);
+    Edge(AbstractGraph* g, const object_id& id, abstract_node_sptr start, abstract_node_sptr end);
 
 protected:
-    void implSetStart(AbstractNodeSPtr s) override { m_start = s; }
-    void implSetEnd(AbstractNodeSPtr e) override { m_end = e; }
+    void impl_set_start(abstract_node_sptr s) override { m_start = s; }
+    void impl_set_end(abstract_node_sptr e) override { m_end = e; }
 
-    AbstractNodeSPtr implStart() const { return m_start; }
-    AbstractNodeSPtr implEnd() const { return m_end; }
+    abstract_node_sptr impl_start() const { return m_start; }
+    abstract_node_sptr impl_end() const { return m_end; }
 
 private:
-    AbstractNodeSPtr m_start;
-    AbstractNodeSPtr m_end;
+    abstract_node_sptr m_start;
+    abstract_node_sptr m_end;
 };
 
 }
