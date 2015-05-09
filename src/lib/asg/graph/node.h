@@ -34,9 +34,9 @@ protected:
     AbstractEdgeSPtrVector implInEdges() const override;
     AbstractEdgeSPtrVector implEdges() const override;
 
-    Size implOutEdgeCount() const override { return outEdges().size(); }
-    Size implInEdgeCount() const override { return inEdges().size(); }
-    Size implEdgeCount() const override { return m_edges.size(); }
+    size implOutEdgeCount() const override { return outEdges().size(); }
+    size implInEdgeCount() const override { return inEdges().size(); }
+    size implEdgeCount() const override { return m_edges.size(); }
 
     ObjectName implName() const override { return m_name; }
 

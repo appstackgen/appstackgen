@@ -33,8 +33,8 @@ protected:
 
     Id createUuid() override { return m_uuidGenerator.createUuid(); }
 
-    Size implNodeCount() const override { return m_nodes.size(); }
-    Size implEdgeCount() const override { return m_edges.size(); }
+    size implNodeCount() const override { return m_nodes.size(); }
+    size implEdgeCount() const override { return m_edges.size(); }
 
     IndexNodeSPtr implIndexNode() const override { return m_indexNode; }
 

@@ -16,7 +16,7 @@
 #include "objectid.h"
 
 namespace ASG {
-    using Size = std::size_t;
+    using size = std::size_t;
 
     using String = std::string;
     using Name = ObjectName;

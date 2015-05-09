@@ -77,7 +77,7 @@ public:
     }
 
     template<typename T=AbstractNode>
-    Size subNodeCountOf(AbstractNodeSPtr p) const {
+    size subNodeCountOf(AbstractNodeSPtr p) const {
         return subNodesOf<T>(p).size();
     }
 
@@ -126,8 +126,8 @@ public:
 
     AbstractNodeSPtr node(const ObjectId& id) const { return implNode(id); }
 
-    Size nodeCount() const { return implNodeCount(); }
-    Size edgeCount() const { return implEdgeCount(); }
+    size nodeCount() const { return implNodeCount(); }
+    size edgeCount() const { return implEdgeCount(); }
 
     IndexNodeSPtr indexNode() const { return implIndexNode(); }
 
@@ -141,8 +141,8 @@ protected:
     virtual void registerNodeAsSubNodeOf(AbstractNodeSPtr n, AbstractNodeSPtr p) = 0;
     virtual void registerEdge(AbstractEdgeSPtr e) = 0;
 
-    virtual Size implNodeCount() const = 0;
-    virtual Size implEdgeCount() const = 0;
+    virtual size implNodeCount() const = 0;
+    virtual size implEdgeCount() const = 0;
 
     virtual AbstractNodeSPtrVector implNodes() const = 0;
     virtual AbstractEdgeSPtrVector implEdges() const = 0;

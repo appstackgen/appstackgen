@@ -33,18 +33,18 @@ public:
     void registerInEdge(AbstractEdgeSPtr e) { implRegisterInEdge(e); }
 
     template<typename T=AbstractEdge>
-    Size countInEdges() const {
+    size countInEdges() const {
         return typedInEdges<T>().size();
     }
 
     template<typename T=AbstractEdge>
-    Size countOutEdges() const {
+    size countOutEdges() const {
         return typedOutEdges<T>().size();
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
     bool hasUniqueInEdgeFrom() const {
-        return ((Size)1 == typedInEdgesFrom<EdgeT, NodeT>().size());
+        return ((size)1 == typedInEdgesFrom<EdgeT, NodeT>().size());
     }
 
     template<typename EdgeT=AbstractEdge, typename NodeT=AbstractNode>
@@ -54,7 +54,7 @@ public:
 
     template<typename T>
     bool hasUniqueInEdge() const {
-        return ((Size)1 == typedInEdges<T>().size());
+        return ((size)1 == typedInEdges<T>().size());
     }
 
     template<typename T>
@@ -161,9 +161,9 @@ public:
 
     AbstractEdgeSPtrVector edges() const { return implEdges(); }
 
-    Size outEdgeCount() const { return implOutEdgeCount(); }
-    Size inEdgeCount() const { return implInEdgeCount(); }
-    Size edgeCount() { return edgeCount(); }
+    size outEdgeCount() const { return implOutEdgeCount(); }
+    size inEdgeCount() const { return implInEdgeCount(); }
+    size edgeCount() { return edgeCount(); }
 
 protected:
     virtual void implRegisterOutEdge(AbstractEdgeSPtr e) = 0;
@@ -173,9 +173,9 @@ protected:
     virtual AbstractEdgeSPtrVector implInEdges() const = 0;
     virtual AbstractEdgeSPtrVector implEdges() const = 0;
 
-    virtual Size implOutEdgeCount() const = 0;
-    virtual Size implInEdgeCount() const = 0;
-    virtual Size implEdgeCount() const = 0;
+    virtual size implOutEdgeCount() const = 0;
+    virtual size implInEdgeCount() const = 0;
+    virtual size implEdgeCount() const = 0;
 
     virtual String implNodeTypeName() const = 0;
     virtual ObjectName implName() const = 0;
