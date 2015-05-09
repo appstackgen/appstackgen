@@ -12,7 +12,7 @@
 
 #include <asg/graph/abstractnode.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class AbstractEdge;

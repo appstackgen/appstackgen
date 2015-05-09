@@ -13,7 +13,7 @@
 #include <asg/graph/abstractedge.h>
 #include <asg/graph/abstractgraph.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class Node : public AbstractNode

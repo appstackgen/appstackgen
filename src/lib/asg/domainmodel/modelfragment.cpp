@@ -8,7 +8,7 @@
 
 #include "modelfragment.h"
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 }

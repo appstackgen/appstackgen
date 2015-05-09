@@ -8,7 +8,7 @@
 
 #include "boundedcontext.h"
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 string BoundedContext::staticNodeName { "BoundedContext" };

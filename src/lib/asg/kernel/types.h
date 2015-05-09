@@ -15,7 +15,7 @@
 #include "objectname.h"
 #include "objectid.h"
 
-namespace ASG {
+namespace asg {
     using size = std::size_t;
 
     using string = std::string;

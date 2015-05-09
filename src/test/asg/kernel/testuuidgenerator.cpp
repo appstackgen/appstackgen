@@ -10,7 +10,7 @@
 
 #include <asg/kernel/uuidgenerator.h>
 
-using namespace ASG;
+using namespace asg;
 
 TEST(TestUuidGenerator, createUuid) {
     auto id = UuidGenerator::createUuid();

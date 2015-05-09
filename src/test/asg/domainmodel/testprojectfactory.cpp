@@ -14,7 +14,7 @@
 #include <asg/domainmodel/boundedcontext.h>
 #include <asg/domainmodel/primitivedatatype.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 namespace Test {
 

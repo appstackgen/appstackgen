@@ -10,7 +10,7 @@
 
 #include <asg/graph/usernode.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 class BoundedContextFragment : public Graph::UserNode

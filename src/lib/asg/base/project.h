@@ -10,7 +10,7 @@
 
 #include <asg/graph/defaultgraph.h>
 
-namespace ASG {
+namespace asg {
 namespace Base {
 
 class Project: public Graph::DefaultGraph

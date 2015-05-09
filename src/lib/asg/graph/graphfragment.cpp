@@ -8,7 +8,7 @@
 
 #include "graphfragment.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 GraphFragment::GraphFragment(AbstractGraph *g, const ObjectId &uuid)

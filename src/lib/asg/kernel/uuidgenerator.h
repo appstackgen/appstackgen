@@ -8,7 +8,7 @@
 
 #include <asg/kernel/types.h>
 
-namespace ASG {
+namespace asg {
 
 class UuidGenerator
 {

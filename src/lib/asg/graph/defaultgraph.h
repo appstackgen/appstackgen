@@ -15,7 +15,7 @@
 #include <asg/graph/abstractnode.h>
 #include <asg/graph/abstractedge.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class DefaultGraph : public AbstractGraph

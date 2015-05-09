@@ -8,7 +8,7 @@
 
 #include "abstractgraphfragment.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 AbstractGraphFragment::AbstractGraphFragment()

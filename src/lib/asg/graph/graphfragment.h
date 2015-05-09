@@ -10,7 +10,7 @@
 
 #include <asg/graph/abstractgraphfragment.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class GraphFragment : public AbstractGraphFragment

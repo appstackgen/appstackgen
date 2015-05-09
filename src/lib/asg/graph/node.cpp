@@ -8,7 +8,7 @@
 
 #include "node.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 Node::Node(AbstractGraph *g, const ObjectName &name, const ObjectId &uuid)

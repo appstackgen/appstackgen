@@ -10,7 +10,7 @@
 
 #include <asg/graph/systemedge.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class Owns : public SystemEdge

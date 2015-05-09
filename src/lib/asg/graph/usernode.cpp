@@ -8,7 +8,7 @@
 
 #include "usernode.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 }

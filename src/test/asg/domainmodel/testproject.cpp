@@ -16,10 +16,10 @@
 
 #include "testprojectfactory.h"
 
-using namespace ASG;
-using namespace ASG::Graph;
-using namespace ASG::DomainModel;
-using namespace ASG::DomainModel::Test;
+using namespace asg;
+using namespace asg::Graph;
+using namespace asg::DomainModel;
+using namespace asg::DomainModel::Test;
 
 TEST(TestProject, selftestProjectFactory)
 {

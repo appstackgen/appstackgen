@@ -8,7 +8,7 @@
 
 #include "systemedge.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 }

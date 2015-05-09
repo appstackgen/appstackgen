@@ -8,7 +8,7 @@
 
 #include "project.h"
 
-namespace ASG {
+namespace asg {
 namespace Base {
 
 }

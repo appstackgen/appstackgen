@@ -10,6 +10,6 @@
 
 #define ASG_KERNEL
 
-namespace ASG {
+namespace asg {
 
 }

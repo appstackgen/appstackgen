@@ -10,7 +10,7 @@
 
 #include <asg/kernel/objectid.h>
 
-using namespace ASG;
+using namespace asg;
 
 TEST(TestObjectId, testDefaultCtor) {
     ObjectId id;

@@ -10,7 +10,7 @@
 
 #include <asg/domainmodel/modelfragment.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 class PrimitiveDataType : public ModelFragment

@@ -8,7 +8,7 @@
 
 #include "objectname.h"
 
-namespace ASG {
+namespace asg {
 
 ObjectName::ObjectName()
 {
@@ -23,7 +23,7 @@ ObjectName::ObjectName(const std::string &n)
 {
 }
 
-std::ostream& operator<<(std::ostream &strm, const ASG::ObjectName &n)
+std::ostream& operator<<(std::ostream &strm, const asg::ObjectName &n)
 {
     n.printOn(strm);
     return strm;

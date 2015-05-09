@@ -8,7 +8,7 @@
 
 #include "indexedge.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 string IndexEdge::staticEdgeName { "IndexEdge" };

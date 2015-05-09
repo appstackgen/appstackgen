@@ -8,7 +8,7 @@
 
 #include "testnode.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 namespace Test {
 

@@ -10,7 +10,7 @@
 
 #include <boost/algorithm/string/join.hpp>
 
-namespace ASG {
+namespace asg {
 
 std::string join(const std::vector<std::string>& data, const std::string& sep = "\n");
 

@@ -11,7 +11,7 @@
 #include <string>
 #include <sstream>
 
-namespace ASG {
+namespace asg {
 
 ObjectId::ObjectId()
     : m_id(boost::uuids::nil_uuid())

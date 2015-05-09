@@ -12,7 +12,7 @@
 #include <asg/graph/abstractnode.h>
 #include <asg/graph/abstractedge.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 string_vec GraphToPlainText::toStringVector(AbstractGraphSPtr g)

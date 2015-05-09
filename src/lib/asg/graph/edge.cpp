@@ -8,7 +8,7 @@
 
 #include "edge.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 Edge::Edge(AbstractGraph *g, const ObjectId &uuid, AbstractNodeSPtr start, AbstractNodeSPtr end)

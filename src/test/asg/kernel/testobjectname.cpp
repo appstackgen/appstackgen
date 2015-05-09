@@ -10,7 +10,7 @@
 
 #include <asg/kernel/types.h>
 
-using namespace ASG;
+using namespace asg;
 
 TEST(TestObjectName, testDefaultCtor) {
     ObjectName n;

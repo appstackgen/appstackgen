@@ -10,7 +10,7 @@
 
 #include <asg/kernel/objectid.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 string AbstractNode::implToString() const

@@ -10,7 +10,7 @@
 
 #include <asg/kernel/stringtools.h>
 
-std::string ASG::join(const std::vector<std::string> &data, const std::string &sep)
+std::string asg::join(const std::vector<std::string> &data, const std::string &sep)
 {
     return boost::algorithm::join(data, sep);
 }

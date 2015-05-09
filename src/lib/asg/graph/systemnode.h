@@ -10,7 +10,7 @@
 
 #include <asg/graph/node.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class SystemNode : public Node

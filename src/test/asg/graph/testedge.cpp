@@ -8,7 +8,7 @@
 
 #include "testedge.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 namespace Test {
 

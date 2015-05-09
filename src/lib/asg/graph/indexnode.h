@@ -10,13 +10,13 @@
 
 #include <asg/graph/systemnode.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class IndexNode : public SystemNode
 {
 public:
-    static ::ASG::name defaultName;
+    static ::asg::name defaultName;
     static string staticNodeName;
 
     using SystemNode::SystemNode;

@@ -9,7 +9,7 @@
 
 #include "indexnode.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 name IndexNode::defaultName { "IndexNode" };

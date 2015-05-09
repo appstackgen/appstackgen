@@ -8,7 +8,7 @@
 
 #include "abstractgraph.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 AbstractGraph::AbstractGraph()

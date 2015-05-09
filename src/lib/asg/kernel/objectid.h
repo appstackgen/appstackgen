@@ -14,7 +14,7 @@
 #include <boost/uuid/nil_generator.hpp>
 #include <boost/uuid/random_generator.hpp>
 
-namespace ASG {
+namespace asg {
 
 class ObjectId
 {

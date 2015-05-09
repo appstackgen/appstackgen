@@ -10,7 +10,7 @@
 
 #include <asg/domainmodel/boundedcontextfragment.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 class Domain : public BoundedContextFragment

@@ -10,7 +10,7 @@
 
 #include <asg/graph/abstractedge.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class Edge : public AbstractEdge

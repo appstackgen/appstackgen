@@ -10,7 +10,7 @@
 
 #include <asg/graph/usernode.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 class PrimitiveDataType;
@@ -22,7 +22,7 @@ using BoundedContextSPtr = std::shared_ptr<BoundedContext>;
 using PrimitiveDataTypeSPtrVector = std::vector<PrimitiveDataTypeSPtr>;
 using BoundedContextSPtrVector = std::vector<BoundedContextSPtr>;
 
-class Model : public ASG::Graph::UserNode
+class Model : public asg::Graph::UserNode
 {
 public:
     static string staticNodeName;
@@ -36,7 +36,7 @@ public:
 protected:
     virtual string implNodeTypeName() const override { return staticNodeName; }
 
-    using ASG::Graph::UserNode::UserNode;
+    using asg::Graph::UserNode::UserNode;
 };
 
 }

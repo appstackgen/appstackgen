@@ -14,7 +14,7 @@
 #include <asg/domainmodel/primitivedatatype.h>
 #include <asg/domainmodel/boundedcontext.h>
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 string Model::staticNodeName = "Model";

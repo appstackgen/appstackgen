@@ -17,9 +17,9 @@
 #include "testnode.h"
 #include "testedge.h"
 
-using namespace ASG;
-using namespace ASG::Graph;
-using namespace ASG::Graph::Test;
+using namespace asg;
+using namespace asg::Graph;
+using namespace asg::Graph::Test;
 
 std::shared_ptr<DefaultGraph> createGraph() {
     auto g = std::make_shared<DefaultGraph>();

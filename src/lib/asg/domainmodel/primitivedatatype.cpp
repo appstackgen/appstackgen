@@ -8,7 +8,7 @@
 
 #include "primitivedatatype.h"
 
-namespace ASG {
+namespace asg {
 namespace DomainModel {
 
 string PrimitiveDataType::staticNodeName { "PrimitiveDataType" };

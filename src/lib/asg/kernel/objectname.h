@@ -10,7 +10,7 @@
 
 #include <string>
 
-namespace ASG {
+namespace asg {
 
 class ObjectName
 {
@@ -32,7 +32,7 @@ private:
     std::string m_str;
 };
 
-std::ostream &operator<<(std::ostream& strm, const ASG::ObjectName& n);
+std::ostream &operator<<(std::ostream& strm, const asg::ObjectName& n);
 
 }
 

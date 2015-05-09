@@ -10,7 +10,7 @@
 
 #include <asg/graph/edge.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 namespace Test {
 

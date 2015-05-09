@@ -8,7 +8,7 @@
 
 #include "systemnode.h"
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 }

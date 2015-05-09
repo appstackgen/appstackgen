@@ -12,7 +12,7 @@
 #include <asg/graph/indexedge.h>
 #include <asg/graph/owns.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 DefaultGraph::DefaultGraph(const name &title)

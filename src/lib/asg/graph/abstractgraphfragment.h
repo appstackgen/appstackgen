@@ -10,7 +10,7 @@
 
 #include <asg/kernel/types.h>
 
-namespace ASG {
+namespace asg {
 namespace Graph {
 
 class AbstractGraph;
