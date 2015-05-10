@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "abstractnode.h"
+#include "abstract_node.h"
 
 #include <asg/kernel/object_id.h>
 

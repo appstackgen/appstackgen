@@ -6,11 +6,11 @@
  * All rights reserved.
  */
 
-#include "abstractedge.h"
+#include "abstract_edge.h"
 
 #include <asg/kernel/object_id.h>
 
-#include <asg/graph/abstractnode.h>
+#include <asg/graph/abstract_node.h>
 
 namespace asg {
 namespace graph {

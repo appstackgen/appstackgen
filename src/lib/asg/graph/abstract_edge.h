@@ -8,9 +8,9 @@
 
 #pragma once
 
-#include <asg/graph/graphfragment.h>
+#include <asg/graph/graph_fragment.h>
 
-#include <asg/graph/abstractnode.h>
+#include <asg/graph/abstract_node.h>
 
 namespace asg {
 namespace graph {

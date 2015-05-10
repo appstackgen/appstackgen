@@ -13,7 +13,7 @@ set(KERNEL_HEADERS
     abstract_graph.h
     default_graph.h
     abstract_graph_fragment.h
-    graphfragment.h
+    graph_fragment.h
     abstract_node.h
     node.h
     abstract_edge.h
@@ -31,10 +31,10 @@ set(KERNEL_SOURCES
     abstract_graph.cpp
     default_graph.cpp
     abstract_graph_fragment.cpp
-    graphfragment.cpp
-    abstractnode.cpp
+    graph_fragment.cpp
+    abstract_node.cpp
     node.cpp
-    abstractedge.cpp
+    abstract_edge.cpp
     edge.cpp
     systemnode.cpp
     indexnode.cpp
