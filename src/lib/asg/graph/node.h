@@ -10,7 +10,7 @@
 
 #include <asg/graph/abstractnode.h>
 
-#include <asg/graph/abstractedge.h>
+#include <asg/graph/abstract_edge.h>
 #include <asg/graph/abstract_graph.h>
 
 namespace asg {

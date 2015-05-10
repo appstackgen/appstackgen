@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/abstractedge.h>
+#include <asg/graph/abstract_edge.h>
 
 namespace asg {
 namespace graph {

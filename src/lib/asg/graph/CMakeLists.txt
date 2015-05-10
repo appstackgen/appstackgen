@@ -16,7 +16,7 @@ set(KERNEL_HEADERS
     graphfragment.h
     abstractnode.h
     node.h
-    abstractedge.h
+    abstract_edge.h
     edge.h
     systemnode.h
     systemedge.h
