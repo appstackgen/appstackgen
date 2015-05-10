@@ -11,7 +11,7 @@
 #include <asg/base/project.h>
 
 #include <asg/domainmodel/model.h>
-#include <asg/domainmodel/boundedcontext.h>
+#include <asg/domainmodel/bounded_context.h>
 #include <asg/domainmodel/primitivedatatype.h>
 
 namespace asg {

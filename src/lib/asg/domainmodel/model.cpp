@@ -12,7 +12,7 @@
 
 #include <asg/domainmodel/model.h>
 #include <asg/domainmodel/primitivedatatype.h>
-#include <asg/domainmodel/boundedcontext.h>
+#include <asg/domainmodel/bounded_context.h>
 
 namespace asg {
 namespace domain_model {
