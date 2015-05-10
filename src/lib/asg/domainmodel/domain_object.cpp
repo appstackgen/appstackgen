@@ -6,17 +6,12 @@
  * All rights reserved.
  */
 
-#include "domain.h"
-
-#include <domain_object.h>
+#include "domain_object.h"
 
 namespace asg {
 namespace domain_model {
 
-domain_object_sptr domain::create_domain_object(const string &name)
-{
-    return create_sub_node<domain_object>(name);
-}
+string domain_object::static_node_type_name = "domain_object";
 
 }
 }

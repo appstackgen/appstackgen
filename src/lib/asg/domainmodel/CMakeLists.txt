@@ -17,6 +17,7 @@ set(KERNEL_HEADERS
     bounded_context_fragment.h
     domain.h
     domain_fragment.h
+    domain_object.h
 )
 
 set(KERNEL_SOURCES
@@ -27,6 +28,7 @@ set(KERNEL_SOURCES
     bounded_context_fragment.cpp
     domain.cpp
     domain_fragment.cpp
+    domain_object.cpp
 )
 
 set(HEADERS

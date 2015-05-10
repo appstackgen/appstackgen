@@ -23,7 +23,7 @@ public:
 
 protected:
     template<typename T>
-    std::shared_ptr<T> createSubNode(const string& name) {
+    std::shared_ptr<T> create_sub_node(const string& name) {
         return graph()->create_sub_node_of<T>(graph()->node(id()), object_name(name));
     }
 

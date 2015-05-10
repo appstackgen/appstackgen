@@ -21,12 +21,12 @@ string model::static_node_type_name = "Model";
 
 primitive_data_type_sptr model::create_primitive_data_type(const string &name)
 {
-    return createSubNode<primitive_data_type>(name);
+    return create_sub_node<primitive_data_type>(name);
 }
 
 bounded_context_sptr model::create_bounded_context(const string &name)
 {
-    return createSubNode<bounded_context>(name);
+    return create_sub_node<bounded_context>(name);
 }
 
 }
