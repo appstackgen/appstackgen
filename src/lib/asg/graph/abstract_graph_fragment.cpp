@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "abstractgraphfragment.h"
+#include "abstract_graph_fragment.h"
 
 namespace asg {
 namespace graph {

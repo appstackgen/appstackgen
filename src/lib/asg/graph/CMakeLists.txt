@@ -12,7 +12,7 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     abstract_graph.h
     default_graph.h
-    abstractgraphfragment.h
+    abstract_graph_fragment.h
     graphfragment.h
     abstractnode.h
     node.h
@@ -30,7 +30,7 @@ set(KERNEL_HEADERS
 set(KERNEL_SOURCES
     abstract_graph.cpp
     default_graph.cpp
-    abstractgraphfragment.cpp
+    abstract_graph_fragment.cpp
     graphfragment.cpp
     abstractnode.cpp
     node.cpp

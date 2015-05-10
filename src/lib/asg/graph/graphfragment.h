@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/abstractgraphfragment.h>
+#include <asg/graph/abstract_graph_fragment.h>
 
 namespace asg {
 namespace graph {
