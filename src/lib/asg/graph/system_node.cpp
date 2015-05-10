@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "systemnode.h"
+#include "system_node.h"
 
 namespace asg {
 namespace graph {
