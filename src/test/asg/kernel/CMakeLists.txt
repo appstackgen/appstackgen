@@ -7,9 +7,9 @@ set(TEST_HEADERS
 )
 
 set(TEST_SOURCES
-    testobjectid.cpp
-    testobjectidgenerator.cpp
-    testobjectname.cpp
+    test_object_id.cpp
+    test_object_id_generator.cpp
+    test_object_name.cpp
 )
 
 set(HEADERS
