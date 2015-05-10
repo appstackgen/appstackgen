@@ -14,7 +14,7 @@
 
 #include <asg/graphtools/graph_to_plain_text.h>
 
-#include "testprojectfactory.h"
+#include "projectfactory.h"
 
 using namespace asg;
 using namespace asg::graph;
@@ -23,7 +23,7 @@ using namespace asg::domain_model::Test;
 
 TEST(test_project, selftest_project_factory)
 {
-    auto proj = test_project_factory::create_project("A Project");
+    auto proj = project_factory::create_project("A Project");
 
     ASSERT_TRUE(proj->has_title());
 

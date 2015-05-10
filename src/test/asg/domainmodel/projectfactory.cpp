@@ -6,19 +6,19 @@
  * All rights reserved.
  */
 
-#include "testprojectfactory.h"
+#include "projectfactory.h"
 
 #include <asg/base/project.h>
 
 #include <asg/domainmodel/model.h>
 #include <asg/domainmodel/bounded_context.h>
-#include <asg/domainmodel/primitivedatatype.h>
+#include <asg/domainmodel/primitive_data_type.h>
 
 namespace asg {
 namespace domain_model {
 namespace Test {
 
-base::ProjectSPtr test_project_factory::create_project(const string &n)
+base::ProjectSPtr project_factory::create_project(const string &n)
 {
     auto proj = std::make_shared<base::project>(name(n));
 
@@ -28,11 +28,6 @@ base::ProjectSPtr test_project_factory::create_project(const string &n)
 
     m->create_primitive_data_type("Integer");
     return proj;
-}
-
-test_project_factory::test_project_factory()
-{
-
 }
 
 }

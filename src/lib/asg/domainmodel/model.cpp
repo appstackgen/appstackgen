@@ -11,7 +11,7 @@
 #include <asg/graph/abstract_graph.h>
 
 #include <asg/domainmodel/model.h>
-#include <asg/domainmodel/primitivedatatype.h>
+#include <asg/domainmodel/primitive_data_type.h>
 #include <asg/domainmodel/bounded_context.h>
 
 namespace asg {

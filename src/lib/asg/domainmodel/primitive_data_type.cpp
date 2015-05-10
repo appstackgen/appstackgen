@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "primitivedatatype.h"
+#include "primitive_data_type.h"
 
 namespace asg {
 namespace domain_model {
