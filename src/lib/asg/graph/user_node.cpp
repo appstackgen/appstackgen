@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "usernode.h"
+#include "user_node.h"
 
 namespace asg {
 namespace graph {

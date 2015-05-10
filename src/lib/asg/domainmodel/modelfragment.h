@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/usernode.h>
+#include <asg/graph/user_node.h>
 
 namespace asg {
 namespace domain_model {
