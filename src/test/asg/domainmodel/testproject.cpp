@@ -8,7 +8,7 @@
 
 #include <gtest/gtest.h>
 
-#include <asg/kernel/stringtools.h>
+#include <asg/kernel/string_tools.h>
 
 #include <asg/base/project.h>
 

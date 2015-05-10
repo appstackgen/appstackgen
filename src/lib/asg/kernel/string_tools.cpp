@@ -7,8 +7,7 @@
  */
 
 
-
-#include <asg/kernel/stringtools.h>
+#include <asg/kernel/string_tools.h>
 
 std::string asg::join(const std::vector<std::string> &data, const std::string &sep)
 {
