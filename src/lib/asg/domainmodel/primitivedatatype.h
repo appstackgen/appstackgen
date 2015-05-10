@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/domainmodel/modelfragment.h>
+#include <asg/domainmodel/model_fragment.h>
 
 namespace asg {
 namespace domain_model {

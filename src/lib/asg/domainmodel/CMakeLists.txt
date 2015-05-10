@@ -11,7 +11,7 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
     model.h
-    modelfragment.h
+    model_fragment.h
     boundedcontext.h
     primitivedatatype.h
     boundedcontextfragment.h
@@ -20,7 +20,7 @@ set(KERNEL_HEADERS
 
 set(KERNEL_SOURCES
     model.cpp
-    modelfragment.cpp
+    model_fragment.cpp
     boundedcontext.cpp
     primitivedatatype.cpp
     boundedcontextfragment.cpp

@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "modelfragment.h"
+#include "model_fragment.h"
 
 namespace asg {
 namespace domain_model {
