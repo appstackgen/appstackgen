@@ -7,7 +7,7 @@ set(TEST_HEADERS
 )
 
 set(TEST_SOURCES
-    testproject.cpp
+    test_project.cpp
 )
 
 set(HEADERS

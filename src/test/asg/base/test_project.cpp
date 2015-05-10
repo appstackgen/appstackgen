@@ -13,7 +13,7 @@
 using namespace asg;
 using namespace asg::base;
 
-TEST(TestProject, testProjectCtor) {
+TEST(test_project, ctor) {
     auto proj = std::unique_ptr<project>(new project(name("A Project")));
 
     ASSERT_TRUE(proj->has_title());
