@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "useredge.h"
+#include "user_edge.h"
 
 namespace asg {
 namespace graph {
