@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "graphtoplaintext.h"
+#include "graph_to_plain_text.h"
 
 #include <asg/graph/abstract_graph.h>
 #include <asg/graph/abstract_node.h>

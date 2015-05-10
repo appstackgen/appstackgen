@@ -10,11 +10,11 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(GRAPHTOOLS_HEADERS
-    graphtoplaintext.h
+    graph_to_plain_text.h
 )
 
 set(GRAPHTOOLS_SOURCES
-    graphtoplaintext.cpp
+    graph_to_plain_text.cpp
 )
 
 set(HEADERS

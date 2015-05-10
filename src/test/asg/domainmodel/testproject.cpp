@@ -12,7 +12,7 @@
 
 #include <asg/base/project.h>
 
-#include <asg/graphtools/graphtoplaintext.h>
+#include <asg/graphtools/graph_to_plain_text.h>
 
 #include "testprojectfactory.h"
 

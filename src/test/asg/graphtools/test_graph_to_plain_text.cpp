@@ -12,7 +12,7 @@
 #include <asg/graph/index_node.h>
 #include <asg/graph/index_edge.h>
 
-#include <asg/graphtools/graphtoplaintext.h>
+#include <asg/graphtools/graph_to_plain_text.h>
 
 #include "testnode.h"
 #include "testedge.h"

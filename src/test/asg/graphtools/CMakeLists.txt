@@ -12,7 +12,7 @@ set(TEST_HEADERS
 set(TEST_SOURCES
     testnode.cpp
     testedge.cpp
-    testgraphtoplaintext.cpp
+    test_graph_to_plain_text.cpp
 
 )
 
