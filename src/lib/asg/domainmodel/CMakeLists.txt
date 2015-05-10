@@ -14,7 +14,7 @@ set(KERNEL_HEADERS
     model_fragment.h
     bounded_context.h
     primitivedatatype.h
-    boundedcontextfragment.h
+    bounded_context_fragment.h
     domain.h
 )
 
@@ -23,7 +23,7 @@ set(KERNEL_SOURCES
     model_fragment.cpp
     bounded_context.cpp
     primitivedatatype.cpp
-    boundedcontextfragment.cpp
+    bounded_context_fragment.cpp
     domain.cpp
 )
 

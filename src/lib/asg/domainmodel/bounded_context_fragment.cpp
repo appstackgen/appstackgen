@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "boundedcontextfragment.h"
+#include "bounded_context_fragment.h"
 
 namespace asg {
 namespace domain_model {
