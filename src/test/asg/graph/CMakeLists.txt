@@ -4,14 +4,14 @@ set(APPNAME ${TEST_PREFIX}${TESTED_LIB_NAME})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(TEST_HEADERS
-    testnode.h
-    testedge.h
+    test_node.h
+    test_edge.h
 )
 
 set(TEST_SOURCES
     testgraph.cpp
-    testnode.cpp
-    testedge.cpp
+    test_node.cpp
+    test_edge.cpp
 )
 
 set(HEADERS

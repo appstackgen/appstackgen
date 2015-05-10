@@ -14,8 +14,8 @@
 
 #include <asg/graphtools/graph_to_plain_text.h>
 
-#include "testnode.h"
-#include "testedge.h"
+#include "test_node.h"
+#include "test_edge.h"
 
 using namespace asg;
 using namespace asg::graph;

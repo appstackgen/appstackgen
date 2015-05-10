@@ -12,8 +12,8 @@
 #include <asg/graph/index_node.h>
 #include <asg/graph/index_edge.h>
 
-#include "testnode.h"
-#include "testedge.h"
+#include "test_node.h"
+#include "test_edge.h"
 
 using namespace asg;
 using namespace asg::graph;

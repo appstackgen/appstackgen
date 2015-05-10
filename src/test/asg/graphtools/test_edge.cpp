@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "testedge.h"
+#include "test_edge.h"
 
 namespace asg {
 namespace graph {
