@@ -10,7 +10,7 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    abstractgraph.h
+    abstract_graph.h
     defaultgraph.h
     abstractgraphfragment.h
     graphfragment.h
@@ -28,7 +28,7 @@ set(KERNEL_HEADERS
 )
 
 set(KERNEL_SOURCES
-    abstractgraph.cpp
+    abstract_graph.cpp
     defaultgraph.cpp
     abstractgraphfragment.cpp
     graphfragment.cpp

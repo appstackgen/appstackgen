@@ -8,7 +8,7 @@
 
 #include "graphtoplaintext.h"
 
-#include <asg/graph/abstractgraph.h>
+#include <asg/graph/abstract_graph.h>
 #include <asg/graph/abstractnode.h>
 #include <asg/graph/abstractedge.h>
 

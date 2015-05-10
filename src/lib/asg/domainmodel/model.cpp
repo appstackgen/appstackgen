@@ -8,7 +8,7 @@
 
 #include "model.h"
 
-#include <asg/graph/abstractgraph.h>
+#include <asg/graph/abstract_graph.h>
 
 #include <asg/domainmodel/model.h>
 #include <asg/domainmodel/primitivedatatype.h>

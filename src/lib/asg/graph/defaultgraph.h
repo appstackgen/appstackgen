@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/abstractgraph.h>
+#include <asg/graph/abstract_graph.h>
 
 #include <asg/kernel/object_id_generator.h>
 
