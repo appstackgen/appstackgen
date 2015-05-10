@@ -27,6 +27,11 @@ protected:
         return graph()->create_sub_node_of<T>(graph()->node(id()), object_name(name));
     }
 
+    template<typename T>
+    std::vector<std::shared_ptr<T>> sub_nodes() const {
+        return graph()->sub_nodes_of<T>(graph()->node(id()));
+    }
+
     void impl_register_out_edge(abstract_edge_sptr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
     void impl_register_in_edge(abstract_edge_sptr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
 

@@ -18,5 +18,10 @@ domain_object_sptr domain::create_domain_object(const string &name)
     return create_sub_node<domain_object>(name);
 }
 
+domain_object_sptr_vec domain::domain_objects() const
+{
+    return sub_nodes<domain_object>();
+}
+
 }
 }

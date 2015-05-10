@@ -78,11 +78,11 @@ public:
 
     template<typename T=abstract_node>
     size sub_node_count_of(abstract_node_sptr p) const {
-        return subNodesOf<T>(p).size();
+        return sub_nodes_of<T>(p).size();
     }
 
     template<typename T=abstract_node>
-    std::vector<std::shared_ptr<T>> subNodesOf(abstract_node_sptr p) const {
+    std::vector<std::shared_ptr<T>> sub_nodes_of(abstract_node_sptr p) const {
         return p->end_nodes_of_typed_out_edges_to<owns, T>();
     }
 
