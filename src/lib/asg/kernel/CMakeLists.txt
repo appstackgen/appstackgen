@@ -13,14 +13,14 @@ set(KERNEL_HEADERS
     objectidgenerator.h
     types.h
     objectname.h
-    objectid.h
+    object_id.h
     stringtools.h
 )
 
 set(KERNEL_SOURCES
     objectidgenerator.cpp
     objectname.cpp
-    objectid.cpp
+    object_id.cpp
     stringtools.cpp
 )
 

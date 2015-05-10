@@ -8,7 +8,7 @@
 
 #include "abstractnode.h"
 
-#include <asg/kernel/objectid.h>
+#include <asg/kernel/object_id.h>
 
 namespace asg {
 namespace graph {
