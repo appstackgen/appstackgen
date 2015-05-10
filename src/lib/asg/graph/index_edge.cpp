@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "indexedge.h"
+#include "index_edge.h"
 
 namespace asg {
 namespace graph {

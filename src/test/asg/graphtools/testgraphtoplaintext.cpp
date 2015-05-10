@@ -10,7 +10,7 @@
 
 #include <asg/graph/default_graph.h>
 #include <asg/graph/index_node.h>
-#include <asg/graph/indexedge.h>
+#include <asg/graph/index_edge.h>
 
 #include <asg/graphtools/graphtoplaintext.h>
 

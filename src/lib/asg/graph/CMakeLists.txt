@@ -21,7 +21,7 @@ set(KERNEL_HEADERS
     systemnode.h
     systemedge.h
     index_node.h
-    indexedge.h
+    index_edge.h
     usernode.h
     useredge.h
     owns.h
@@ -39,7 +39,7 @@ set(KERNEL_SOURCES
     systemnode.cpp
     index_node.cpp
     systemedge.cpp
-    indexedge.cpp
+    index_edge.cpp
     usernode.cpp
     useredge.cpp
     owns.cpp
