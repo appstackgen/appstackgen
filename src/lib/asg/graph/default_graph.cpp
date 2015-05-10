@@ -8,7 +8,7 @@
 
 #include "default_graph.h"
 
-#include <asg/graph/indexnode.h>
+#include <asg/graph/index_node.h>
 #include <asg/graph/indexedge.h>
 #include <asg/graph/owns.h>
 

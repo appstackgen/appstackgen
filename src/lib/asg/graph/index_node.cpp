@@ -7,7 +7,7 @@
  * All rights reserved.
  */
 
-#include "indexnode.h"
+#include "index_node.h"
 
 namespace asg {
 namespace graph {

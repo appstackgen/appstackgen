@@ -20,7 +20,7 @@ set(KERNEL_HEADERS
     edge.h
     systemnode.h
     systemedge.h
-    indexnode.h
+    index_node.h
     indexedge.h
     usernode.h
     useredge.h
@@ -37,7 +37,7 @@ set(KERNEL_SOURCES
     abstract_edge.cpp
     edge.cpp
     systemnode.cpp
-    indexnode.cpp
+    index_node.cpp
     systemedge.cpp
     indexedge.cpp
     usernode.cpp
