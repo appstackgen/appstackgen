@@ -10,7 +10,6 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    module.h
     objectidgenerator.h
     types.h
     objectname.h
@@ -19,7 +18,6 @@ set(KERNEL_HEADERS
 )
 
 set(KERNEL_SOURCES
-    module.cpp
     objectidgenerator.cpp
     objectname.cpp
     objectid.cpp
