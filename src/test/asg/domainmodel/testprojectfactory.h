@@ -21,13 +21,13 @@ namespace domain_model {
 
 namespace Test {
 
-class TestProjectFactory
+class test_project_factory
 {
 public:
-    static base::ProjectSPtr createProject(const string& n = "Test Project");
+    static base::ProjectSPtr create_project(const string& n = "Test Project");
 
 protected:
-    TestProjectFactory();
+    test_project_factory();
 
 
 };

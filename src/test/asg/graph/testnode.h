@@ -14,7 +14,7 @@ namespace asg {
 namespace graph {
 namespace Test {
 
-class TestNode : public node
+class test_node : public node
 {
 public:
     static string static_node_type_name;
@@ -22,7 +22,7 @@ public:
     using node::node;
 
 protected:
-    string impl_node_type_name() const override { return TestNode::static_node_type_name; }
+    string impl_node_type_name() const override { return test_node::static_node_type_name; }
 };
 
 }

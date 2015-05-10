@@ -8,15 +8,15 @@
 
 #include <gtest/gtest.h>
 
-TEST(GoogleTestSelfTest, ASSERT_EQ) {
+TEST(gtest_selftest, ASSERT_EQ) {
     ASSERT_EQ(1, 1);
     ASSERT_EQ(nullptr, nullptr);
 }
 
-TEST(GoogleTestSelfTest, ASSERT_TRUE) {
+TEST(gtest_selftest, ASSERT_TRUE) {
     ASSERT_TRUE(true);
 }
 
-TEST(GoogleTestSelfTest, ASSERT_FALSE) {
+TEST(gtest_selftest, ASSERT_FALSE) {
     ASSERT_FALSE(false);
 }

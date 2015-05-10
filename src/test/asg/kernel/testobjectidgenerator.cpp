@@ -12,12 +12,12 @@
 
 using namespace asg;
 
-TEST(TestUuidGenerator, createUuid) {
+TEST(test_object_id_generator, create_id) {
     auto id = object_id_generator::create_id();
 
     ASSERT_TRUE(id.is_valid());
 }
 
-TEST(TestUuidGenerator, createInvalidUuid)  {
+TEST(test_object_id_generator, create_invalid_id)  {
     ASSERT_TRUE(!object_id_generator::create_invalid_id().is_valid());
 }

@@ -12,7 +12,7 @@
 
 using namespace asg;
 
-TEST(TestObjectId, testDefaultCtor) {
+TEST(test_object_id, default_ctor) {
     object_id id;
 
     ASSERT_TRUE(!id.is_valid());

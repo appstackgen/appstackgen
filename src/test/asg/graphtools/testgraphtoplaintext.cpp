@@ -24,15 +24,15 @@ using namespace asg::graph::Test;
 std::shared_ptr<default_graph> createGraph() {
     auto g = std::make_shared<default_graph>();
 
-    auto n1 = g->create_node<TestNode>(name("N1"));
-    auto n2 = g->create_node<TestNode>(name("N2"));
+    auto n1 = g->create_node<test_node>(name("N1"));
+    auto n2 = g->create_node<test_node>(name("N2"));
 
-    g->create_edge<TestEdge>(n1, n2);
+    g->create_edge<test_edge>(n1, n2);
 
     return g;
 }
 
-TEST(TestGraphTools, testGraphToPlainText) {
+TEST(test_graph_tools, graph_to_plain_text) {
     auto g = createGraph();
 
     auto buf = GraphToPlainText::toStringVector(g);

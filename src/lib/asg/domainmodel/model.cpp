@@ -19,12 +19,12 @@ namespace domain_model {
 
 string model::static_node_type_name = "Model";
 
-primitive_data_type_sptr model::createPrimitiveDataType(const string &name)
+primitive_data_type_sptr model::create_primitive_data_type(const string &name)
 {
     return createSubNode<primitive_data_type>(name);
 }
 
-bounded_context_sptr model::createBoundedContext(const string &name)
+bounded_context_sptr model::create_bounded_context(const string &name)
 {
     return createSubNode<bounded_context>(name);
 }

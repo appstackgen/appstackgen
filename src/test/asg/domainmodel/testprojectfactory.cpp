@@ -18,19 +18,19 @@ namespace asg {
 namespace domain_model {
 namespace Test {
 
-base::ProjectSPtr TestProjectFactory::createProject(const string &n)
+base::ProjectSPtr test_project_factory::create_project(const string &n)
 {
     auto proj = std::make_shared<base::project>(name(n));
 
     auto m = proj->create_node<model>(name("TestModel"));
 
-    auto natSci = m->createBoundedContext("NatSci");
+    auto natSci = m->create_bounded_context("NatSci");
 
-    m->createPrimitiveDataType("Integer");
+    m->create_primitive_data_type("Integer");
     return proj;
 }
 
-TestProjectFactory::TestProjectFactory()
+test_project_factory::test_project_factory()
 {
 
 }

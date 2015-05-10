@@ -21,9 +21,9 @@ using namespace asg::graph;
 using namespace asg::domain_model;
 using namespace asg::domain_model::Test;
 
-TEST(TestProject, selftestProjectFactory)
+TEST(test_project, selftest_project_factory)
 {
-    auto proj = TestProjectFactory::createProject("A Project");
+    auto proj = test_project_factory::create_project("A Project");
 
     ASSERT_TRUE(proj->has_title());
 

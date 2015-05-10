@@ -12,13 +12,13 @@
 
 using namespace asg;
 
-TEST(TestObjectName, testDefaultCtor) {
+TEST(test_object_name, default_ctor) {
     object_name n;
 
     ASSERT_EQ(std::string(), n.to_string());
 }
 
-TEST(TestObjectName, testEquality) {
+TEST(test_object_name, equality) {
     object_name a("a");
     object_name b("b");
     object_name a2("a");

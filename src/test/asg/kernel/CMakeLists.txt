@@ -8,7 +8,7 @@ set(TEST_HEADERS
 
 set(TEST_SOURCES
     testobjectid.cpp
-    testuuidgenerator.cpp
+    testobjectidgenerator.cpp
     testobjectname.cpp
 )
 

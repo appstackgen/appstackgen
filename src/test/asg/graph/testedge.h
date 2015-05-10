@@ -14,7 +14,7 @@ namespace asg {
 namespace graph {
 namespace Test {
 
-class TestEdge : public edge
+class test_edge : public edge
 {
 public:
     static string static_edge_name;
@@ -22,7 +22,7 @@ public:
     using edge::edge;
 
 protected:
-    string impl_edge_type_name() const override { return TestEdge::static_edge_name; }
+    string impl_edge_type_name() const override { return test_edge::static_edge_name; }
 };
 
 }

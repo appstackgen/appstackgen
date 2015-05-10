@@ -27,11 +27,11 @@ class model : public asg::graph::user_node
 public:
     static string static_node_type_name;
 
-    primitive_data_type_sptr createPrimitiveDataType(const string& name);
-    bounded_context_sptr createBoundedContext(const string& name);
+    primitive_data_type_sptr create_primitive_data_type(const string& name);
+    bounded_context_sptr create_bounded_context(const string& name);
 
-    const primitive_data_type_sptr_vec primtiveDataTypes() const;
-    const bounded_context_sptr_vec boundedContexts() const;
+    const primitive_data_type_sptr_vec primitive_data_types() const;
+    const bounded_context_sptr_vec bounded_contexts() const;
 
 protected:
     virtual string impl_node_type_name() const override { return static_node_type_name; }
