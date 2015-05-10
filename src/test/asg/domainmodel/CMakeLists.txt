@@ -9,7 +9,7 @@ set(TEST_HEADERS
 
 set(TEST_SOURCES
     projectfactory.cpp
-    testproject.cpp
+    test_project.cpp
 )
 
 set(HEADERS
