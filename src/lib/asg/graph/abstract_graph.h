@@ -10,7 +10,7 @@
 
 #include <asg/kernel/types.h>
 
-#include <asg/graph/abstractnode.h>
+#include <asg/graph/abstract_node.h>
 #include <asg/graph/owns.h>
 
 namespace asg {

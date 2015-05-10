@@ -12,7 +12,7 @@
 
 #include <asg/kernel/object_id_generator.h>
 
-#include <asg/graph/abstractnode.h>
+#include <asg/graph/abstract_node.h>
 #include <asg/graph/abstract_edge.h>
 
 namespace asg {

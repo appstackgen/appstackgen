@@ -9,7 +9,7 @@
 #include "graphtoplaintext.h"
 
 #include <asg/graph/abstract_graph.h>
-#include <asg/graph/abstractnode.h>
+#include <asg/graph/abstract_node.h>
 #include <asg/graph/abstract_edge.h>
 
 namespace asg {
