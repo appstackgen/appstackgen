@@ -8,7 +8,7 @@
 
 #include <gtest/gtest.h>
 
-#include <asg/kernel/objectidgenerator.h>
+#include <asg/kernel/object_id_generator.h>
 
 using namespace asg;
 

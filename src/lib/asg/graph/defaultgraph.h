@@ -10,7 +10,7 @@
 
 #include <asg/graph/abstractgraph.h>
 
-#include <asg/kernel/objectidgenerator.h>
+#include <asg/kernel/object_id_generator.h>
 
 #include <asg/graph/abstractnode.h>
 #include <asg/graph/abstractedge.h>

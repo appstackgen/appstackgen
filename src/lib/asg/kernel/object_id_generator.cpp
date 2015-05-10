@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "objectidgenerator.h"
+#include "object_id_generator.h"
 
 #include <boost/uuid/random_generator.hpp>
 #include <boost/uuid/nil_generator.hpp>
