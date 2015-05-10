@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/defaultgraph.h>
+#include <asg/graph/default_graph.h>
 
 namespace asg {
 namespace base {

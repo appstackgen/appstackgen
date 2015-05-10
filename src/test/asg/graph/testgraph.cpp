@@ -8,7 +8,7 @@
 
 #include <gtest/gtest.h>
 
-#include <asg/graph/defaultgraph.h>
+#include <asg/graph/default_graph.h>
 #include <asg/graph/indexnode.h>
 #include <asg/graph/indexedge.h>
 

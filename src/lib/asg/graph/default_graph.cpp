@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "defaultgraph.h"
+#include "default_graph.h"
 
 #include <asg/graph/indexnode.h>
 #include <asg/graph/indexedge.h>
