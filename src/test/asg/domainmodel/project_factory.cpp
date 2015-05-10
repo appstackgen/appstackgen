@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "projectfactory.h"
+#include "project_factory.h"
 
 #include <asg/base/project.h>
 

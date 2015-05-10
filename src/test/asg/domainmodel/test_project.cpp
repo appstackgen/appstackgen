@@ -14,7 +14,7 @@
 
 #include <asg/graphtools/graph_to_plain_text.h>
 
-#include "projectfactory.h"
+#include "project_factory.h"
 
 using namespace asg;
 using namespace asg::graph;
