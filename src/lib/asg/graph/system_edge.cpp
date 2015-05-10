@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "systemedge.h"
+#include "system_edge.h"
 
 namespace asg {
 namespace graph {

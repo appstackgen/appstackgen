@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/graph/systemedge.h>
+#include <asg/graph/system_edge.h>
 
 namespace asg {
 namespace graph {
