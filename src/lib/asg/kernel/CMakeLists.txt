@@ -12,14 +12,14 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     object_id_generator.h
     types.h
-    objectname.h
+    object_name.h
     object_id.h
     stringtools.h
 )
 
 set(KERNEL_SOURCES
     object_id_generator.cpp
-    objectname.cpp
+    object_name.cpp
     object_id.cpp
     stringtools.cpp
 )

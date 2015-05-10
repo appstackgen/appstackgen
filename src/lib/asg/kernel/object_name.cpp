@@ -6,7 +6,7 @@
  * All rights reserved.
  */
 
-#include "objectname.h"
+#include "object_name.h"
 
 namespace asg {
 

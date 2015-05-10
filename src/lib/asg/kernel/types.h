@@ -12,7 +12,7 @@
 #include <map>
 #include <cassert>
 
-#include "objectname.h"
+#include "object_name.h"
 #include "object_id.h"
 
 namespace asg {
