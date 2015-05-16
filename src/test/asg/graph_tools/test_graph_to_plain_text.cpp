@@ -14,8 +14,8 @@
 #include <asg/graph/index_node.h>
 #include <asg/graph/index_edge.h>
 
-#include <asg/graphtools/graph_to_plain_text.h>
-#include <asg/graphtools/graph_to_dot.h>
+#include <asg/graph_tools/graph_to_plain_text.h>
+#include <asg/graph_tools/graph_to_dot.h>
 
 #include "test_node.h"
 #include "test_edge.h"

@@ -10,10 +10,10 @@
 
 #include <asg/base/project.h>
 
-#include <asg/domainmodel/model.h>
-#include <asg/domainmodel/bounded_context.h>
-#include <asg/domainmodel/primitive_data_type.h>
-#include <asg/domainmodel/domain.h>
+#include <asg/domain_model/model.h>
+#include <asg/domain_model/bounded_context.h>
+#include <asg/domain_model/primitive_data_type.h>
+#include <asg/domain_model/domain.h>
 
 namespace asg {
 namespace domain_model {

@@ -8,7 +8,7 @@
 
 #include "bounded_context.h"
 
-#include <asg/domainmodel/domain.h>
+#include <asg/domain_model/domain.h>
 
 namespace asg {
 namespace domain_model {

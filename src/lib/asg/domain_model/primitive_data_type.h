@@ -8,18 +8,17 @@
 
 #pragma once
 
-#include <asg/domainmodel/audit_value.h>
+#include <asg/domain_model/model_fragment.h>
 
 namespace asg {
 namespace domain_model {
 
-class last_changed_timestamp_value: public audit_value
+class primitive_data_type : public model_fragment
 {
 public:
     static string static_node_type_name;
-    static string default_name;
 
-    using audit_value::audit_value;
+    using model_fragment::model_fragment;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

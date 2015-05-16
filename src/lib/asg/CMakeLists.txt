@@ -1,5 +1,5 @@
 add_subdirectory(kernel)
 add_subdirectory(graph)
-add_subdirectory(graphtools)
+add_subdirectory(graph_tools)
 add_subdirectory(base)
-add_subdirectory(domainmodel)
+add_subdirectory(domain_model)

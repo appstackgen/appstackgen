@@ -8,16 +8,16 @@
 
 #pragma once
 
-#include <asg/domainmodel/domain_object_fragment.h>
+#include <asg/domain_model/value.h>
 
 namespace asg {
 namespace domain_model {
 
-class value : public domain_object_fragment
+class system_value : public value
 {
 public:
 protected:
-    using domain_object_fragment::domain_object_fragment;
+    using value::value;
 };
 
 }

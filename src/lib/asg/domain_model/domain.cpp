@@ -8,12 +8,12 @@
 
 #include "domain.h"
 
-#include <asg/domainmodel/domain_object.h>
+#include <asg/domain_model/domain_object.h>
 
-#include <asg/domainmodel/id_value.h>
-#include <asg/domainmodel/last_changed_timestamp_value.h>
-#include <asg/domainmodel/object_version.h>
-#include <asg/domainmodel/last_changed_by_user_value.h>
+#include <asg/domain_model/id_value.h>
+#include <asg/domain_model/last_changed_timestamp_value.h>
+#include <asg/domain_model/object_version.h>
+#include <asg/domain_model/last_changed_by_user_value.h>
 
 namespace asg {
 namespace domain_model {

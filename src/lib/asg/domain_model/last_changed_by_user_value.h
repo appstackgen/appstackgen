@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/domainmodel/audit_value.h>
+#include <asg/domain_model/audit_value.h>
 
 namespace asg {
 namespace domain_model {

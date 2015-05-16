@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/domainmodel/bounded_context_fragment.h>
+#include <asg/domain_model/bounded_context_fragment.h>
 
 namespace asg {
 namespace domain_model {

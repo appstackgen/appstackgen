@@ -13,14 +13,14 @@
 
 #include <asg/base/project.h>
 
-#include <asg/graphtools/graph_to_plain_text.h>
-#include <asg/graphtools/graph_to_dot.h>
+#include <asg/graph_tools/graph_to_plain_text.h>
+#include <asg/graph_tools/graph_to_dot.h>
 
-#include <asg/domainmodel/model.h>
-#include <asg/domainmodel/bounded_context.h>
-#include <asg/domainmodel/domain.h>
-#include <asg/domainmodel/domain_object.h>
-#include <asg/domainmodel/id_value.h>
+#include <asg/domain_model/model.h>
+#include <asg/domain_model/bounded_context.h>
+#include <asg/domain_model/domain.h>
+#include <asg/domain_model/domain_object.h>
+#include <asg/domain_model/id_value.h>
 
 #include "project_factory.h"
 

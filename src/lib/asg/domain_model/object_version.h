@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/domainmodel/concurrency_control_value.h>
+#include <asg/domain_model/concurrency_control_value.h>
 
 namespace asg {
 namespace domain_model {

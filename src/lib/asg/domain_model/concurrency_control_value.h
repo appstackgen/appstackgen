@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <asg/domainmodel/persistence_value.h>
+#include <asg/domain_model/persistence_value.h>
 
 namespace asg {
 namespace domain_model {

@@ -8,17 +8,18 @@
 
 #pragma once
 
-#include <asg/domainmodel/model_fragment.h>
+#include <asg/domain_model/persistence_value.h>
 
 namespace asg {
 namespace domain_model {
 
-class primitive_data_type : public model_fragment
+class id_value : public persistence_value
 {
 public:
     static string static_node_type_name;
+    static string default_name;
 
-    using model_fragment::model_fragment;
+    using persistence_value::persistence_value;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }
