@@ -29,7 +29,7 @@ TEST(test_project, project_to_plain_text)
 
     ASSERT_EQ(name("A Project"), proj->title());
 
-    ASSERT_EQ(4, proj->node_count());
+    ASSERT_EQ(11, proj->node_count());
 
     std::cout << std::endl << join(GraphToPlainText::toStringVector(proj)) << std::endl;
 }

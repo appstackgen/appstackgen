@@ -24,9 +24,12 @@ base::ProjectSPtr project_factory::create_project(const string &n)
 
     auto m = proj->create_node<model>(name("TestModel"));
 
+    for (auto tn : model::default_primitve_data_type_names) {
+        m->create_primitive_data_type(tn);
+    }
+
     auto natSci = m->create_bounded_context("NatSci");
 
-    m->create_primitive_data_type("Integer");
     return proj;
 }
 

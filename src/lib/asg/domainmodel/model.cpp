@@ -17,7 +17,26 @@
 namespace asg {
 namespace domain_model {
 
-string model::static_node_type_name = "Model";
+string model::static_node_type_name { "Model" };
+
+string model::boolean_type_name { "boolean" };
+string model::integer_type_name { "integer" };
+string model::numeric_type_name { "numeric" };
+string model::uuid_type_name { "uuid" };
+string model::text_type_name { "text" };
+string model::date_type_name { "date" };
+string model::time_type_name { "time" };
+string model::timestamp_type_name { "timestamp" };
+
+string_vec model::default_primitve_data_type_names {
+    model::boolean_type_name,
+            model::integer_type_name,
+            model::numeric_type_name,
+            model::uuid_type_name,
+            model::text_type_name,
+            model::date_type_name,
+            model::time_type_name,
+            model::timestamp_type_name };
 
 primitive_data_type_sptr model::create_primitive_data_type(const string &name)
 {

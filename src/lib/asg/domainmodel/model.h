@@ -22,10 +22,21 @@ using bounded_context_sptr = std::shared_ptr<bounded_context>;
 using primitive_data_type_sptr_vec = std::vector<primitive_data_type_sptr>;
 using bounded_context_sptr_vec = std::vector<bounded_context_sptr>;
 
-class model : public asg::graph::user_node
+class model : public graph::user_node
 {
 public:
     static string static_node_type_name;
+
+    static string boolean_type_name;
+    static string integer_type_name;
+    static string numeric_type_name;
+    static string uuid_type_name;
+    static string text_type_name;
+    static string date_type_name;
+    static string time_type_name;
+    static string timestamp_type_name;
+
+    static string_vec default_primitve_data_type_names;
 
     primitive_data_type_sptr create_primitive_data_type(const string& name);
     bounded_context_sptr create_bounded_context(const string& name);
@@ -36,7 +47,7 @@ public:
 protected:
     virtual string impl_node_type_name() const override { return static_node_type_name; }
 
-    using asg::graph::user_node::user_node;
+    using graph::user_node::user_node;
 };
 
 }
