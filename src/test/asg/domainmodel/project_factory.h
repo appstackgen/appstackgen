@@ -41,6 +41,7 @@ protected:
     void init_nat_sci_bounded_context(model_sptr m);
     void init_medical_bounded_context(model_sptr m);
     void init_statistics_bounded_context(model_sptr m);
+    void init_ddd_bounded_context(model_sptr m);
 };
 
 }
