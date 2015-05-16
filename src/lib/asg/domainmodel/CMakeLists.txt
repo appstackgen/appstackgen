@@ -18,6 +18,11 @@ set(KERNEL_HEADERS
     domain.h
     domain_fragment.h
     domain_object.h
+    domain_object_fragment.h
+    value.h
+    system_value.h
+    persistence_value.h
+    id_value.h
 )
 
 set(KERNEL_SOURCES
@@ -29,6 +34,11 @@ set(KERNEL_SOURCES
     domain.cpp
     domain_fragment.cpp
     domain_object.cpp
+    domain_object_fragment.cpp
+    value.cpp
+    system_value.cpp
+    persistence_value.cpp
+    id_value.cpp
 )
 
 set(HEADERS

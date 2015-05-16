@@ -8,7 +8,9 @@
 
 #include "domain.h"
 
-#include <domain_object.h>
+#include <asg/domainmodel/domain_object.h>
+
+#include <asg/domainmodel/id_value.h>
 
 namespace asg {
 namespace domain_model {
@@ -17,7 +19,11 @@ string domain::static_node_type_name { "domain" };
 
 domain_object_sptr domain::create_domain_object(const string &name)
 {
-    return create_sub_node<domain_object>(name);
+    auto o = create_sub_node<domain_object>(name);
+
+    o->create_value<id_value>(id_value::default_name);
+
+    return o;
 }
 
 domain_object_sptr_vec domain::domain_objects() const
