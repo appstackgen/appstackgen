@@ -23,6 +23,8 @@ using abstract_graph_sptr = std::shared_ptr<abstract_graph>;
 using abstract_node_sptr = std::shared_ptr<abstract_node>;
 using abstract_edge_sptr = std::shared_ptr<abstract_edge>;
 
+namespace tools {
+
 class graph_to_dot
 {
 public:
@@ -46,5 +48,6 @@ private:
     string quote(const string& n) const;
 };
 
+}
 }
 }

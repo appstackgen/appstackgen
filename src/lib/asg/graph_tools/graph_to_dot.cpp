@@ -17,6 +17,7 @@
 
 namespace asg {
 namespace graph {
+namespace tools {
 
 string_vec graph_to_dot::to_string_vector(abstract_graph_sptr g, bool skip_index_node)
 {
@@ -100,5 +101,6 @@ string graph_to_dot::quote(const string &n) const
     return s.str();
 }
 
+}
 }
 }

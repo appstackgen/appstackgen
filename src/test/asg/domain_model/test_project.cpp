@@ -26,6 +26,7 @@
 
 using namespace asg;
 using namespace asg::graph;
+using namespace asg::graph::tools;
 using namespace asg::domain_model;
 using namespace asg::domain_model::Test;
 
