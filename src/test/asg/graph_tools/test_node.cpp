@@ -10,7 +10,7 @@
 
 namespace asg {
 namespace graph {
-namespace Test {
+namespace test {
 
 string test_node::static_node_type_name { "TestNode" };
 

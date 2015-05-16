@@ -23,7 +23,7 @@
 using namespace asg;
 using namespace asg::graph;
 using namespace asg::graph::tools;
-using namespace asg::graph::Test;
+using namespace asg::graph::test;
 
 std::shared_ptr<default_graph> createGraph() {
     auto g = std::make_shared<default_graph>();

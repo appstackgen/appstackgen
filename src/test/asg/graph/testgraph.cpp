@@ -17,7 +17,7 @@
 
 using namespace asg;
 using namespace asg::graph;
-using namespace asg::graph::Test;
+using namespace asg::graph::test;
 
 TEST(test_graph, test_create_nodes_and_edges) {
     auto g = std::unique_ptr<default_graph>(new default_graph());

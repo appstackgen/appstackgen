@@ -12,7 +12,7 @@
 
 namespace asg {
 namespace graph {
-namespace Test {
+namespace test {
 
 class test_edge : public edge
 {

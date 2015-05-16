@@ -10,7 +10,7 @@
 
 namespace asg {
 namespace graph {
-namespace Test {
+namespace test {
 
 string test_edge::static_edge_name { "TestEdge" };
 
