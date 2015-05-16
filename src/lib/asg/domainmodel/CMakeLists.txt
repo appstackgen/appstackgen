@@ -24,6 +24,7 @@ set(KERNEL_HEADERS
     persistence_value.h
     id_value.h
     last_changed_timestamp_value.h
+    object_version.h
 )
 
 set(KERNEL_SOURCES
@@ -41,6 +42,7 @@ set(KERNEL_SOURCES
     persistence_value.cpp
     id_value.cpp
     last_changed_timestamp_value.cpp
+    object_version.cpp
 )
 
 set(HEADERS

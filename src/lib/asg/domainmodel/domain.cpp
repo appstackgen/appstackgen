@@ -12,6 +12,7 @@
 
 #include <asg/domainmodel/id_value.h>
 #include <asg/domainmodel/last_changed_timestamp_value.h>
+#include <asg/domainmodel/object_version.h>
 
 namespace asg {
 namespace domain_model {
@@ -24,6 +25,7 @@ domain_object_sptr domain::create_domain_object(const string &name)
 
     o->create_value<id_value>(id_value::default_name);
     o->create_value<last_changed_timestamp_value>(last_changed_timestamp_value::default_name);
+    o->create_value<object_version>(object_version::default_name);
 
     return o;
 }
