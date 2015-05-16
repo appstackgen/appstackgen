@@ -32,6 +32,17 @@ protected:
         return graph()->sub_nodes_of<T>(graph()->node(id()));
     }
 
+    template<typename T>
+    bool has_unique_sub_node() const {
+        return ((size)1 == sub_nodes<T>().size());
+    }
+
+    template<typename T>
+    std::shared_ptr<T> unique_sub_node() const {
+        assert(has_unique_sub_node<T>());
+        return *(sub_nodes<T>().begin());
+    }
+
     void impl_register_out_edge(abstract_edge_sptr e) override { assert(e->start().get() == this); m_edges.push_back(e); }
     void impl_register_in_edge(abstract_edge_sptr e) override { assert(e->end().get() == this); m_edges.push_back(e); }
 

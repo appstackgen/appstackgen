@@ -103,6 +103,11 @@ public:
     }
 
     template<typename T>
+    std::shared_ptr<T> create_node(const string& n) {
+        return create_node<T>(name(n));
+    }
+
+    template<typename T>
     std::shared_ptr<T> create_node(const name& n = name("")) {
         auto node = std::make_shared<T>(this, n, create_object_id());
         assert(T::static_node_type_name == node->node_type_name());
