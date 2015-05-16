@@ -10,16 +10,16 @@
 
 namespace asg {
 
+object_name::object_name(const std::string &str)
+    : m_str(str)
+{
+}
+
 object_name::object_name()
 {
 }
 
 object_name::~object_name()
-{
-}
-
-object_name::object_name(const std::string &n)
-    : m_str(n)
 {
 }
 

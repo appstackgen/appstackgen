@@ -8,11 +8,14 @@
 
 #include <gtest/gtest.h>
 
+#include <asg/kernel/file_tools.h>
+
 #include <asg/graph/default_graph.h>
 #include <asg/graph/index_node.h>
 #include <asg/graph/index_edge.h>
 
 #include <asg/graphtools/graph_to_plain_text.h>
+#include <asg/graphtools/graph_to_dot.h>
 
 #include "test_node.h"
 #include "test_edge.h"
@@ -35,15 +38,39 @@ std::shared_ptr<default_graph> createGraph() {
 TEST(test_graph_tools, graph_to_plain_text) {
     auto g = createGraph();
 
-    auto buf = GraphToPlainText::toStringVector(g);
+    auto formatted_data = graph_to_plain_text::to_string_vector(g);
 
-    ASSERT_TRUE(!buf.empty());
+    ASSERT_TRUE(!formatted_data.empty());
 
-    std::cout << std::endl;
+    stringstream data;
 
-    for(auto r : buf) {
-        std::cout << r << std::endl;
+    data << std::endl;
+
+    for(auto r : formatted_data) {
+        data << r << std::endl;
     }
 
-    std::cout << std::endl;
+    data << std::endl;
+
+    save_to_file(data.str(), "graph_to_plain_text.txt");
+}
+
+TEST(test_graph_tools, graph_to_dot) {
+    auto g = createGraph();
+
+    auto dot_data = graph_to_dot::to_string_vector(g);
+
+    ASSERT_TRUE(!dot_data.empty());
+
+    stringstream buf;
+
+    buf << std::endl;
+
+    for(auto r : dot_data) {
+        buf << r << std::endl;
+    }
+
+    buf << std::endl;
+
+    save_to_file(buf.str(), "graph_to_dot.dot");
 }

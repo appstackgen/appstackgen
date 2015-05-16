@@ -14,20 +14,20 @@ namespace asg {
 namespace graph {
 
 class abstract_graph;
-using AbstractGraphSPtr = std::shared_ptr<abstract_graph>;
+using abstract_graph_sptr = std::shared_ptr<abstract_graph>;
 
-class GraphToPlainText
+class graph_to_plain_text
 {
 public:
-    static string_vec toStringVector(AbstractGraphSPtr g);
+    static string_vec to_string_vector(abstract_graph_sptr g);
 
 protected:
-    GraphToPlainText(AbstractGraphSPtr g);
+    graph_to_plain_text(abstract_graph_sptr g);
 
-    string_vec graphToStringVector() const;
+    string_vec graph_to_string_vector() const;
 
 private:
-    AbstractGraphSPtr m_g;
+    abstract_graph_sptr m_g;
 };
 
 }

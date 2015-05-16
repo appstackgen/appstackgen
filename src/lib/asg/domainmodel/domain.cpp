@@ -13,6 +13,8 @@
 namespace asg {
 namespace domain_model {
 
+string domain::static_node_type_name { "domain" };
+
 domain_object_sptr domain::create_domain_object(const string &name)
 {
     return create_sub_node<domain_object>(name);

@@ -9,10 +9,12 @@
 #include <gtest/gtest.h>
 
 #include <asg/kernel/string_tools.h>
+#include <asg/kernel/file_tools.h>
 
 #include <asg/base/project.h>
 
 #include <asg/graphtools/graph_to_plain_text.h>
+#include <asg/graphtools/graph_to_dot.h>
 
 #include "project_factory.h"
 
@@ -30,6 +32,13 @@ TEST(test_project, project_to_plain_text)
     ASSERT_EQ(name("A Project"), proj->title());
 
     ASSERT_EQ(11, proj->node_count());
+}
 
-    std::cout << std::endl << join(GraphToPlainText::toStringVector(proj)) << std::endl;
+TEST(test_project, project_to_dot)
+{
+    auto proj = project_factory::create_project("A Project");
+
+    ASSERT_EQ(name("A Project"), proj->title());
+
+    save_to_file(graph_to_dot::to_string_vector(proj), "a_project.dot", "\n");
 }

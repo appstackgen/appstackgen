@@ -11,10 +11,12 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(GRAPHTOOLS_HEADERS
     graph_to_plain_text.h
+    graph_to_dot.h
 )
 
 set(GRAPHTOOLS_SOURCES
     graph_to_plain_text.cpp
+    graph_to_dot.cpp
 )
 
 set(HEADERS

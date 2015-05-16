@@ -15,6 +15,7 @@ set(KERNEL_HEADERS
     object_name.h
     object_id.h
     string_tools.h
+    file_tools.h
 )
 
 set(KERNEL_SOURCES
@@ -22,6 +23,7 @@ set(KERNEL_SOURCES
     object_name.cpp
     object_id.cpp
     string_tools.cpp
+    file_tools.cpp
 )
 
 set(HEADERS

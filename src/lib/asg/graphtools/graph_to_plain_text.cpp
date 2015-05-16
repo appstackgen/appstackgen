@@ -11,31 +11,33 @@
 #include <asg/graph/abstract_graph.h>
 #include <asg/graph/abstract_node.h>
 #include <asg/graph/abstract_edge.h>
+#include <asg/graph/index_node.h>
+#include <asg/graph/index_edge.h>
 
 namespace asg {
 namespace graph {
 
-string_vec GraphToPlainText::toStringVector(AbstractGraphSPtr g)
+string_vec graph_to_plain_text::to_string_vector(abstract_graph_sptr g)
 {
-    GraphToPlainText i(g);
+    graph_to_plain_text i(g);
 
-    return i.graphToStringVector();
+    return i.graph_to_string_vector();
 }
 
-GraphToPlainText::GraphToPlainText(AbstractGraphSPtr g)
+graph_to_plain_text::graph_to_plain_text(abstract_graph_sptr g)
     : m_g(g)
 {
 
 }
 
-string_vec GraphToPlainText::graphToStringVector() const
+string_vec graph_to_plain_text::graph_to_string_vector() const
 {
     string_vec buf;
 
     buf.push_back(string("Graph: ") + m_g->title().to_string());
 
     for (auto n : m_g->nodes()) {
-        buf.push_back("\t" + n->to_string());
+        buf.push_back("\t" + n->name().to_string());
     }
 
     for (auto e : m_g->edges()) {

@@ -17,7 +17,7 @@
 namespace asg {
 namespace domain_model {
 
-string model::static_node_type_name { "Model" };
+string model::static_node_type_name { "model" };
 
 string model::boolean_type_name { "boolean" };
 string model::integer_type_name { "integer" };
