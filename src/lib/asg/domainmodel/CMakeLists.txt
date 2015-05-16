@@ -26,6 +26,7 @@ set(KERNEL_HEADERS
     concurrency_control_value.h
     last_changed_timestamp_value.h
     object_version.h
+    audit_value.h
 )
 
 set(KERNEL_SOURCES
@@ -45,6 +46,7 @@ set(KERNEL_SOURCES
     concurrency_control_value.cpp
     last_changed_timestamp_value.cpp
     object_version.cpp
+    audit_value.cpp
 )
 
 set(HEADERS
