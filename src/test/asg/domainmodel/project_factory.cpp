@@ -121,7 +121,7 @@ base::project_sptr project_factory::do_create_project(const string &n)
 {
     auto proj = std::make_shared<base::project>(name(n));
 
-    auto m = proj->create_node<model>(name("test_model"));
+    auto m = proj->create_node<model>("test_model");
     init_primitive_data_types(m);
 
     init_ddd_bounded_context(m);

@@ -20,5 +20,10 @@ domain_sptr bounded_context::create_domain(const string &n)
     return create_sub_node<domain>(n);
 }
 
+domain_sptr_vec bounded_context::domains() const
+{
+    return sub_nodes<domain>();
+}
+
 }
 }

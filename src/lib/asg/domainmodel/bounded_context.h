@@ -17,6 +17,8 @@ class domain;
 
 using domain_sptr = std::shared_ptr<domain>;
 
+using domain_sptr_vec = std::vector<domain_sptr>;
+
 class bounded_context : public model_fragment
 {
 public:
@@ -25,6 +27,8 @@ public:
     using model_fragment::model_fragment;
 
     domain_sptr create_domain(const string& n);
+
+    domain_sptr_vec domains() const;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

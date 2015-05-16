@@ -48,5 +48,10 @@ bounded_context_sptr model::create_bounded_context(const string &name)
     return create_sub_node<bounded_context>(name);
 }
 
+const bounded_context_sptr_vec model::bounded_contexts() const
+{
+    return sub_nodes<bounded_context>();
+}
+
 }
 }

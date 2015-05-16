@@ -13,6 +13,8 @@
 namespace asg {
 namespace domain_model {
 
+class id_value;
+
 class domain_object : public domain_fragment
 {
 public:
@@ -23,6 +25,11 @@ public:
     template<typename T>
     std::shared_ptr<T> create_value(const std::string& name) {
         return create_sub_node<T>(name);
+    }
+
+    template<typename T=id_value>
+    std::shared_ptr<T> id_value() const {
+        return unique_sub_node<T>();
     }
 
 protected:
