@@ -31,9 +31,11 @@ void project_factory::init_nat_sci_bounded_context(model_sptr m)
 {
     auto nat_sci = m->create_bounded_context("nat sci");
     auto physics = nat_sci->create_domain("physics");
+
     auto chemistry = nat_sci->create_domain("chemistry");
     auto element = chemistry->create_domain_object("element");
     auto compound = chemistry->create_domain_object("compound");
+
     auto geosci = nat_sci->create_domain("geosci");
     auto map_type = geosci->create_domain_object("map type");
     auto map_layer_type = geosci->create_domain_object("map layer type");
