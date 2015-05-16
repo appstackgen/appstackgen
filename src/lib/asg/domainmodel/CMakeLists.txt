@@ -23,6 +23,7 @@ set(KERNEL_HEADERS
     system_value.h
     persistence_value.h
     id_value.h
+    concurrency_control_value.h
     last_changed_timestamp_value.h
     object_version.h
 )
@@ -41,6 +42,7 @@ set(KERNEL_SOURCES
     system_value.cpp
     persistence_value.cpp
     id_value.cpp
+    concurrency_control_value.cpp
     last_changed_timestamp_value.cpp
     object_version.cpp
 )
