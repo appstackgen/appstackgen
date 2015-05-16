@@ -39,7 +39,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_LIB_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_LIB_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BIN_DIR})
 
-set(PROJECT_COMPILER_FLAGS "-Wall -Werror -std=c++11")
+set(PROJECT_COMPILER_FLAGS "-Wall -Werror -std=c++11") # for -std=c++14 also -stdlib=libc++
 
 include_directories(${CPPUNIT_INCLUDE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/src/lib)
