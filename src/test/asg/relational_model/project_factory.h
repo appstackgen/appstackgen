@@ -23,7 +23,7 @@ class model;
 
 using model_sptr = std::shared_ptr<model>;
 
-namespace Test {
+namespace test {
 
 class project_factory
 {

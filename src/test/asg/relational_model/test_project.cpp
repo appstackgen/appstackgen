@@ -24,7 +24,7 @@ using namespace asg;
 using namespace asg::graph;
 using namespace asg::graph::tools;
 using namespace asg::relational_model;
-using namespace asg::relational_model::Test;
+using namespace asg::relational_model::test;
 
 TEST(test_project, test_object_has_default_values) {
     auto proj = project_factory::create_project("A Project");

@@ -14,7 +14,7 @@
 
 namespace asg {
 namespace relational_model {
-namespace Test {
+namespace test {
 
 base::project_sptr project_factory::create_project(const string &n)
 {
