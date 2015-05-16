@@ -16,6 +16,8 @@ namespace graph {
 class abstract_graph;
 using abstract_graph_sptr = std::shared_ptr<abstract_graph>;
 
+namespace tools {
+
 class graph_to_plain_text
 {
 public:
@@ -30,5 +32,6 @@ private:
     abstract_graph_sptr m_g;
 };
 
+}
 }
 }

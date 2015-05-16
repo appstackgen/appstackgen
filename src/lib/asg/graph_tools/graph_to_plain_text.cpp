@@ -16,6 +16,7 @@
 
 namespace asg {
 namespace graph {
+namespace tools {
 
 string_vec graph_to_plain_text::to_string_vector(abstract_graph_sptr g)
 {
@@ -47,5 +48,6 @@ string_vec graph_to_plain_text::graph_to_string_vector() const
     return buf;
 }
 
+}
 }
 }
