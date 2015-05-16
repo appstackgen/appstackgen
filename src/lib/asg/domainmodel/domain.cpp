@@ -25,5 +25,10 @@ domain_object_sptr_vec domain::domain_objects() const
     return sub_nodes<domain_object>();
 }
 
+string domain::impl_node_type_name() const
+{
+    return static_node_type_name;
+}
+
 }
 }

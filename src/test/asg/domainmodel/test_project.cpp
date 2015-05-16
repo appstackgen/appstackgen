@@ -30,8 +30,6 @@ TEST(test_project, project_to_plain_text)
     ASSERT_TRUE(proj->has_title());
 
     ASSERT_EQ(name("A Project"), proj->title());
-
-    ASSERT_EQ(11, proj->node_count());
 }
 
 TEST(test_project, project_to_dot)

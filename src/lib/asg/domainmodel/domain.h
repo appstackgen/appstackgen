@@ -29,6 +29,9 @@ public:
     domain_object_sptr create_domain_object(const string& name);
 
     domain_object_sptr_vec domain_objects() const;
+
+protected:
+    string impl_node_type_name() const override;
 };
 
 }
