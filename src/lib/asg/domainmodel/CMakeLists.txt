@@ -27,6 +27,7 @@ set(KERNEL_HEADERS
     last_changed_timestamp_value.h
     object_version.h
     audit_value.h
+    last_changed_by_user_value.h
 )
 
 set(KERNEL_SOURCES
@@ -47,6 +48,7 @@ set(KERNEL_SOURCES
     last_changed_timestamp_value.cpp
     object_version.cpp
     audit_value.cpp
+    last_changed_by_user_value.cpp
 )
 
 set(HEADERS
