@@ -11,6 +11,7 @@
 #include <asg/base/project.h>
 
 #include <asg/relational_model/model.h>
+#include <asg/relational_model/iso_data_type.h>
 
 namespace asg {
 namespace relational_model {
@@ -35,7 +36,7 @@ base::project_sptr project_factory::do_create_project(const string &n)
 void project_factory::init_iso_data_types(model_sptr m)
 {
     for (auto tn : model::iso_data_type_names) {
-        m->create_iso_data_type(tn);
+        m->create_data_type<iso_data_type>(tn);
     }
 }
 

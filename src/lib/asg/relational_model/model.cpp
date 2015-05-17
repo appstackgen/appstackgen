@@ -35,16 +35,5 @@ string_vec model::iso_data_type_names { boolean_type_name,
             time_type_name,
             timestamp_type_name };
 
-
-iso_data_type_sptr model::create_iso_data_type(const string &n)
-{
-    return create_sub_node<iso_data_type>(n);
-}
-
-iso_data_type_sptr_vec model::iso_data_types() const
-{
-    return sub_nodes<iso_data_type>();
-}
-
 }
 }

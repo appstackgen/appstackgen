@@ -13,6 +13,7 @@
 namespace asg {
 namespace relational_model {
 
+class data_type;
 class iso_data_type;
 
 using iso_data_type_sptr = std::shared_ptr<iso_data_type>;
@@ -38,9 +39,15 @@ public:
 
     using graph::user_node::user_node;
 
-    iso_data_type_sptr create_iso_data_type(const string& n);
+    template<typename T=data_type>
+    std::shared_ptr<T> create_data_type(const string& n) {
+        return create_sub_node<T>(n);
+    }
 
-    iso_data_type_sptr_vec iso_data_types() const;
+    template<typename T=data_type>
+    std::vector<std::shared_ptr<T>> data_types() const {
+        return sub_nodes<T>();
+    }
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

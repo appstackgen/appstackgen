@@ -1,4 +1,4 @@
-set(LIBNAME ${ASG_RELATIONAL_MODEL_LIB_NAME})
+set(LIBNAME ${ASG_POSTGRES_MODEL_LIB_NAME})
 
 set(LIBVERSION_MAJOR 1)
 set(LIBVERSION_MINOR 0)
@@ -10,19 +10,11 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    model.h
-    model_fragment.h
-    data_type.h
-    iso_data_type.h
-    custom_data_type.h
+    serial_data_type.h
 )
 
 set(KERNEL_SOURCES
-    model.cpp
-    model_fragment.cpp
-    data_type.cpp
-    iso_data_type.cpp
-    custom_data_type.cpp
+    serial_data_type.cpp
 )
 
 set(HEADERS
@@ -44,4 +36,4 @@ set_target_properties(${LIBNAME}
     SOVERSION ${LIBSOVERSION}
 )
 
-target_link_libraries(${LIBNAME} ${ASG_GRAPH_LIB_NAME})
+target_link_libraries(${LIBNAME} ${ASG_RELATIONAL_MODEL_LIB_NAME})
