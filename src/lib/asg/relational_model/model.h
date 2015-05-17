@@ -15,10 +15,13 @@ namespace relational_model {
 
 class data_type;
 class iso_data_type;
+class schema;
 
 using iso_data_type_sptr = std::shared_ptr<iso_data_type>;
+using schema_sptr = std::shared_ptr<schema>;
 
 using iso_data_type_sptr_vec = std::vector<iso_data_type_sptr>;
+using schema_sptr_vec = std::vector<schema_sptr>;
 
 class model : public graph::user_node
 {
@@ -44,8 +47,18 @@ public:
         return create_sub_node<T>(n);
     }
 
+    template<typename T=schema>
+    std::shared_ptr<T> create_schema(const string& n) {
+        return create_sub_node<T>(n);
+    }
+
     template<typename T=data_type>
     std::vector<std::shared_ptr<T>> data_types() const {
+        return sub_nodes<T>();
+    }
+
+    template<typename T=schema>
+    std::vector<std::shared_ptr<T>> schemata() const {
         return sub_nodes<T>();
     }
 

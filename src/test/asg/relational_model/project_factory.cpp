@@ -12,6 +12,7 @@
 
 #include <asg/relational_model/model.h>
 #include <asg/relational_model/iso_data_type.h>
+#include <asg/relational_model/schema.h>
 
 namespace asg {
 namespace relational_model {
@@ -30,6 +31,8 @@ base::project_sptr project_factory::do_create_project(const string &n)
 
     init_iso_data_types(m);
 
+    init_schemata(m);
+
     return proj;
 }
 
@@ -38,6 +41,34 @@ void project_factory::init_iso_data_types(model_sptr m)
     for (auto tn : model::iso_data_type_names) {
         m->create_data_type<iso_data_type>(tn);
     }
+}
+
+void project_factory::init_schemata(model_sptr m)
+{
+    init_kernel_schema(m);
+    init_data_schema(m);
+    init_audit_schema(m);
+    init_api_schema(m);
+}
+
+void project_factory::init_kernel_schema(model_sptr m)
+{
+    auto kernel = m->create_schema("kernel");
+}
+
+void project_factory::init_data_schema(model_sptr m)
+{
+    auto data = m->create_schema("data");
+}
+
+void project_factory::init_audit_schema(model_sptr m)
+{
+    auto audit = m->create_schema("audit");
+}
+
+void project_factory::init_api_schema(model_sptr m)
+{
+    auto api = m->create_schema("api");
 }
 
 }

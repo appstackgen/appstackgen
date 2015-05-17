@@ -15,6 +15,7 @@ set(KERNEL_HEADERS
     data_type.h
     iso_data_type.h
     custom_data_type.h
+    schema.h
 )
 
 set(KERNEL_SOURCES
@@ -23,6 +24,7 @@ set(KERNEL_SOURCES
     data_type.cpp
     iso_data_type.cpp
     custom_data_type.cpp
+    schema.cpp
 )
 
 set(HEADERS
