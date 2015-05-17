@@ -49,5 +49,5 @@ TEST(test_project, project_to_dot)
 
     ASSERT_EQ(name("A Project"), proj->title());
 
-    save_to_file(graph_to_dot::to_string_vector(proj), "a_project.dot", "\n");
+    save_to_file(graph_to_dot::to_string_vector(proj), "relational_project.dot", "\n");
 }

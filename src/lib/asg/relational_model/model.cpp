@@ -8,10 +8,43 @@
 
 #include "model.h"
 
+#include <asg/relational_model/iso_data_type.h>
+
 namespace asg {
 namespace relational_model {
 
 string model::static_node_type_name { "relational model" };
+
+string model::boolean_type_name { "boolean" };
+string model::integer_type_name { "integer" };
+string model::bigint_type_name { "bigint" };
+string model::numeric_type_name { "numeric" };
+string model::char_type_name { "char" };
+string model::varchar_type_name { "varchar" };
+string model::date_type_name { "date" };
+string model::time_type_name { "time" };
+string model::timestamp_type_name { "timestamp" };
+
+string_vec model::iso_data_type_names { boolean_type_name,
+            integer_type_name,
+            bigint_type_name,
+            numeric_type_name,
+            char_type_name,
+            varchar_type_name,
+            date_type_name,
+            time_type_name,
+            timestamp_type_name };
+
+
+iso_data_type_sptr model::create_iso_data_type(const string &n)
+{
+    return create_sub_node<iso_data_type>(n);
+}
+
+iso_data_type_sptr_vec model::iso_data_types() const
+{
+    return sub_nodes<iso_data_type>();
+}
 
 }
 }

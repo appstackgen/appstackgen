@@ -34,6 +34,8 @@ protected:
     project_factory() {}
 
     base::project_sptr do_create_project(const string& n);
+
+    void init_iso_data_types(model_sptr m);
 };
 
 }
