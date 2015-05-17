@@ -6,11 +6,10 @@
  * All rights reserved.
  */
 
-#include "serial_data_type.h"
+#include "schema_fragment.h"
 
 namespace asg {
-namespace postgres_model {
+namespace relational_model {
 
-string serial_data_type::static_node_type_name { "serial" }
 }
 }

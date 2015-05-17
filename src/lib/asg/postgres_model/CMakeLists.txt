@@ -10,11 +10,11 @@ set(LIBVERSION ${LIBVERSION_MAJOR}.${LIBVERSION_MINOR}.${LIBVERSION_PATCH})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
-    serial_data_type.h
+    sequence.h
 )
 
 set(KERNEL_SOURCES
-    serial_data_type.cpp
+    sequence.cpp
 )
 
 set(HEADERS

@@ -20,6 +20,16 @@ public:
 
     using model_fragment::model_fragment;
 
+    template<typename T>
+    std::shared_ptr<T> create_schema_fragment(const string& name) {
+        return create_sub_node<T>(name);
+    }
+
+    template<typename T>
+    std::vector<std::shared_ptr<T>> schema_fragments() const {
+        return sub_nodes<T>();
+    }
+
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }
 };
