@@ -16,6 +16,7 @@ namespace relational_model {
 class data_type;
 class iso_data_type;
 class schema;
+class iso_constant;
 
 using iso_data_type_sptr = std::shared_ptr<iso_data_type>;
 using schema_sptr = std::shared_ptr<schema>;
@@ -38,7 +39,10 @@ public:
     static string time_type_name;
     static string timestamp_type_name;
 
+    static string current_date_constant_name;
+
     static string_vec iso_data_type_names;
+    static string_vec iso_constant_names;
 
     using graph::user_node::user_node;
 
@@ -59,6 +63,16 @@ public:
 
     template<typename T=schema>
     std::vector<std::shared_ptr<T>> schemata() const {
+        return sub_nodes<T>();
+    }
+
+    template<typename T=iso_constant>
+    std::shared_ptr<T> create_constant(const string& n) {
+        return create_sub_node<T>(n);
+    }
+
+    template<typename T=iso_constant>
+    std::vector<std::shared_ptr<T>> constants() const {
         return sub_nodes<T>();
     }
 

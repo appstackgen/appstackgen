@@ -19,6 +19,8 @@ set(KERNEL_HEADERS
     schema_fragment.h
     tabloid.h
     table.h
+    constant.h
+    iso_constant.h
 )
 
 set(KERNEL_SOURCES
@@ -31,6 +33,8 @@ set(KERNEL_SOURCES
     schema_fragment.cpp
     tabloid.cpp
     table.cpp
+    constant.cpp
+    iso_constant.cpp
 )
 
 set(HEADERS

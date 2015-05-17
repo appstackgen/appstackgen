@@ -12,6 +12,7 @@
 
 #include <asg/relational_model/model.h>
 #include <asg/relational_model/iso_data_type.h>
+#include <asg/relational_model/iso_constant.h>
 #include <asg/relational_model/schema.h>
 
 namespace asg {
@@ -30,6 +31,7 @@ base::project_sptr project_factory::do_create_project(const string &n)
     auto m = proj->create_node<model>("relational model");
 
     init_iso_data_types(m);
+    init_iso_constants(m);
 
     init_schemata(m);
 
@@ -40,6 +42,13 @@ void project_factory::init_iso_data_types(model_sptr m)
 {
     for (auto tn : model::iso_data_type_names) {
         m->create_data_type<iso_data_type>(tn);
+    }
+}
+
+void project_factory::init_iso_constants(model_sptr m)
+{
+    for (auto cn : model::iso_constant_names) {
+        m->create_constant<iso_constant>(cn);
     }
 }
 

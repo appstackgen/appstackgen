@@ -36,6 +36,8 @@ protected:
     base::project_sptr do_create_project(const string& n);
 
     void init_iso_data_types(model_sptr m);
+    void init_iso_constants(model_sptr m);
+
     void init_custom_data_types(model_sptr m);
 
     void init_schemata(model_sptr m);

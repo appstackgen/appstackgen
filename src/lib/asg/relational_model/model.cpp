@@ -25,6 +25,8 @@ string model::date_type_name { "date" };
 string model::time_type_name { "time" };
 string model::timestamp_type_name { "timestamp" };
 
+string model::current_date_constant_name { "current_timestamp" };
+
 string_vec model::iso_data_type_names { boolean_type_name,
             integer_type_name,
             bigint_type_name,
@@ -34,6 +36,8 @@ string_vec model::iso_data_type_names { boolean_type_name,
             date_type_name,
             time_type_name,
             timestamp_type_name };
+
+string_vec model::iso_constant_names { current_date_constant_name };
 
 }
 }
