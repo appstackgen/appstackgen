@@ -21,6 +21,11 @@ class node : public abstract_node
 public:
     node(abstract_graph* g, const object_name& name, const object_id& id);
 
+    template<typename T>
+    std::shared_ptr<T> create_edge_to(abstract_node_sptr end) {
+        return graph()->create_edge<T>(graph()->node(id()), end);
+    }
+
 protected:
     template<typename T>
     std::shared_ptr<T> create_sub_node(const string& name) {
