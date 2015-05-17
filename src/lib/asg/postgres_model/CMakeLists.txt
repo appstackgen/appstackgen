@@ -12,11 +12,13 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     model.h
     sequence.h
+    extension.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
     sequence.cpp
+    extension.cpp
 )
 
 set(HEADERS

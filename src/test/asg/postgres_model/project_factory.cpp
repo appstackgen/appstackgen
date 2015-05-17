@@ -16,6 +16,7 @@
 
 #include <asg/postgres_model/model.h>
 #include <asg/postgres_model/sequence.h>
+#include <asg/postgres_model/extension.h>
 
 using namespace asg::relational_model;
 
@@ -68,6 +69,8 @@ void project_factory::init_schemata(model_sptr m)
 void project_factory::init_kernel_schema(model_sptr m)
 {
     auto kernel = m->create_schema("kernel");
+
+    auto uuid_ossp = kernel->create_schema_fragment<extension>(extension::uuid_extension_name);
 }
 
 void project_factory::init_data_schema(model_sptr m)
