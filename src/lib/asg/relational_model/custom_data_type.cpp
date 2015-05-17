@@ -11,5 +11,6 @@
 namespace asg {
 namespace relational_model {
 
+string custom_data_type::static_node_type_name { "custom data type" };
 }
 }
