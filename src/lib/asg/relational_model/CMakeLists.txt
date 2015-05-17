@@ -17,6 +17,8 @@ set(KERNEL_HEADERS
     custom_data_type.h
     schema.h
     schema_fragment.h
+    tabloid.h
+    table.h
 )
 
 set(KERNEL_SOURCES
@@ -27,6 +29,8 @@ set(KERNEL_SOURCES
     custom_data_type.cpp
     schema.cpp
     schema_fragment.cpp
+    tabloid.cpp
+    table.cpp
 )
 
 set(HEADERS

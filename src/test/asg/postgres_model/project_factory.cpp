@@ -13,6 +13,7 @@
 #include <asg/relational_model/iso_data_type.h>
 #include <asg/relational_model/schema.h>
 #include <asg/relational_model/custom_data_type.h>
+#include <asg/relational_model/table.h>
 
 #include <asg/postgres_model/model.h>
 #include <asg/postgres_model/sequence.h>
@@ -81,6 +82,9 @@ void project_factory::init_kernel_schema(model_sptr m)
 void project_factory::init_data_schema(model_sptr m)
 {
     auto data = m->create_schema("data");
+
+    auto flat = data->create_table<table>("flat_table");
+    auto hierarchical = data->create_table<table>("hierarchical_table");
 }
 
 void project_factory::init_audit_schema(model_sptr m)

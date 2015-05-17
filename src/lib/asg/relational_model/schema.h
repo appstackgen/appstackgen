@@ -13,6 +13,8 @@
 namespace asg {
 namespace relational_model {
 
+class table;
+
 class schema : public model_fragment
 {
 public:
@@ -27,6 +29,16 @@ public:
 
     template<typename T>
     std::vector<std::shared_ptr<T>> schema_fragments() const {
+        return sub_nodes<T>();
+    }
+
+    template<typename T=table>
+    std::shared_ptr<T> create_table(const string& n) {
+        return create_sub_node<T>(n);
+    }
+
+    template<typename T=table>
+    std::vector<std::shared_ptr<T>> tables() const {
         return sub_nodes<T>();
     }
 
