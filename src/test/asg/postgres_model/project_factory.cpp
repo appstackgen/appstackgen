@@ -17,6 +17,8 @@
 #include <asg/postgres_model/model.h>
 #include <asg/postgres_model/sequence.h>
 #include <asg/postgres_model/extension.h>
+#include <asg/postgres_model/extension_data_type.h>
+#include <asg/postgres_model/provides_data_type.h>
 
 using namespace asg::relational_model;
 
@@ -71,6 +73,9 @@ void project_factory::init_kernel_schema(model_sptr m)
     auto kernel = m->create_schema("kernel");
 
     auto uuid_ossp = kernel->create_schema_fragment<extension>(extension::uuid_extension_name);
+
+    auto uuid_t = m->create_data_type<extension_data_type>(model::uuid_data_type_name);
+    uuid_ossp->create_edge_to<provides_data_type>(uuid_t);
 }
 
 void project_factory::init_data_schema(model_sptr m)

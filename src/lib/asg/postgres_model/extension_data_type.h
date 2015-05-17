@@ -8,23 +8,17 @@
 
 #pragma once
 
-#include <asg/relational_model/model.h>
+#include <asg/relational_model/custom_data_type.h>
 
 namespace asg {
 namespace postgres_model {
 
-class model : public relational_model::model
+class extension_data_type : public relational_model::custom_data_type
 {
 public:
     static string static_node_type_name;
 
-    static string serial_data_type_name;
-    static string bigserial_data_type_name;
-    static string uuid_data_type_name;
-
-    static string_vec custom_data_type_names;
-
-    using relational_model::model::model;
+    using relational_model::custom_data_type::custom_data_type;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

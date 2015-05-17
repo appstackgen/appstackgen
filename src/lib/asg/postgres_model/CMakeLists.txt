@@ -13,12 +13,16 @@ set(KERNEL_HEADERS
     model.h
     sequence.h
     extension.h
+    extension_data_type.h
+    provides_data_type.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
     sequence.cpp
     extension.cpp
+    extension_data_type.cpp
+    provides_data_type.cpp
 )
 
 set(HEADERS
