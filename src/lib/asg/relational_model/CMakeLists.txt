@@ -25,6 +25,7 @@ set(KERNEL_HEADERS
     table_column.h
     table_constraint.h
     primary_key_constraint.h
+    uses.h
 )
 
 set(KERNEL_SOURCES
@@ -43,6 +44,7 @@ set(KERNEL_SOURCES
     table_column.cpp
     table_constraint.cpp
     primary_key_constraint.cpp
+    uses.cpp
 )
 
 set(HEADERS
