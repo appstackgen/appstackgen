@@ -16,10 +16,7 @@ namespace relational_model {
 
 string table::static_node_type_name { "table" };
 
-table_column_sptr table::create_column(const string &name)
-{
-    return create_sub_node<table_column>(name);
-}
+
 
 primary_key_constraint_sptr table::create_primary_key_constraint(const string &name)
 {
@@ -28,10 +25,7 @@ primary_key_constraint_sptr table::create_primary_key_constraint(const string &n
     return create_sub_node<relational_model::primary_key_constraint>(name);
 }
 
-table_column_sptr_vec table::columns() const
-{
-    return sub_nodes<table_column>();
-}
+
 
 primary_key_constraint_sptr table::primary_key_constraint() const
 {

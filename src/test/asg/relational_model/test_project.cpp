@@ -19,6 +19,7 @@
 #include <asg/relational_model/model.h>
 #include <asg/relational_model/schema.h>
 #include <asg/relational_model/table.h>
+#include <asg/relational_model/primary_key_constraint.h>
 
 #include "project_factory.h"
 
@@ -35,6 +36,7 @@ TEST(test_project, test_object_has_default_values) {
         for (auto schema : model->schemata()) {
             for (auto table : schema->tables()) {
                 ASSERT_TRUE(table->has_primary_key_constraint());
+                ASSERT_TRUE(!table->primary_key_constraint()->columns().empty());
             }
         }
     }

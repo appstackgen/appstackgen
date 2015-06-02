@@ -28,10 +28,18 @@ public:
 
     using tabloid::tabloid;
 
-    table_column_sptr create_column(const string& name);
+    template<typename T=table_column>
+    std::shared_ptr<T> create_column(const string& name) {
+        return create_sub_node<T>(name);
+    }
+
     primary_key_constraint_sptr create_primary_key_constraint(const string& name);
 
-    table_column_sptr_vec columns() const;
+    template<typename T=table_column>
+    std::vector<std::shared_ptr<T>> columns() const {
+        return sub_nodes<T>();
+    }
+
     primary_key_constraint_sptr primary_key_constraint() const;
 
     bool has_primary_key_constraint() const;

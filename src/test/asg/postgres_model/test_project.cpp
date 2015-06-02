@@ -37,7 +37,7 @@ TEST(test_postgres_model, project_to_dot)
     save_to_file(graph_to_dot::to_string_vector(proj), "postgres_model_project.dot", "\n");
 }
 
-TEST(test_postgres_model, table_must_have_primary_key)
+TEST(test_postgres_model, table_must_have_non_empty_primary_key)
 {
     auto proj = project_factory::create_project("table_must_have_primary_key");
 
@@ -45,6 +45,7 @@ TEST(test_postgres_model, table_must_have_primary_key)
         for (auto schema : db->schemata()) {
             for (auto table : schema->tables()) {
                 ASSERT_TRUE(table->has_primary_key_constraint());
+                ASSERT_TRUE(!table->primary_key_constraint()->columns().empty());
             }
         }
     }
