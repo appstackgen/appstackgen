@@ -15,6 +15,8 @@ namespace domain_model {
 
 class id_value;
 
+using id_value_sptr = std::shared_ptr<id_value>;
+
 class domain_object : public domain_fragment
 {
 public:
@@ -31,6 +33,10 @@ public:
     std::shared_ptr<T> id_value() const {
         return unique_sub_node<T>();
     }
+
+    bool has_id_value() const;
+
+    id_value_sptr id_value() const;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }
