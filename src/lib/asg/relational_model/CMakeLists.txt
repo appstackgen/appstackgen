@@ -23,6 +23,7 @@ set(KERNEL_HEADERS
     iso_constant.h
     table_fragment.h
     table_column.h
+    table_constraint.h
 )
 
 set(KERNEL_SOURCES
@@ -39,6 +40,7 @@ set(KERNEL_SOURCES
     iso_constant.cpp
     table_fragment.cpp
     table_column.cpp
+    table_constraint.cpp
 )
 
 set(HEADERS
