@@ -11,10 +11,14 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(KERNEL_HEADERS
     model.h
+    dedicated_schema.h
+    kernel_schema.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
+    dedicated_schema.cpp
+    kernel_schema.cpp
 )
 
 set(HEADERS

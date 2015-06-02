@@ -25,6 +25,8 @@
 #include <asg/postgres_model/extension_data_type.h>
 #include <asg/postgres_model/provides_data_type.h>
 
+#include <asg/postgres_backend_model/kernel_schema.h>
+
 using namespace asg::relational_model;
 
 namespace asg {
@@ -84,7 +86,7 @@ void project_factory::init_schemata(model_sptr m)
 
 void project_factory::init_kernel_schema(model_sptr m)
 {
-    auto kernel = m->create_schema("kernel");
+    auto kernel = m->create_schema<postgres_backend_model::kernel_schema>("kernel");
 
     auto uuid_ossp = kernel->create_schema_fragment<postgres_model::extension>(postgres_model::extension::uuid_extension_name);
 
