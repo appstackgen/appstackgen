@@ -15,6 +15,8 @@
 #include <asg/relational_model/custom_data_type.h>
 #include <asg/relational_model/table.h>
 #include <asg/relational_model/iso_constant.h>
+#include <asg/relational_model/table_column.h>
+#include <asg/relational_model/primary_key_constraint.h>
 
 #include <asg/postgres_model/model.h>
 #include <asg/postgres_model/sequence.h>
@@ -95,10 +97,12 @@ void project_factory::init_data_schema(model_sptr m)
 
     auto flat = data->create_table<table>("flat_table");
     auto flat_id = flat->create_column("id");
+    auto flat_pk = flat->create_primary_key_constraint("pk_flat");
 
     auto hierarchical = data->create_table<table>("hierarchical_table");
     auto hierarchical_id = hierarchical->create_column("id");
     auto hierarchical_parent_id = hierarchical->create_column("parent_id");
+    auto hierarchical_pk = hierarchical->create_primary_key_constraint("pk_hierarchical");
 }
 
 void project_factory::init_audit_schema(model_sptr m)

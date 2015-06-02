@@ -17,6 +17,8 @@
 #include <asg/graph_tools/graph_to_dot.h>
 
 #include <asg/relational_model/model.h>
+#include <asg/relational_model/schema.h>
+#include <asg/relational_model/table.h>
 
 #include "project_factory.h"
 
@@ -30,7 +32,11 @@ TEST(test_project, test_object_has_default_values) {
     auto proj = project_factory::create_project("A Project");
 
     for (auto model : proj->nodes<model>()) {
-
+        for (auto schema : model->schemata()) {
+            for (auto table : schema->tables()) {
+                ASSERT_TRUE(table->has_primary_key_constraint());
+            }
+        }
     }
 }
 

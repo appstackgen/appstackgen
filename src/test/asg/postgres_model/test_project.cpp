@@ -17,6 +17,9 @@
 #include <asg/graph_tools/graph_to_dot.h>
 
 #include <asg/relational_model/model.h>
+#include <asg/relational_model/schema.h>
+#include <asg/relational_model/table.h>
+#include <asg/relational_model/primary_key_constraint.h>
 
 #include "project_factory.h"
 
@@ -32,4 +35,17 @@ TEST(test_postgres_model, project_to_dot)
     auto proj = project_factory::create_project("A Postgres Model Project");
 
     save_to_file(graph_to_dot::to_string_vector(proj), "postgres_model_project.dot", "\n");
+}
+
+TEST(test_postgres_model, table_must_have_primary_key)
+{
+    auto proj = project_factory::create_project("table_must_have_primary_key");
+
+    for (auto db : proj->nodes<relational_model::model>()) {
+        for (auto schema : db->schemata()) {
+            for (auto table : schema->tables()) {
+                ASSERT_TRUE(table->has_primary_key_constraint());
+            }
+        }
+    }
 }

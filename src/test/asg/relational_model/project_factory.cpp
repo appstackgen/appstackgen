@@ -15,6 +15,8 @@
 #include <asg/relational_model/iso_constant.h>
 #include <asg/relational_model/schema.h>
 #include <asg/relational_model/table.h>
+#include <asg/relational_model/primary_key_constraint.h>
+#include <asg/relational_model/table_column.h>
 
 namespace asg {
 namespace relational_model {
@@ -81,7 +83,9 @@ void project_factory::init_api_schema(model_sptr m)
     auto api = m->create_schema("api");
 
     auto config_t = api->create_table("configuration");
-    config_t->create_column("installation_id");
+    auto config_id = config_t->create_column("installation_id");
+    auto config_pk = config_t->create_primary_key_constraint("pk_config");
+    config_pk->append(config_id);
 }
 
 }
