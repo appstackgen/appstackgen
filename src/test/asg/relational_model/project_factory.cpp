@@ -14,6 +14,7 @@
 #include <asg/relational_model/iso_data_type.h>
 #include <asg/relational_model/iso_constant.h>
 #include <asg/relational_model/schema.h>
+#include <asg/relational_model/table.h>
 
 namespace asg {
 namespace relational_model {
@@ -78,6 +79,9 @@ void project_factory::init_audit_schema(model_sptr m)
 void project_factory::init_api_schema(model_sptr m)
 {
     auto api = m->create_schema("api");
+
+    auto config_t = api->create_table("configuration");
+    config_t->create_column("installation_id");
 }
 
 }

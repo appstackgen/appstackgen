@@ -94,7 +94,11 @@ void project_factory::init_data_schema(model_sptr m)
     auto data = m->create_schema("data");
 
     auto flat = data->create_table<table>("flat_table");
+    auto flat_id = flat->create_column("id");
+
     auto hierarchical = data->create_table<table>("hierarchical_table");
+    auto hierarchical_id = hierarchical->create_column("id");
+    auto hierarchical_parent_id = hierarchical->create_column("parent_id");
 }
 
 void project_factory::init_audit_schema(model_sptr m)
