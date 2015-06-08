@@ -16,10 +16,12 @@ namespace sql {
 class statement;
 class begin;
 class commit;
+class rollback;
 
 using statement_sptr = std::shared_ptr<statement>;
 using begin_sptr = std::shared_ptr<begin>;
 using commit_sptr = std::shared_ptr<commit>;
+using rollback_sptr = std::shared_ptr<rollback>;
 
 using statement_sptr_vec = std::vector<statement_sptr>;
 
@@ -35,6 +37,7 @@ public:
         return s;
     }
 
+    rollback_sptr rollback();
     begin_sptr begin();
     commit_sptr commit();
 

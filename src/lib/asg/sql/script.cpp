@@ -8,6 +8,7 @@
 
 #include "script.h"
 
+#include <asg/sql/rollback.h>
 #include <asg/sql/begin.h>
 #include <asg/sql/commit.h>
 
@@ -16,6 +17,11 @@ namespace sql {
 
 script::script()
 {
+}
+
+rollback_sptr script::rollback()
+{
+    return create_statement<sql::rollback>(rollback::default_text);
 }
 
 begin_sptr script::begin()

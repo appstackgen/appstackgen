@@ -22,10 +22,11 @@ TEST(test_script, default_ctor) {
     ASSERT_EQ((size)0, s.size());
     ASSERT_TRUE(s.empty());
 
+    s.rollback();
     s.begin();
     s.commit();
 
-    ASSERT_EQ((size)2, s.size());
+    ASSERT_EQ((size)3, s.size());
     ASSERT_FALSE(s.empty());
 
     std::cout << std::endl << join(s.sql(true, true), "\n") << std::endl;

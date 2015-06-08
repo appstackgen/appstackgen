@@ -15,6 +15,8 @@ set(KERNEL_HEADERS
     transaction_statement.h
     begin.h
     commit.h
+    rollback.h
+    ddl_statement.h
 )
 
 set(KERNEL_SOURCES
@@ -23,6 +25,8 @@ set(KERNEL_SOURCES
     transaction_statement.cpp
     begin.cpp
     commit.cpp
+    rollback.cpp
+    ddl_statement.cpp
 )
 
 set(HEADERS
