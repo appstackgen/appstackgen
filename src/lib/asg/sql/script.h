@@ -14,8 +14,10 @@ namespace asg {
 namespace sql {
 
 class statement;
+class begin;
 
 using statement_sptr = std::shared_ptr<statement>;
+using begin_sptr = std::shared_ptr<begin>;
 
 using statement_sptr_vec = std::vector<statement_sptr>;
 
@@ -31,8 +33,13 @@ public:
         return s;
     }
 
+    begin_sptr begin();
+
     bool empty() const { return m_statements.empty(); }
     size size() const { return m_statements.size(); }
+
+    statement_sptr_vec statements() const { return m_statements; }
+    string_vec sql(bool with_pre_comments=false, bool with_post_comments=false) const;
 
 private:
     statement_sptr_vec m_statements;

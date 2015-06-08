@@ -8,6 +8,8 @@
 
 #include <gtest/gtest.h>
 
+#include <asg/kernel/string_tools.h>
+
 #include <asg/sql/script.h>
 #include <asg/sql/statement.h>
 
@@ -19,6 +21,13 @@ TEST(test_script, default_ctor) {
 
     ASSERT_EQ((size)0, s.size());
     ASSERT_TRUE(s.empty());
+
+    s.begin();
+
+    ASSERT_EQ((size)1, s.size());
+    ASSERT_FALSE(s.empty());
+
+    std::cout << std::endl << join(s.sql(true, true), "\n") << std::endl;
 }
 
 

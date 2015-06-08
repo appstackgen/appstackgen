@@ -12,11 +12,15 @@ set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 set(KERNEL_HEADERS
     statement.h
     script.h
+    transaction_statement.h
+    begin.h
 )
 
 set(KERNEL_SOURCES
     statement.cpp
     script.cpp
+    transaction_statement.cpp
+    begin.cpp
 )
 
 set(HEADERS
