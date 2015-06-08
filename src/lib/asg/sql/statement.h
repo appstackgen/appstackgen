@@ -16,7 +16,7 @@ namespace sql {
 class statement
 {
 public:
-    statement(const string& txt="");
+    explicit statement(const string& txt="");
 
     string text() const { return m_txt; }
 

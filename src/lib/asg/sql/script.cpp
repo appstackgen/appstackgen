@@ -9,6 +9,7 @@
 #include "script.h"
 
 #include <asg/sql/begin.h>
+#include <asg/sql/commit.h>
 
 namespace asg {
 namespace sql {
@@ -20,6 +21,11 @@ script::script()
 begin_sptr script::begin()
 {
     return create_statement<sql::begin>(begin::default_text);
+}
+
+commit_sptr script::commit()
+{
+    return create_statement<sql::commit>(commit::default_text);
 }
 
 string_vec script::sql(bool with_pre_comments, bool with_post_comments) const

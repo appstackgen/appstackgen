@@ -15,9 +15,11 @@ namespace sql {
 
 class statement;
 class begin;
+class commit;
 
 using statement_sptr = std::shared_ptr<statement>;
 using begin_sptr = std::shared_ptr<begin>;
+using commit_sptr = std::shared_ptr<commit>;
 
 using statement_sptr_vec = std::vector<statement_sptr>;
 
@@ -34,6 +36,7 @@ public:
     }
 
     begin_sptr begin();
+    commit_sptr commit();
 
     bool empty() const { return m_statements.empty(); }
     size size() const { return m_statements.size(); }

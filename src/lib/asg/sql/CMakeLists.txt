@@ -14,6 +14,7 @@ set(KERNEL_HEADERS
     script.h
     transaction_statement.h
     begin.h
+    commit.h
 )
 
 set(KERNEL_SOURCES
@@ -21,6 +22,7 @@ set(KERNEL_SOURCES
     script.cpp
     transaction_statement.cpp
     begin.cpp
+    commit.cpp
 )
 
 set(HEADERS

@@ -13,12 +13,12 @@
 namespace asg {
 namespace sql {
 
-class begin : public transaction_statement
+class commit : public transaction_statement
 {
 public:
     static string default_text;
 
-    explicit begin(const string& txt=begin::default_text);
+    explicit commit(const string& txt = commit::default_text);
 };
 
 }
