@@ -156,6 +156,18 @@ public:
         return buf;
     }
 
+    template<typename edge_t, typename node_t>
+    bool has_unique_out_edge_to() const {
+        return ((size)1 == end_nodes_of_typed_out_edges_to<edge_t, node_t>().size());
+    }
+
+    template<typename edge_t, typename node_t>
+    std::shared_ptr<node_t> end_node_of_unique_out_edge_to() const {
+        assert((has_unique_out_edge_to<edge_t, node_t>()));
+
+        return *(end_nodes_of_typed_out_edges_to<edge_t, node_t>().begin());
+    }
+
     abstract_edge_sptr_vec out_edges() const { return impl_out_edges(); }
     abstract_edge_sptr_vec in_edges() const { return impl_in_edges(); }
 

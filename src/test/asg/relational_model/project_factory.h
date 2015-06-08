@@ -20,8 +20,10 @@ using project_sptr = std::shared_ptr<project>;
 namespace relational_model {
 
 class model;
+class data_type;
 
 using model_sptr = std::shared_ptr<model>;
+using data_type_sptr = std::shared_ptr<data_type>;
 
 namespace test {
 
@@ -42,6 +44,16 @@ protected:
     void init_data_schema(model_sptr m);
     void init_audit_schema(model_sptr m);
     void init_api_schema(model_sptr m);
+
+    data_type_sptr m_boolean_type;
+    data_type_sptr m_integer_type;
+    data_type_sptr m_bigint_type;
+    data_type_sptr m_numeric_type;
+    data_type_sptr m_char_type;
+    data_type_sptr m_varchar_type;
+    data_type_sptr m_date_type;
+    data_type_sptr m_time_type;
+    data_type_sptr m_timestamp_type;
 };
 
 }

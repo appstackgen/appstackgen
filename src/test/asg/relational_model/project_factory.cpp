@@ -46,6 +46,16 @@ void project_factory::init_iso_data_types(model_sptr m)
     for (auto tn : model::iso_data_type_names) {
         m->create_data_type<iso_data_type>(tn);
     }
+
+    m_boolean_type = m->data_type(model::boolean_type_name);
+    m_integer_type = m->data_type(model::integer_type_name);
+    m_bigint_type = m->data_type(model::bigint_type_name);
+    m_numeric_type = m->data_type(model::numeric_type_name);
+    m_char_type = m->data_type(model::char_type_name);
+    m_varchar_type = m->data_type(model::varchar_type_name);
+    m_date_type = m->data_type(model::date_type_name);
+    m_time_type = m->data_type(model::time_type_name);
+    m_timestamp_type = m->data_type(model::timestamp_type_name);
 }
 
 void project_factory::init_iso_constants(model_sptr m)
@@ -83,7 +93,7 @@ void project_factory::init_api_schema(model_sptr m)
     auto api = m->create_schema("api");
 
     auto config_t = api->create_table("configuration");
-    auto config_id = config_t->create_column("installation_id");
+    auto config_id = config_t->create_column("installation_id", m_integer_type);
     auto config_pk = config_t->create_primary_key_constraint("pk_config");
     config_pk->append(config_id);
 }

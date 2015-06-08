@@ -27,6 +27,7 @@ set(KERNEL_HEADERS
     primary_key_constraint.h
     uses.h
     unique_constraint.h
+    has_data_type.h
 )
 
 set(KERNEL_SOURCES
@@ -47,6 +48,7 @@ set(KERNEL_SOURCES
     primary_key_constraint.cpp
     uses.cpp
     unique_constraint.cpp
+    has_data_type.cpp
 
 )
 

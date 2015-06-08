@@ -101,18 +101,18 @@ void project_factory::init_data_schema(model_sptr m)
     auto data = m->create_schema<postgres_backend_model::data_schema>("data");
 
     auto flat = data->create_table<table>("flat_table");
-    auto flat_id = flat->create_column("id");
+    auto flat_id = flat->create_column("id", m->data_type(model::bigint_type_name));
     auto flat_pk = flat->create_primary_key_constraint("pk_flat");
-    auto flat_name = flat->create_column("name");
+    auto flat_name = flat->create_column("name", m->data_type(model::varchar_type_name));
     flat_pk->append(flat_id);
     auto flat_u = flat->create_unique_constraint("u_flat");
     flat_u->append(flat_name);
 
     auto hierarchical = data->create_table<table>("hierarchical_table");
-    auto hierarchical_id = hierarchical->create_column("id");
-    auto hierarchical_parent_id = hierarchical->create_column("parent_id");
+    auto hierarchical_id = hierarchical->create_column("id", m->data_type(model::bigint_type_name));
+    auto hierarchical_parent_id = hierarchical->create_column("parent_id", hierarchical_id->data_type());
     auto hierarchical_pk = hierarchical->create_primary_key_constraint("pk_hierarchical");
-    auto hierarchical_name = hierarchical->create_column("name");
+    auto hierarchical_name = hierarchical->create_column("name", m->data_type(model::varchar_type_name));
     hierarchical_pk->append(hierarchical_id);
     auto hierarchical_u = hierarchical->create_unique_constraint("u_hierarchical");
     hierarchical_u->append(hierarchical_parent_id);

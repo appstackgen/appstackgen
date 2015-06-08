@@ -25,6 +25,7 @@ set(KERNEL_HEADERS
     user_node.h
     user_edge.h
     owns.h
+    unknown_sub_node.h
 )
 
 set(KERNEL_SOURCES
@@ -43,6 +44,7 @@ set(KERNEL_SOURCES
     user_node.cpp
     user_edge.cpp
     owns.cpp
+    unknown_sub_node.cpp
 )
 
 set(HEADERS

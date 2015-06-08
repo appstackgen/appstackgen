@@ -9,6 +9,7 @@
 #pragma once
 
 #include <asg/graph/user_node.h>
+#include <asg/graph/unknown_sub_node.h>
 
 namespace asg {
 namespace relational_model {
@@ -59,6 +60,17 @@ public:
     template<typename T=data_type>
     std::vector<std::shared_ptr<T>> data_types() const {
         return sub_nodes<T>();
+    }
+
+    template<typename t=data_type>
+    std::shared_ptr<t> data_type(const string& n) const {
+        for (auto node : sub_nodes<t>()) {
+            if (node->name() == object_name(n)) {
+                return node;
+            }
+        }
+
+        throw graph::unknown_sub_node(n, this);
     }
 
     template<typename T=schema>
