@@ -24,8 +24,16 @@ public:
 
     bool has_text() const { return (!m_txt.empty()); }
 
+    void prepend_comment(const string& txt) { m_pre_comments.push_back(txt); }
+    void append_comment(const string& txt) { m_post_comments.push_back(txt); }
+
+    string_vec pre_comments() const { return m_pre_comments; }
+    string_vec post_comments() const { return m_post_comments; }
+
 private:
     string m_txt;
+    string_vec m_pre_comments;
+    string_vec m_post_comments;
 };
 
 }

@@ -18,5 +18,6 @@ TEST(test_sql, default_ctor) {
 
     ASSERT_EQ(std::string(), s.text());
     ASSERT_FALSE(s.has_text());
+    ASSERT_EQ(string_vec(), s.pre_comments());
 }
 
