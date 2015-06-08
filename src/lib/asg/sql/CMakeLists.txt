@@ -20,6 +20,7 @@ set(KERNEL_HEADERS
     create.h
     create_database.h
     create_schema.h
+    create_table.h
 )
 
 set(KERNEL_SOURCES
@@ -32,6 +33,7 @@ set(KERNEL_SOURCES
     ddl_statement.cpp
     create_database.cpp
     create_schema.cpp
+    create_table.cpp
 )
 
 set(HEADERS

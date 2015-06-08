@@ -14,11 +14,13 @@
 
 #include <asg/relational_model/model.h>
 #include <asg/relational_model/schema.h>
+#include <asg/relational_model/table.h>
 
 #include <asg/sql/script.h>
 #include <asg/sql/statement.h>
 #include <asg/sql/create_database.h>
 #include <asg/sql/create_schema.h>
+#include <asg/sql/create_table.h>
 
 #include "project_factory.h"
 
@@ -54,6 +56,10 @@ TEST(test_script, create_database) {
 
         for (auto schema : db->schemata()) {
             scr.create<create_schema>(schema);
+
+            for (auto table : schema->tables()) {
+                scr.create<create_table>(table);
+            }
         }
 
         scr.commit();

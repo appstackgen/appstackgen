@@ -27,6 +27,17 @@ public:
     }
 
 protected:
+    template<typename t>
+    std::shared_ptr<t> super_node() const {
+        assert((has_super_node<t>()));
+        return start_node_of_unique_in_edge_from<owns, t>();
+    }
+
+    template<typename t>
+    bool has_super_node() const {
+        return has_unique_in_edge_from<owns, t>();
+    }
+
     template<typename T>
     std::shared_ptr<T> create_sub_node(const string& name) {
         return graph()->create_sub_node_of<T>(graph()->node(id()), object_name(name));

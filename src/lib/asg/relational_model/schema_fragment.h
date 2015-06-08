@@ -13,10 +13,18 @@
 namespace asg {
 namespace relational_model {
 
+class schema;
+
+using schema_sptr = std::shared_ptr<schema>;
+
 class schema_fragment : public graph::user_node
 {
 public:
     using graph::user_node::user_node;
+
+    string qualified_name() const;
+
+    relational_model::schema_sptr schema() const;
 };
 
 }

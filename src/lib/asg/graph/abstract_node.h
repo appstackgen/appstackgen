@@ -48,8 +48,8 @@ public:
     }
 
     template<typename edge_t=abstract_edge, typename node_t=abstract_node>
-    std::shared_ptr<node_t> start_node_of_unique_in_edge_from() const {
-        return *(typed_in_edges_from<edge_t, node_t>().begin());
+    std::shared_ptr<node_t> start_node_of_unique_in_edge_from() const {        
+        return *(start_nodes_of_typed_in_edges_from<edge_t, node_t>().begin());
     }
 
     template<typename T>
