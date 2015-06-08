@@ -37,6 +37,13 @@ public:
         return s;
     }
 
+    template<typename creator_t, typename obj_t>
+    std::shared_ptr<creator_t> create(std::shared_ptr<obj_t> o) {
+        auto s = std::make_shared<creator_t>(o);
+        m_statements.push_back(s);
+        return s;
+    }
+
     rollback_sptr rollback();
     begin_sptr begin();
     commit_sptr commit();

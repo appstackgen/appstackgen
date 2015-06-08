@@ -4,9 +4,11 @@ set(APPNAME ${TEST_PREFIX}${TESTED_LIB_NAME})
 set(CMAKE_CXX_FLAGS "${PROJECT_COMPILER_FLAGS}")
 
 set(TEST_HEADERS
+    project_factory.h
 )
 
 set(TEST_SOURCES
+    project_factory.cpp
     test_statement.cpp
     test_script.cpp
 )

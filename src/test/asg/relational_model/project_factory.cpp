@@ -31,7 +31,7 @@ base::project_sptr project_factory::do_create_project(const string &n)
 {
     auto proj = std::make_shared<base::project>(name(n));
 
-    auto m = proj->create_node<model>("relational model");
+    auto m = proj->create_node<model>("testdb");
 
     init_iso_data_types(m);
     init_iso_constants(m);

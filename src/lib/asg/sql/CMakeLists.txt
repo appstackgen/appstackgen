@@ -17,6 +17,8 @@ set(KERNEL_HEADERS
     commit.h
     rollback.h
     ddl_statement.h
+    create.h
+    create_database.h
 )
 
 set(KERNEL_SOURCES
@@ -27,6 +29,7 @@ set(KERNEL_SOURCES
     commit.cpp
     rollback.cpp
     ddl_statement.cpp
+    create_database.cpp
 )
 
 set(HEADERS
@@ -48,4 +51,6 @@ set_target_properties(${LIBNAME}
     SOVERSION ${LIBSOVERSION}
 )
 
-target_link_libraries(${LIBNAME} ${ASG_KERNEL_LIB_NAME})
+target_link_libraries(${LIBNAME}
+    ${ASG_RELATIONAL_MODEL_LIB_NAME}
+)
