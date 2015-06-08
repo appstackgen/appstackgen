@@ -30,6 +30,8 @@ public:
     string_vec pre_comments() const { return m_pre_comments; }
     string_vec post_comments() const { return m_post_comments; }
 
+    string to_string(bool with_pre_comments=false, bool with_post_comments=false) const;
+
 private:
     string m_txt;
     string_vec m_pre_comments;
