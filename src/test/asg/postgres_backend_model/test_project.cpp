@@ -32,9 +32,9 @@ using namespace asg::postgres_backend_model::test;
 
 TEST(test_postgres_model, project_to_dot)
 {
-    auto proj = project_factory::create_project("A Postgres Model Project");
+    auto proj = project_factory::create_project("A Postgres Backend Model Project");
 
-    save_to_file(graph_to_dot::to_string_vector(proj), "postgres_model_project.dot", "\n");
+    save_to_file(graph_to_dot::to_string_vector(proj), "postgres_backend_model_project.dot", "\n");
 }
 
 TEST(test_postgres_model, table_must_have_non_empty_primary_key)

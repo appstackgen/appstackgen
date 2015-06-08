@@ -17,6 +17,7 @@
 #include <asg/relational_model/iso_constant.h>
 #include <asg/relational_model/table_column.h>
 #include <asg/relational_model/primary_key_constraint.h>
+#include <asg/relational_model/unique_constraint.h>
 
 #include <asg/postgres_backend_model/model.h>
 
@@ -26,6 +27,7 @@
 #include <asg/postgres_model/provides_data_type.h>
 
 #include <asg/postgres_backend_model/kernel_schema.h>
+#include <asg/postgres_backend_model/data_schema.h>
 
 using namespace asg::relational_model;
 
@@ -96,18 +98,25 @@ void project_factory::init_kernel_schema(model_sptr m)
 
 void project_factory::init_data_schema(model_sptr m)
 {
-    auto data = m->create_schema("data");
+    auto data = m->create_schema<postgres_backend_model::data_schema>("data");
 
     auto flat = data->create_table<table>("flat_table");
     auto flat_id = flat->create_column("id");
     auto flat_pk = flat->create_primary_key_constraint("pk_flat");
+    auto flat_name = flat->create_column("name");
     flat_pk->append(flat_id);
+    auto flat_u = flat->create_unique_constraint("u_flat");
+    flat_u->append(flat_name);
 
     auto hierarchical = data->create_table<table>("hierarchical_table");
     auto hierarchical_id = hierarchical->create_column("id");
     auto hierarchical_parent_id = hierarchical->create_column("parent_id");
     auto hierarchical_pk = hierarchical->create_primary_key_constraint("pk_hierarchical");
+    auto hierarchical_name = hierarchical->create_column("name");
     hierarchical_pk->append(hierarchical_id);
+    auto hierarchical_u = hierarchical->create_unique_constraint("u_hierarchical");
+    hierarchical_u->append(hierarchical_parent_id);
+    hierarchical_u->append(hierarchical_name);
 }
 
 void project_factory::init_audit_schema(model_sptr m)

@@ -13,12 +13,14 @@ set(KERNEL_HEADERS
     model.h
     dedicated_schema.h
     kernel_schema.h
+    data_schema.h
 )
 
 set(KERNEL_SOURCES
     model.cpp
     dedicated_schema.cpp
     kernel_schema.cpp
+    data_schema.cpp
 )
 
 set(HEADERS
