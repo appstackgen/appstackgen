@@ -34,7 +34,7 @@ public:
     bool has_not_null_constraint() const;
 
     data_type_sptr data_type() const;
-    not_null_constraint_sptr get_not_null_constraint() const;
+    not_null_constraint_sptr not_null_constraint() const;
 
 protected:
     string impl_node_type_name() const override { return static_node_type_name; }

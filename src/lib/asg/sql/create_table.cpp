@@ -41,6 +41,10 @@ string create_table::declare_column(relational_model::table_column_sptr col) con
 
     s << col->name() << " " << col->data_type()->name();
 
+    if (col->has_not_null_constraint()) {
+        s << " not null";
+    }
+
     return s.str();
 }
 

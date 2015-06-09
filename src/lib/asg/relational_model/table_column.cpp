@@ -37,9 +37,9 @@ data_type_sptr table_column::data_type() const
     return end_node_of_unique_out_edge_to<relational_model::has_data_type, relational_model::data_type>();
 }
 
-not_null_constraint_sptr table_column::get_not_null_constraint() const
+not_null_constraint_sptr table_column::not_null_constraint() const
 {
-    return unique_sub_node<not_null_constraint>();
+    return unique_sub_node<relational_model::not_null_constraint>();
 }
 
 not_null_constraint_sptr table_column::create_not_null_constraint()

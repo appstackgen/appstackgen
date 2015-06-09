@@ -94,6 +94,7 @@ void project_factory::init_api_schema(model_sptr m)
 
     auto config_t = api->create_table("configuration");
     auto config_id = config_t->create_column("installation_id", m_integer_type);
+    config_id->create_not_null_constraint();
     auto config_pk = config_t->create_primary_key_constraint("pk_config");
     config_pk->append(config_id);
 }
