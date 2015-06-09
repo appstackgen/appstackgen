@@ -10,6 +10,7 @@
 
 #include <asg/relational_model/has_data_type.h>
 #include <asg/relational_model/data_type.h>
+#include <asg/relational_model/not_null_constraint.h>
 
 namespace asg {
 namespace relational_model {
@@ -26,9 +27,24 @@ bool table_column::has_data_type() const
     return has_unique_out_edge_to<relational_model::has_data_type, relational_model::data_type>();
 }
 
+bool table_column::has_not_null_constraint() const
+{
+    return has_unique_sub_node<relational_model::not_null_constraint>();
+}
+
 data_type_sptr table_column::data_type() const
 {
     return end_node_of_unique_out_edge_to<relational_model::has_data_type, relational_model::data_type>();
+}
+
+not_null_constraint_sptr table_column::get_not_null_constraint() const
+{
+    return unique_sub_node<not_null_constraint>();
+}
+
+not_null_constraint_sptr table_column::create_not_null_constraint()
+{
+    return create_sub_node<asg::relational_model::not_null_constraint>("not null");
 }
 
 }

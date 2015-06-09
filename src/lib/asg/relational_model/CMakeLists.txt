@@ -28,6 +28,9 @@ set(KERNEL_HEADERS
     uses.h
     unique_constraint.h
     has_data_type.h
+    table_column_fragment.h
+    table_column_constraint.h
+    not_null_constraint.h
 )
 
 set(KERNEL_SOURCES
@@ -49,6 +52,9 @@ set(KERNEL_SOURCES
     uses.cpp
     unique_constraint.cpp
     has_data_type.cpp
+    table_column_fragment.cpp
+    table_column_constraint.cpp
+    not_null_constraint.cpp
 
 )
 
